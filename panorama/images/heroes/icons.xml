@@ -1,0 +1,16 @@
+<root>
+  <Panel class="AddonLoadingRoot">
+      <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_venomancer.png" />
+      <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_venomancer.png" />
+
+      <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_axe.png" />
+      <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_axe.png" />
+
+      <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_meepo.png" />
+      <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_meepo.png" />
+
+      <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_undying.png" />
+      <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_undying.png" />
+
+  </Panel>
+</root>

@@ -1,0 +1,145 @@
+"TalentTree"
+{
+	"Points" // points for level up
+	{
+		"min_level" "0" 	// min level for giving points
+		"max_level" "30" 	// max level for giving points
+		"amount"	"1" 	// points per level
+		"special_levels" 	// special cases of giving points (still respects min_level and max_level)
+		{
+			"1"	"2"
+		}
+	}
+	
+	// heroes talents
+	"npc_dota_hero_bloodseeker"
+	{
+		"Physical"
+		{
+			"0"	//level required
+			{
+				"1"   	"talent_lifesteal"
+			}
+			"5"
+			{
+				"2"		"talent_bonus_damage"
+			}
+			"10"
+			{
+				"3"		"talent_krit"
+			}
+			"15"
+			{
+				"4"		"talent_bash"
+			}
+			"20"
+			{
+				"5"		"talent_mana_burn"
+			}
+			"25"
+			{
+				"6"		"talent_agi"
+			}
+			"30"
+			{
+				"7"		"talent_truestrike"
+			}
+		}
+		"Magical"
+		{
+			"0"	//level required
+			{
+				"1"   "talent_bonus_manaregen"
+			}
+			"5"
+			{
+				"2"		"talent_bonus_spellamp"
+			}
+			"10"
+			{
+				"3"		"talent_bonus_cooldown"
+			}
+			"15"
+			{
+				"4"		"talent_bonus_manabonus"
+			}
+			"20"
+			{
+				"5"		"talent_bonus_casttime"
+			}
+			"25"
+			{
+				"6"		"talent_int"
+			}
+			"30"
+			{
+				"7"		"obsidian_destroyer_equilibrium"
+			}
+		}
+		"Strength"
+		{
+			"0"	//level required
+			{
+				"1"   	"talent_bonus_hp_regen"
+			}
+			"5"
+			{
+				"2"		"talent_bonus_move_speed"
+			}
+			"10"
+			{
+				"3"		"talent_bonus_armor"
+			}
+			"15"
+			{
+				"4"		"talent_bonus_magic_res"
+			}
+			"20"
+			{
+				"5"		"talent_bonus_hp"
+			}
+			"25"
+			{
+				"6"		"talent_str"
+			}
+			"30"
+			{
+				"7"		"faceless_void_backtrack"
+			}
+		}
+	}
+	"npc_dota_hero_rubick"
+	{
+		"Rubick"
+		{
+			"0"	//level required
+			{
+				"1"   	"talent_slow_enemy"
+			}
+			"5"
+			{
+				"2"		"talent_degree_armour"
+			}
+			"10"
+			{
+				"3"		"talent_radiance"
+			}
+			"15"
+			{
+				"4"		"bakedanuki_frolic_aura"
+			}
+			"20"
+			{
+				"5"		"talent_sacred_earth"
+			}
+			"25"
+			{
+				"6"		"dota_talent_reveal_invis"
+			}
+			"30"
+			{
+				"7"		"talent_mana_shield"
+			}
+		}
+	}
+}

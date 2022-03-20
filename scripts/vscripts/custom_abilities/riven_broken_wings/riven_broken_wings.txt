@@ -1,0 +1,81 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Riven: Broken Wings
+	//=================================================================================================================
+		"riven_broken_wings"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"custom_abilities/riven_broken_wings/riven_broken_wings"
+		"AbilityTextureName"			"\custom\mifune_zanmato"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"7"
+        "AbilityProcsMagicStick"		"1"
+
+//		"precache"
+//		{
+//			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_<hero>.vsndevts"
+//			"particle"	"particles/units/heroes/hero_<hero>/<hero>_<ability>.vpcf"
+//		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+		"AbilityCastPoint"				"0.3"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25 22 20 17 15 12 10"
+		"AbilityManaCost"				"25"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"range"					"400 425 450 475 500 525 550"
+				"LinkedSpecialBonus"	"spec_riven_crit_dur"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"25 30 35 40 45 50 55"
+				"LinkedSpecialBonus"	"spec_riven_damage"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"recast_timer"			"2.0"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"recast_number"			"2"
+				"LinkedSpecialBonus"	"spec_riven_rush"
+			}
+		}
+	}
+	
+}

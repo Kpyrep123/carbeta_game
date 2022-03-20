@@ -1,0 +1,1743 @@
+// Dota Heroes File
+// NOTE: This is not for creating new heroes, this is for taking a currently existing hero as a template and overriding
+// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
+
+"DOTAHeroes"
+{
+//=================================================================================================================
+	// HERO: Bloodseeker
+	//=================================================================================================================
+	"npc_dota_hero_bloodseeker"
+		{
+			"Model"		"models/heroes/blood_seeker/blood_seeker.vmdl"
+			"IdleExpression"		"scenes/bloodseeker/bloodseeker_exp_idle_01.vcd"
+			"SoundSet"		"Hero_Bloodseeker"
+			"PickSound"		"bloodseeker_blod_spawn_01"
+			"BanSound"		"bloodseeker_blod_anger_06"
+			"HeroUnlockOrder"		"3"
+			"Role"			"Carry,Disabler,Jungler,Nuker,Initiator"
+			"Rolelevels"	"1,1,1,1,1"
+			"Complexity"	"1"
+			"Team"		"Bad"
+			"HeroID"		"4"
+			"ModelScale"		"0.880000"
+			"VersusScale"		"1.000000"
+			"LoadoutScale"		"1.100000"
+			"SpectatorLoadoutScale" "1.05"
+			"HeroGlowColor"		"247 60 12"
+			"CMEnabled"		"1"
+			"NameAliases"		"bs"
+			"workshop_guide_name"		"Bloodseeker"
+			"LastHitChallengeRival"		"npc_dota_hero_juggernaut"
+			"HeroSelectSoundEffect"		"Hero_Bloodseeker.Pick"
+			"GibType"		"default"
+			"new_player_enable"		"1"
+
+			"Ability1"		"angel_arena_shell"
+			"Ability2"		"blood_rite_datadriven"
+			"Ability3"		"bellatrix_live_transfusion"
+			"Ability4"		"huskar_berserkers_blood_lod"
+			"Ability5"		"ability_hero_attributes_cursed"
+			"Ability6"		"ability_spike_tearing_blow_2_custom"
+			//10
+			"Ability10"		""
+			"Ability11"		""
+			//15
+			"Ability12"		""
+			"Ability13"		""
+			//20
+			"Ability14"		""
+			"Ability15"		""
+			//25
+			"Ability16"		""
+			"Ability17"		""
+			"ArmorPhysical"		"2"
+			"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+			"AttackDamageMin"		"25"
+			"AttackDamageMax"		"26"
+			"AttackRate"		"1.700000"
+			"AttackAnimationPoint"		"0.430000"
+			"AttackAcquisitionRange"		"600"
+			"AttackRange"		"150"
+			"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+			"AttributeBaseStrength"		"20"
+			"AttributeStrengthGain"		"0.000000"
+			"AttributeBaseIntelligence"		"21"
+			"AttributeIntelligenceGain"		"0.0"
+			"AttributeBaseAgility"		"22"
+			"AttributeAgilityGain"		"0.000000"
+			"MovementSpeed"		"290"
+			"MovementTurnRate"		"0.500000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"particle_folder"		"particles/units/heroes/hero_bloodseeker"
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
+			"VoiceFile"		"soundevents/voscripts/game_sounds_vo_bloodseeker.vsndevts"
+			"RenderablePortrait"
+			{
+				"Particles"
+				{
+					"particles/units/heroes/hero_bloodseeker/bloodseeker_loadout.vpcf"		"loadout"
+				}
+			}
+			"ItemSlots"
+			{
+				"0"
+				{
+					"SlotIndex"		"0"
+					"SlotName"		"weapon"
+					"SlotText"		"#LoadoutSlot_Weapon"
+					"TextureWidth"		"256"
+					"TextureHeight"		"256"
+					"MaxPolygonsLOD0"		"2500"
+					"MaxPolygonsLOD1"		"1500"
+				}
+				"1"
+				{
+					"SlotIndex"		"1"
+					"SlotName"		"head"
+					"SlotText"		"#LoadoutSlot_Head_Accessory"
+					"TextureWidth"		"512"
+					"TextureHeight"		"512"
+					"MaxPolygonsLOD0"		"3000"
+					"MaxPolygonsLOD1"		"1200"
+				}
+				"2"
+				{
+					"SlotIndex"		"2"
+					"SlotName"		"offhand_weapon"
+					"SlotText"		"#LoadoutSlot_OffHand_Weapon"
+					"TextureWidth"		"256"
+					"TextureHeight"		"256"
+					"MaxPolygonsLOD0"		"2500"
+					"MaxPolygonsLOD1"		"1000"
+				}
+				"3"
+				{
+					"SlotIndex"		"3"
+					"SlotName"		"back"
+					"SlotText"		"#LoadoutSlot_Back"
+					"TextureWidth"		"256"
+					"TextureHeight"		"256"
+					"MaxPolygonsLOD0"		"2000"
+					"MaxPolygonsLOD1"		"800"
+				}
+				"4"
+				{
+					"SlotIndex"		"4"
+					"SlotName"		"shoulder"
+					"SlotText"		"#LoadoutSlot_Shoulder"
+					"TextureWidth"		"256"
+					"TextureHeight"		"256"
+					"MaxPolygonsLOD0"		"2000"
+					"MaxPolygonsLOD1"		"800"
+				}
+				"5"
+				{
+					"SlotIndex"		"5"
+					"SlotName"		"arms"
+					"SlotText"		"#LoadoutSlot_Arms"
+					"TextureWidth"		"256"
+					"TextureHeight"		"256"
+					"MaxPolygonsLOD0"		"1500"
+					"MaxPolygonsLOD1"		"600"
+				}
+				"6"
+				{
+					"SlotIndex"		"6"
+					"SlotName"		"belt"
+					"SlotText"		"#LoadoutSlot_Belt"
+					"TextureWidth"		"256"
+					"TextureHeight"		"256"
+					"MaxPolygonsLOD0"		"1500"
+					"MaxPolygonsLOD1"		"600"
+				}
+				"7"
+				{
+					"SlotIndex"		"7"
+					"SlotName"		"taunt"
+					"SlotText"		"#LoadoutSlot_Taunt"
+				}
+				"8"
+				{
+					"SlotIndex"		"8"
+					"SlotName"		"costume"
+					"SlotText"		"#LoadoutSlot_Costume"
+				}
+			}
+		}
+
+		"npc_dota_bakedanuki"
+	{
+		"override_hero"					"npc_dota_hero_dark_willow"	// Hero to override
+		"Ability1"				"bakedanuki_tricksters_insight"						// Ability 1
+		"Ability2"				"bakedanuki_tomfoolery_blink"						// Ability 2
+		"Ability3"				"bakedanuki_tomfoolery_summon"						// Ability 2
+		"Ability4"				"bakedanuki_tomfoolery_end"						// Ability 3
+		"Ability5"				"bakedanuki_frolic_aura"						// Ability 3
+		"Ability6"				"bakedanuki_futatsuiwas_curse"							// Ability 6
+		"Ability10"		"special_bonus_hp_regen_6"
+		"Ability11"		"special_bonus_cast_range_100"
+		"Ability12"		"special_bonus_unquie_bakedanuki_tricksters_insight_dur"
+		"Ability13"		"special_bonus_unquie_bakedanuki_tomfoolery_blink"
+		"Ability14"		"special_bonus_unquie_bakedanuki_tricksters_insight_chance"
+		"Ability15"		"special_bonus_unquie_bakedanuki_futatsuiwas_curse_bonus_chance"
+		"Ability16"		"special_bonus_unquie_bakedanuki_tricksters_insight_mult"
+		"Ability17"		"special_bonus_unquie_bakedanuki_futatsuiwas_curse_dur"
+
+		"AttackDamageMin"		"20"
+		"AttackDamageMax"		"22"
+		"AttackRate"		"1.500000"
+		"AttackAnimationPoint"		"0.30000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"260"
+		"ProjectileModel"		"particles/units/heroes/hero_dark_willow/dark_willow_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"1.80000"
+		"AttributeBaseIntelligence"		"21"
+		"AttributeIntelligenceGain"		"3.500000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"1.600000"
+		"MovementSpeed"		"275"
+		"MovementTurnRate"		"0.700000"
+	}
+
+	"npc_dota_hero_juggernaut"
+	{
+		"Model"		"models/heroes/juggernaut/juggernaut_arcana.vmdl"
+		"SoundSet"		"Hero_Juggernaut"
+		"PickSound"		"juggernaut_jug_spawn_03"
+		"BanSound"		"juggernaut_jug_anger_04"
+		"HeroID"		"8"
+		"ModelScale"		"0.850000"
+		"VersusScale"		"0.850000"
+		"HeroGlowColor"		"222 120 36"
+		"workshop_guide_name"		"Juggernaut"
+		"LastHitChallengeRival"		"npc_dota_hero_skeleton_king"
+		"HeroSelectSoundEffect"		"Hero_Juggernaut.Pick"
+		"GibType"		"default"
+		"Ability1"		"Battle_fury"
+		"Ability2"		"xartoth_brutality"
+		"Ability3"		"ability_tidehunter_anchor_smash"
+		"Ability4"		"become_jugger"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"okita_zanmato"
+		"Ability10"		"special_bonus_all_stats_5"
+		"Ability11"		"spec_jugg_leap"
+		"Ability12"		"spec_jugg_smash_radius"
+		"Ability13"		"special_bonus_unquie_brutality_dmg"
+		"Ability14"		"special_bonus_armor_8"
+		"Ability15"		"spec_jugg_smash_slow"
+		"Ability16"		"special_bonus_unquie_brutality_stun"
+		"Ability17"		"spec_jugg_fury"
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"16"
+		"AttackDamageMax"		"20"
+		"AttackRate"		"1.400000"
+		"BaseAttackSpeed"		"110"
+		"AttackAnimationPoint"		"0.330000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"0"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.1000"
+		"AttributeBaseIntelligence"		"14"
+		"AttributeIntelligenceGain"		"1.200000"
+		"AttributeBaseAgility"		"24"
+		"AttributeAgilityGain"		"3.300000"
+		"StatusHealthRegen"		"0.5"
+		"MovementSpeed"		"305"
+		"MovementTurnRate"		"0.600000"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"345"
+			"run_fast"	"373"
+		}
+		"HasAggressiveStance"		"1"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"precache"
+		{
+			"model"		"models/heroes/juggernaut/jugg_healing_ward.vmdl"
+		}
+		"particle_folder"		"particles/units/heroes/hero_juggernaut"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_juggernaut.vsndevts"
+		"AbilityPreview"
+		{
+			"resource"		"resource/UI/Heroes/default.res"
+			"movie"			"media/heroes/default"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+		}
+}
+
+//=================================================================================================================
+	// HERO: Azura (Drow Ranger)
+	//=================================================================================================================
+	"npc_dota_hero_azura"
+	{
+		// Base Hero Override
+		"override_hero"			"npc_dota_hero_drow_ranger"			// Hero to override
+		
+		// General Override
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.300000"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"2.500000"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"2.000000"
+		"Model"						"models/items/drow/drow_arcana/drow_arcana.vmdl"
+		// Base Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"			"1"
+		"MovementSpeed"			"295"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"28"
+		"AttackDamageMax"		"36"
+		"AttackRate"		"1.800000"
+		"AttackRange"		"500"
+
+		//-------------------------------------------------------------------------------------------------------------
+		// Ability Override
+		"Ability1"				"wave_of_silence_datadriven"						// Ability 1
+		"Ability2"				"azura_gaze_of_exile"							// Ability 2
+		"Ability3"				"azura_multishot_crossbow"					// Ability 3
+		"Ability5"				"hoodwink_sharpshooter_release_custom"
+		"Ability6"				"hoodwink_sharpshooter_custom"						// Ability 6
+
+
+		"Ability10"				"special_bonus_unquie_gaze_damage"
+		"Ability11"				"special_bonus_attack_damage_25"
+		"Ability12"				"special_bonus_unquie_azura_creep_damage"
+		"Ability13"				"special_bonus_unquie_gaze_radius"
+		"Ability14"				"special_bonus_unique_azura_2"
+		"Ability15"				"special_bonus_unquie_sharo_max"
+		"Ability16"				"hoodwink_sharp_2"
+		"Ability17"				"special_bonus_Sharp_1"
+
+		"AttackDamageMin"		"35"
+		"AttackDamageMax"		"45"
+
+
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"1.900000"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"1.400000"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"2.900000"
+		"StatusHealthRegen"		"0.25"
+		"VisionDaytimeRange"		"1800"
+		"MovementSpeed"		"290"
+		"MovementTurnRate"		"0.7000"
+	}
+	"npc_dota_hero_midas"
+	{
+		"override_hero"					"npc_dota_hero_dragon_knight"	// Hero to override
+		"Ability1"				"midas_golden_touch"						// Ability 1
+		"Ability2"				"midas_golden_sword"						// Ability 2
+		"Ability3"				"midas_golden_burst"						// Ability 3
+		"Ability4"				"midas_golden_valkyrie_a"							// Ability 6
+		"Ability5"				"midas_golden_valkyrie_b"							// Ability 6
+		"Ability6"				"midas_golden_valkyrie_c"							// Ability 6
+		"Ability10"		"special_bonus_mp_regen_2"
+		"Ability11"		"special_bonus_unique_rahl_3"
+		"Ability12"		"special_bonus_attack_damage_25"
+		"Ability13"		"special_bonus_hp_350"
+		"Ability14"		"special_bonus_cooldown_reduction_25"
+		"Ability15"		"special_bonus_unique_rahl_1"
+		"Ability16"		"special_bonus_armor_30"
+		"Ability17"		"special_bonus_unique_rahl_2"
+	}
+	"npc_dota_hero_sf"
+	{
+		"override_hero"	"npc_dota_hero_templar_assassin"
+
+		//"Attributes"		
+
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"2.40000"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"1.900000"
+		"AttributeBaseIntelligence"		"30"
+		"AttributeIntelligenceGain"		"3.10000"
+		"AttackRange"					"300"
+
+		//Abilities
+		"ability1"	"lanaya_cursed_dakra"
+		"ability2"	"lanaya_sparks_lua"
+		"Ability3"	"Lanaya_blink"
+		"ability4"	"generic_hidden"
+		"ability5"	"generic_hidden"
+		"ability6"	"channel_earthquake_op"
+
+		"Ability10"		"special_bonus_unquie_lanaya_sparks_radius"
+		"Ability11"		"special_bonus_spell_lifesteal_6"
+		"Ability13"		"special_bonus_mp_225"
+		"Ability14"		"special_bonus_lanaya_ult_cd"
+		"Ability15"		"special_bonus_lanaya_unquie_2"
+		"Ability16"		"special_bonus_unquie_dackra_mult"
+		"Ability17"		"special_bonus_lanaya_unquie_3"
+
+	}
+
+	"npc_dota_hero_troy"
+	{
+		"override_hero"				"npc_dota_hero_axe"
+		"DisableWearables"          "0"
+
+		// Model info
+		"Model"                     "models/heroes/jeremy/jeremy.vmdl"
+		"ModelScale"                "1.0"
+		"LoadoutScale"              "1.0"
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "160"
+
+		// Sound info
+		"SoundSet"                  "Hero_Axe"
+		"PickSound"                 "jeremy_spawn"
+		"BanSound"                  "treant_treant_anger_11"
+		"HeroSelectSoundEffect"     "jeremy_spawn"
+		"GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+		"VoiceFile"                 "soundevents/voscripts/game_sounds_vo_jeremy_khan.vsndevts"
+
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"     "22"
+		"AttributeStrengthGain"     "2.000000"
+		"AttributeBaseIntelligence" "15"
+		"AttributeIntelligenceGain" "1.200000"
+		"AttributeBaseAgility"      "21"
+		"AttributeAgilityGain"      "2.400000"
+
+		"ProjectileModel"           "particles/units/heroes/hero_parasight/parasight_base_attack.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"           "900"       // Speed of projectile.
+		
+		// Misc stats
+		"ArmorPhysical"             "0"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"           "22"
+		"AttackDamageMax"           "34"
+		"AttackRate"                "1.700000"
+		"AttackAnimationPoint"      "0.400000"
+		"AttackAcquisitionRange"    "800"
+		"AttackRange"               "350"
+		"ProjectileSpeed"           "1250"
+		"MovementSpeed"             "295"
+		"MovementTurnRate"          "0.600000"
+		
+		// Abilities
+		"Ability1"                  "troy_battle_lunge"
+		"Ability2"                  "troy_fury"
+		"Ability3"                  "troy_immolation"
+		"Ability4"                  "generic_hidden"
+        "Ability5"      			"troy_ill_be_back"
+		"Ability6"                  "troy_rage"
+		
+		// Talents
+		"Ability10"                 "special_bonus_troy_immolation_duration"          //10 Right
+		"Ability11"                 "special_bonus_troy_immolation_radius"          //10 Left
+		"Ability12"                 "special_bonus_troy_battle_lunge_range"      //15 Right
+		"Ability13"                 "special_bonus_troy_immolation_dps"   //15 Left
+		"Ability14"                 "special_bonus_troy_rage_double_damage"      //20 Right    
+		"Ability15"                 "special_bonus_troy_fury"      //20 Left
+		"Ability16"                 "special_bonus_troy_instant_arena"      //25 Right
+		"Ability17"                 "special_bonus_troy_arena_dps"      //25 Left
+		
+		// Card info
+		"Role"          "Carry,Disabler,Durable,Nuker"
+		"Rolelevels"    "1,2,2,3"
+		"Complexity"    "2"
+		
+		// Misc
+		"NameAliases"       "jk"
+		"url"       "Jeremykhan"
+		"LastHitChallengeRival"     "npc_dota_hero_axe" //TODO: Check if its used still
+		"precache"
+		{
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_jeremy.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+		}
+		//TODO: RenderablePortrait
+	}
+
+	"npc_dota_hero_faceless_void"
+    {     
+        "ModelScale"        "1.8"
+        "HerioID"			"41"
+
+        "Portrait"      "vgui/hud/heroportraits/portrait_faceless_void"
+        "IdleExpression"        "scenes/faceless_void/faceless_void_exp_idle_01.vcd"
+        "SoundSet"      "Hero_FacelessVoid"
+        "ModelScale"        "0.930000"
+        "LastHitChallengeRival"     "npc_dota_hero_sand_king"
+        "LastHitChallengeRival"     "npc_dota_hero_bounty_hunter"
+        "HeroSelectSoundEffect"     "Hero_FacelessVoid.Pick"
+
+        "Ability1"              "warp_beast_temporal_jump"
+        "Ability2"              "warp_beast_latch"
+        "Ability3"              "warp_beast_mana_eater"
+        "Ability4"              "warp_beast_silly_attack_mutator"
+        "Ability5"              "generic_hidden"
+        "Ability6"              "warp_beast_warp"
+
+        "Ability10"     "special_bonus_unique_warp_beast_mana_eater"
+        "Ability11"     "special_bonus_strength_8"
+        "Ability12"     "special_bonus_unique_warp_beast_latch_attackspeed"
+        "Ability13"     "special_bonus_unique_warp_beast_jump_radius"
+        "Ability14"     "special_bonus_unique_warp_beast_warp_mana_pool"
+        "Ability15"     "special_bonus_lifesteal_15"
+        "Ability16"     "special_bonus_mp_1000"
+        "Ability17"     "special_bonus_unique_warp_beast_warp_silence"
+
+
+        "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"            // Primary Attribute
+        "AttributeBaseStrength"     "28"                        // Base strength
+        "AttributeStrengthGain"     "1.6"                       // Strength bonus per level.
+        "AttributeBaseIntelligence" "19"                        // Base intelligence
+        "AttributeIntelligenceGain" "2.8"                       // Intelligence bonus per level.
+        "AttributeBaseAgility"      "29"                        // Base agility
+        "AttributeAgilityGain"      "2.8"                       // Agility bonus per level.
+
+
+        "ArmorPhysical"             "1" 
+        "MagicalResistance"     "25"
+        
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "23"                        
+        "AttackDamageMax"           "28"
+        "AttackAnimationPoint"      "0.380000"
+        "AttackRate"                "1.6"
+        "AttackAcquisitionRange"        "600"
+        "AttackRange"       "150"
+
+        "VisionDaytimeRange"        "1800"
+        "VisionNighttimeRange"      "800"
+        "MovementSpeed"     "310"
+        "MovementTurnRate"      "1.000000"
+
+
+        // Bounds
+        //-------------------------------------------------------------------------------------------------------------
+        "BoundsHullName"            "DOTA_HULL_SIZE_HERO"
+        "RingRadius"                "70"
+
+        // Movement
+        //-------------------------------------------------------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+
+        // Status
+        //-------------------------------------------------------------------------------------------------------------
+        "StatusHealth"              "200"
+        "StatusHealthRegen"         "1.7500"
+        "StatusMana"                "75"
+        "StatusManaRegen"           "0.9"
+        //-------------------------------------------------------------------------------------------------------------
+        "VisionDaytimeRange"        "1800"                                  // Range of vision during day light.
+        "VisionNighttimeRange"      "800"                                   // Range of vision at night time.
+
+        // Inventory
+        "HasInventory"              "1"
+
+        // Health Bar   
+        "HealthBarOffset"           "170"
+
+        "particle_folder"        "particles/units/heroes/hero_faceless_void"
+        "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+        "VoiceFile"     "soundevents/voscripts/game_sounds_vo_warp_beast.vsndevts"
+        "RenderablePortrait"
+        {
+            "Particles"
+            {
+                "particles/units/heroes/hero_faceless_void/faceless_void_loadout.vpcf"
+                {
+                    "0"
+                    {
+                        "type"      "follow_origin"
+                        "location"      "attach_hitloc"
+                    }
+                }
+            }
+        }
+    }
+
+    "npc_dota_hero_meepo"
+	{
+		"HeroID"        "82"
+		"DisableWearables"	"1"
+		"Model"     "models/heroes/lathaal/lathaal.vmdl"
+		"Portrait"      "vgui/hud/heroportraits/portrait_chaos_knight"
+		"IdleExpression"        "scenes/meepo/meepo_exp_idle_01.vcd"
+		"SoundSet"      "Hero_SandKing"
+		"ModelScale"        "1.130000"
+		"PickSound"     "meepo_meepo_spawn_01"
+		"BanSound"      "meepo_meepo_anger_12"
+		"LastHitChallengeRival"     "npc_dota_hero_sand_king"
+		"HeroSelectSoundEffect"     "Hero_SandKing.Pick"
+
+		"Ability1"		"lathaal_divine_intervention"
+		"Ability2"		"lathaal_mystic_twister"
+		"Ability3"		"lathaal_conviction"
+        "Ability4"      "generic_hidden"
+        "Ability5"      "generic_hidden"
+		"Ability6"		"lathaal_superposition"
+
+		"Ability10"		"special_bonus_unique_lathaal_1"
+		"Ability11"		"special_bonus_exp_boost_25"
+		"Ability12"		"special_bonus_unique_lathaal_2"
+		"Ability13"		"special_bonus_spell_amplify_20"
+		"Ability14"		"special_bonus_unique_lathaal_3"
+		"Ability15"		"special_bonus_unique_lathaal_4"
+		"Ability16"		"special_bonus_unique_lathaal_5"
+		"Ability17"		"special_bonus_cast_range_250"
+
+		"ArmorPhysical"		"3.500000"
+		"MagicalResistance"		"25"
+
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"       "29"
+		"AttackDamageMax"       "35"
+		"AttackRate"        "1.700000"
+		"AttackAnimationPoint"      "0.380000"
+		"AttackAcquisitionRange"        "600"
+		"AttackRange"       "150"
+		
+		"AttributePrimary"      "DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"24"
+		"AttributeStrengthGain"		"2.000000"
+		"AttributeBaseAgility"		"24"
+		"AttributeAgilityGain"		"2.750000"
+		"AttributeBaseIntelligence"		"22"
+		"AttributeIntelligenceGain"		"3.000000"
+		"VisionDaytimeRange"        "1800"
+		"MovementSpeed"     "310"
+		"MovementTurnRate"      "1.000000"
+		"particle_folder"       "particles/units/heroes/hero_meepo"
+		"GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+		"VoiceFile"     "soundevents/voscripts/game_sounds_vo_meepo.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_meepo/meepo_loadout.vpcf"
+				{
+					"0"
+					{
+						"type"      "follow_origin"
+						"location"      "attach_hitloc"
+					}
+				}
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"     "0"
+				"SlotName"      "weapon"
+				"SlotText"      "#LoadoutSlot_Weapon"
+				"TextureWidth"      "512"
+				"TextureHeight"     "128"
+				"MaxPolygonsLOD0"       "1000"
+				"MaxPolygonsLOD1"       "500"
+			}
+		}
+	}
+
+	"npc_dota_hero_Arkosh_poz"
+	{
+		"override_hero"		"npc_dota_hero_terrorblade"
+		"ability1"			"arkosh_cloak_of_dark"
+		"ability2"			"angel_arena_firehell"
+		"ability3"			"terrorblade_metamorphosis_datadriven"
+		"ability4"			"anima_bombardment"
+		"Ability5"			"manaeater_ultimate"
+		"ability6"			"terrorblade_sunder_datadriven"
+		"Ability15"		"special_bonus_arkosh_unquie_1"
+		"Ability16"		"special_bonus_attack_damage_160"
+		"ability17"			"special_bonus_arkosh_unquie"
+
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"26"
+		"AttackDamageMax"		"32"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.0"
+		"AttributeBaseIntelligence"		"25"
+		"AttributeIntelligenceGain"		"3.00000"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"1.800000"
+		"MovementSpeed"		"300"
+		"MovementTurnRate"		"0.500000"
+	}
+
+	"npc_dota_hero_viscous_ooze"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"override_hero"			"npc_dota_hero_venomancer"
+		"DisableWearables"      "1"
+		
+
+		"Model"                 "models/heroes/viscous_ooze/viscous_ooze_animation.vmdl"
+		// "Portrait"            "vgui/hud/heroportraits/portrait_viscous_ooze"
+		"SoundSet"              "Hero_Venomancer"
+
+		"Rolelevels"            "3,1,2"
+		"Team"                  "Bad"
+		"ModelScale"        "0.700000"
+		"LoadoutScale"      "0.830000"
+		//"NameAliases"     "Abaddon"
+		//"url"     "Abaddon"
+		//"PickSound"       "abaddon_abad_spawn_01"
+		//"BanSound"        "abaddon_abad_anger_07"
+		//"NoCombine"       "1"
+		//"CMEnabled"       "1"
+		//"LastHitChallengeRival"       "npc_dota_hero_chaos_knight"
+		//"HeroSelectSoundEffect"       "Hero_Abaddon.Pick"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"			// Primary Attribute
+		"AttributeBaseStrength"		"40"						// Base strength
+		"AttributeStrengthGain"		"2.5"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"8"						// Base intelligence
+		"AttributeIntelligenceGain"	"0.6"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"10"						// Base agility
+		"AttributeAgilityGain"		"0.75"						// Agility bonus per level.
+
+		// Abilities
+        //-------------------------------------------------------------------------------------------------------------
+        "Ability1"              "viscous_ooze_slime_trail"      // Ability 1
+        "Ability2"              "viscous_ooze_split_oozelings"      // Ability 2
+        "Ability3"              "viscous_ooze_sticky_membrane"      // Ability 3
+        "Ability4"              "viscous_ooze_treasure_magic"       // Ability 4
+        "Ability5"				"generic_hidden"
+        "Ability6"              "viscous_ooze_consume_items"        // Ultimate
+        "Ability7"              "viscous_ooze_size_mutator"     // Innate
+
+        // Talents
+        //-------------------------------------------------------------------------------------------------------------
+        "Ability10"                 "special_bonus_unquie_oozeling_dmg"              //10 Right
+        "Ability11"                 "special_bonus_armor_4"            //10 Left
+        "Ability12"                 "special_bonus_movement_speed_25"          //15 Right
+        "Ability13"                 "special_bonus_unique_viscous_ooze_1"   //15 Left
+        "Ability14"                 "special_bonus_attack_speed_50"             //20 Right    
+        "Ability15"                 "special_bonus_unique_viscous_ooze_2"       //20 Left
+        "Ability16"                 "special_bonus_unique_viscous_ooze_3"       //25 Right
+        "Ability17"                 "special_bonus_unique_viscous_ooze_4"       //25 Left
+
+        "ProjectileModel"			"particles/units/heroes/hero_viscous_ooze/viscous_ooze_base_attack/viscous_ooze_base_attack.vpcf"		// Particle system model for projectile.
+		"ProjectileSpeed"			"800"									// Speed of projectile.
+
+	  
+		//"particle_folder"     "particles/units/heroes/hero_abaddon"
+		"GameSoundsFile"      "soundevents/game_sounds_heroes/game_sounds_viscous_ooze.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_viscous_ooze.vsndevts"
+
+	}
+
+	"npc_dota_hero_naga_siren_lua"
+	{
+		"override_hero"					"npc_dota_hero_naga_siren"	// Hero to override
+		"Ability1"				"proteus_razorwind"						// Ability 1
+		"Ability2"				"wave_dance"						// Ability 2
+		"Ability3"				"proteus_jet"						// Ability 3
+		"Ability6"				"proteus_rarefaction"							// Ability 6
+
+		"Ability11"				"proteus_wave_base_damage"
+		"Ability12"				"special_bonus_intelligence_10"
+		"Ability14"				"proteus_razorwind_100_dmgheal"
+		"Ability15"				"proteus_refract_reduction"
+		"Ability16"				"proteus_wave_max"
+		"Ability17"				"special_bonus_cooldown_reduction_25"
+
+
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"			// Primary Attribute
+		"AttributeBaseStrength"		"23"						// Base strength
+		"AttributeStrengthGain"		"1.9"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"35"						// Base intelligence
+		"AttributeIntelligenceGain"	"2.6"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"16"						// Base agility
+		"AttributeAgilityGain"		"2.9"						// Agility bonus per level.
+	}
+
+	"npc_dota_hero_sniper"
+	{
+		"ability1"		"nova_rapid_fire"
+		"ability2"		"nova_force_dash"
+		"ability3"		"nova_Interrupt_Matrix"
+		"ability4"		"nova_rapid_fire_sub"
+		"Ability5"		"become_nova"
+		"ability6"		"nova_nuclear_strike"
+		
+		"ability10"		"dethmark_ticks"
+		"ability11"		"shot_damage"
+		"ability12"		"shot_range"
+		"Ability13"		"dethmark_radius"
+		"Ability14"		"drone_count"
+		"Ability15"		"dethmark_damage"
+		"Ability16"		"special_bonus_unquie_ns_rad"
+		"Ability17"		"Partinggift"
+		"AttackRange"		"700"
+		"ArmorPhysical"		"0"
+		"MovementSpeed"		"300"
+		"AttackDamageMin"		"25"
+		"AttackDamageMax"		"26"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"1.500000"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"2.800000"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"2.100000"
+	}
+	//=================================================================================================================
+	// HERO: Sandra Olivia (PA)
+	//=================================================================================================================
+	"npc_dota_hero_sandra"
+	{
+		// Base Hero Override
+		"override_hero"			"npc_dota_hero_phantom_assassin"			// Hero to override
+		
+		// General Override
+		//-------------------------------------------------------------------------------------------------------------
+		"Portrait"		"portrait_sandra"
+		"Role"			"Support,Carry,Durable,Nuker,Initiator"
+		"Rolelevels"	"2,1,3,1,1"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"26"
+		"AttributeStrengthGain"		"2.990000"
+		"AttributeBaseAgility"		"24"
+		"AttributeAgilityGain"		"1.660000"
+		"AttributeBaseIntelligence"		"13"
+		"AttributeIntelligenceGain"		"1.330000"
+
+		// Base Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"			"1"
+		"MagicalResistance"		"29"
+		"MovementSpeed"			"280"
+		"VisionDaytimeRange"		"1673"
+		"VisionNighttimeRange"		"942"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"45"
+		"AttackDamageMax"		"55"
+		"AttackRate"		"1.860000"
+		"AttackRange"		"79"
+
+		//-------------------------------------------------------------------------------------------------------------
+		// Ability Override
+		"Ability1"				"sandra_undeniable_torture"						// Ability 1
+		"Ability2"				"sandra_ironical_healing"						// Ability 2
+		"Ability3"				"sandra_will_to_live"						// Ability 3
+		"Ability6"				"sandra_sacrifice"							// Ability 6
+
+		"Ability10"				"special_bonus_strength_8"
+		"Ability11"				"spec_bonus_olivia_chanel_time"
+		"Ability12"				"special_bonus_hp_400"
+		"Ability13"				"spec_bonus_olivia_lifeshare"
+		"Ability15"				"spec_bonus_olivia_selfdamage_dur"
+		"Ability16"				"spec_bonus_olivia_stack_dur"
+		"Ability17"				"spec_bonus_olivia_leash_dur"
+	}
+
+	//=================================================================================================================
+	// HERO: Riven (Juggernaut)
+	//=================================================================================================================
+	"npc_dota_hero_riven"
+	{
+		// Base Hero Override
+		"override_hero"			"npc_dota_hero_shadow_shaman"			// Hero to override
+		
+		// General Override
+		//-------------------------------------------------------------------------------------------------------------
+		"Portrait"		"portrait_riven"
+		"Role"			"Carry,Nuker,Disabler,Pusher,Escape"
+		"Rolelevels"	"2,2,1,1,1"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"1.80000"
+		"AttributeBaseAgility"		"24"
+		"AttributeAgilityGain"		"2.900000"
+		"AttributeBaseIntelligence"		"26"
+		"AttributeIntelligenceGain"		"2.10000"
+
+		// Base Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"			"-1.0"
+		"MagicalResistance"		"25"
+		"MovementSpeed"			"300"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"35"
+		"AttackDamageMax"		"35"
+		"AttackRate"		"1.700000"
+		"AttackRange"		"350"
+
+		//-------------------------------------------------------------------------------------------------------------
+		// Ability Override
+		"Ability1"				"riven_ki_burst"						// Ability 1
+		"Ability2"				"riven_broken_wings"					// Ability 2
+		"Ability3"				"riven_runic_blade"						// Ability 3
+		"Ability6"				"riven_blade_of_the_exile"				// Ability 6
+
+		"MovementTurnRate"		"1.000000"
+
+		"Ability10"		"special_bonus_hp_175"
+		"Ability11"		"spec_riven_rush"
+		"Ability12"		"special_bonus_attack_range_100"
+		"Ability13"		"spec_riven_damage"
+		"Ability14"		"spec_riven_ki_rad"
+		"Ability15"		"spec_riven_crit_dur"
+		"Ability16"		"spec_riven_ult_dur"
+		"Ability17"		"spec_riven_crit"
+	}
+
+	"npc_dota_hero_phoenix"
+	{
+		"Model"		"models/items/windrunner/windrunner_arcana/wr_arcana_base.vmdl"
+		"AbilityLayout"		"5"
+		"ability1"	"fairy_queen_enchantment"
+		"ability2"	"fairy_queen_whisk"
+		"ability3"	"fairy_queen_quell"
+		"ability4"	"fairy_queen_fairies"
+		"ability6"	"fairy_queen_royal_decree"
+		"Ability10"		"spec_fairy_enchantment_radius"
+		"Ability11"		"special_bonus_spell_amplify_6"
+		"Ability12"		"spec_fairy_damage"
+		"Ability13"		"special_bonus_hp_500"
+		"Ability14"		"spec_blink_dur"
+		"Ability15"		"spec_fairy_damage_amp"
+		"Ability16"		"special_bonus_attack_range_100"
+		"Ability17"		"spec_fairy_fairies_cooldown"
+
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"24"
+		"AttackDamageMax"		"36"
+		"AttackRate"		"1.500000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"HasAggressiveStance"		"1"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"200"
+		}
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"18"
+		"AttributeStrengthGain"		"1.000000"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"3.600000"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"1.400000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"MovementSpeed"		"290"
+		"MovementTurnRate"		"0.800000"
+	}
+	"npc_dota_hero_brax"
+	{
+		"override_hero"					"npc_dota_hero_storm_spirit"         // Hero to override
+		"DisableWearables"          "1"
+
+		// Model info
+		"Model"                     "models/heroes/thunderboar/thunderboar.vmdl"
+		"ModelScale"                "1.3"
+		"LoadoutScale"              "1.3"
+		"HeroGlowColor"             "255 100 100"
+		"HealthBarOffset"           "160"
+
+		// Sound info
+		"SoundSet"                  "Hero_Stormspirit"
+		"PickSound"                 "ss_spawn_01"
+		"BanSound"                  "ss_anger_01"
+		"HeroSelectSoundEffect"     "ss_spawn_01"
+		"GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+		"VoiceFile"                 "soundevents/voscripts/game_sounds_vo_stormspirit.vsndevts"
+
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"     "22"
+		"AttributeStrengthGain"     "1.999000"
+		"AttributeBaseIntelligence" "21"
+		"AttributeIntelligenceGain" "2.200000"
+		"AttributeBaseAgility"      "16"
+		"AttributeAgilityGain"      "1.800000"
+
+		// Misc stats
+		"ArmorPhysical"             "1.5"
+		"MagicalResistance"			"25"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"ProjectileModel"           "" // Particle system model for projectile.
+		"ProjectileSpeed"           "900"       // Speed of projectile.
+		"AttackDamageMin"           "30"
+		"AttackDamageMax"           "34"
+		"AttackRate"                "1.700000"
+		"AttackAnimationPoint"      "0.550000"
+		"AttackAcquisitionRange"    "800"
+		"AttackRange"               "150"
+		"MovementSpeed"             "290"
+		"MovementTurnRate"          "1.000000"
+		
+		// Abilities
+		"Ability1"                  "brax_stomp"
+		"Ability2"                  "brax_rush"
+		"Ability3"                  "brax_tornado"
+		"Ability4"                  "generic_hidden"
+        "Ability5"      			"generic_hidden"
+		"Ability6"                  "brax_kinetic_energy"
+
+		// Talents
+		"Ability10"					"special_bonus_brax_1"
+		"Ability11"					"special_bonus_armor_5"
+		"Ability12"					"special_bonus_brax_2"
+		"Ability13"					"special_bonus_evasion_15"
+		"Ability14"					"special_bonus_brax_3" 
+		"Ability15"					"special_bonus_brax_4"
+		"Ability16"					"special_bonus_brax_5"
+		"Ability17"					"special_bonus_brax_6"
+		
+		// Card info
+		"Role"          "Carry,Disabler,Durable,Nuker"
+		"Rolelevels"    "1,2,2,3"
+		"Complexity"    "2"
+		
+		// Misc
+		"NameAliases"       "brax"
+		"url"       "Brax"
+		"LastHitChallengeRival"     "npc_dota_hero_storm_spirit" //TODO: Check if its used still
+		
+		//TODO: RenderablePortrait
+	}
+	"npc_dota_hero_life_stealer"
+	{
+		"ability1"	"feral_ghoul_feral_hunt"
+		"ability2"	"broken_heart"
+		"ability3"	"hylonome_libation"
+		"ability6"	"ghoul_scythe"
+		"ability15"	"special_bonus_unique_ghoul_2"
+		"ability16"	"special_bonus_unique_ghoul_3"
+		"ability17"	"special_bonus_unique_ghoul_1"
+
+		"ArmorPhysical"		"-3"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"25"
+		"AttackDamageMax"		"27"
+		"AttackRate"		"1.7000"
+		"BaseAttackSpeed"		"120"
+		"AttackAnimationPoint"		"0.390000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"2.400000"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"1.8000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"1.600000"
+		"MovementSpeed"		"285" 
+		"MovementTurnRate"		"1.000000"
+		"HasAggressiveStance"		"1"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_life_stealer.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_life_stealer"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+	}
+	"npc_dota_hero_ember_spirit"
+	{
+
+		"Model"					"models/heroes/mifune/mifune.vmdl"
+		"ModelScale"			"1.0"
+		"Ability1"              "mifune_raigeki" 
+        "Ability2"              "mifune_bushido" 
+        "Ability3"              "mifune_zanmato"
+        "Ability4"              "mifune_sacrifice"
+        "Ability5"              "generic_hidden"
+        "Ability6"              "mifune_genso"
+
+
+
+
+        "Ability10"             "special_bonus_mifune_1"
+        "Ability11"             "special_bonus_mifune_8"
+        "Ability12"             "special_bonus_mifune_7"
+        "Ability13"             "special_bonus_mifune_6"
+        "Ability14"             "special_bonus_mifune_4"
+        "Ability15"             "special_bonus_mifune_5"
+        "Ability16"             "special_bonus_mifune_2"
+        "Ability17"             "special_bonus_mifune_3"
+
+        "AttributePrimary"          "DOTA_ATTRIBUTE_INTELLECT"
+        "AttributeBaseStrength"     "20"
+        "AttributeStrengthGain"     "1.5"
+        "AttributeBaseIntelligence" "20"
+        "AttributeIntelligenceGain" "3.0"
+        "AttributeBaseAgility"      "16"
+        "AttributeAgilityGain"      "2.0"
+
+        "ProjectileModel"           "particles/units/heroes/hero_parasight/parasight_base_attack.vpcf" // Particle system model for projectile.
+        "ProjectileSpeed"           "900"       // Speed of projectile.
+
+        // Misc stats
+        "ArmorPhysical"             "0"
+        "MagicalResistance"         "25"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "28"
+        "AttackDamageMax"           "37"
+        "AttackRate"                "1.5"
+        "AttackAnimationPoint"      "0.33"
+        "AttackAcquisitionRange"    "600"
+        "AttackRange"               "150"
+        "MovementSpeed"             "305"
+        "MovementTurnRate"          "1.0"
+	}
+	"hero_zulf"
+	{
+		"override_hero"			"npc_dota_hero_skywrath_mage"
+		"Role"              	"Support,Carry,Nuker,Initiator,Escape"
+		"Rolelevels"            "2,2,1,1,1"
+		"Team"              	"Good"
+		"BotImplemented"			"0"	
+
+
+		"Ability1"				"zulf_cyclone_trap"
+		"Ability2"				"zulf_jet_stream"
+		"Ability3"				"zulf_gale_force"
+		"Ability6"				"zulf_typhoon"
+
+
+		"Ability12"		"special_bonus_mp_350"
+		"Ability13"		"special_bonus_base_attack_rate_1"
+		"Ability14"		"special_bonus_attack_speed_55"
+		"Ability15"				"special_bonus_spell_lifesteal_20"
+		"Ability16"				"zephyr_spec_1"
+		"Ability17"		"zephyr_spec_2"	
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"			// Primary Attribute
+		"AttributeBaseStrength"		"22"						// Base strength
+		"AttributeStrengthGain"		"1.6"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"18"						// Base intelligence
+		"AttributeIntelligenceGain"	"2.2"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"22"						// Base agility
+		"AttributeAgilityGain"		"2.9"						// Agility bonus per level.
+		"ArmorPhysical"			"2"	
+		"AttackRate" 			"1.7"
+		"AttackRange"			"325"
+		"MovementSpeed" 		"310"
+		"AttackDamageMin"		"21"						
+		"AttackDamageMax"		"27"	
+	}
+
+	"npc_dota_hero_elder_titan"
+	{
+		"Model"			"models/units/destroyer/destroyer.vmdl"
+		"DisableWearables"	"1"
+		"ModelScale"		"1.5"
+
+		"Ability1"			"Chthonic_wave"
+		"Ability2"			"mind_flight"
+		"Ability3"			"pillar_of_creation"
+		"Ability6"			"echo_stomp"
+
+		"Ability13"			"special_bonus_titan_wave_range"
+		"Ability14"			"special_bonus_titan_spec_titan_ult_dur"
+		"Ability15"			"special_bonus_titan_steal"
+		"Ability16"			"special_bonus_intelligence_75"
+		"Ability17"			"special_bonus_titan_spec_1"
+
+		"ArmorPhysical"		"0.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"33"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"30"
+		"AttributeStrengthGain"		"1.900000"
+		"AttributeBaseAgility"		"14"
+		"AttributeAgilityGain"		"1.800000"
+		"AttributeBaseIntelligence"		"23"
+		"AttributeIntelligenceGain"		"3.000000"
+		"MovementSpeed"		"310"
+		"MovementTurnRate"		"0.500000"
+		"particle_folder"		"particles/units/heroes/hero_elder_titan"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_elder_titan.vsndevts"
+	}
+	 "npc_dota_hero_sobek"
+    {
+        "override_hero"             "npc_dota_hero_phantom_lancer"         // Hero to override
+        "DisableWearables"          "1"
+
+        // Model info
+        "Model"                     "models/creeps/lane_creeps/ti9_crocodilian_dire/ti9_crocodilian_dire_melee_mega.vmdl"
+        "ModelScale"                "1.0"
+        "LoadoutScale"              "1.0"
+        "HeroGlowColor"             "200 200 200"
+        "IdleExpression"            "scenes/windrunner/windrunner_exp_idle_01.vcd"
+        "HealthBarOffset"           "160"
+        "ProjectileModel"           "particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
+
+        // Sound info
+        "SoundSet"                  "Hero_Koh"
+        "PickSound"                 "sobek_spawn"
+        "BanSound"                  "windrunner_wind_anger_01"
+        "HeroSelectSoundEffect"     "sobek_spawn"
+        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_koh.vsndevts"
+        "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_sobek.vsndevts"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "19"
+        "AttributeStrengthGain"     "2.800000"
+        "AttributeBaseIntelligence" "18"
+        "AttributeIntelligenceGain" "1.000000"
+        "AttributeBaseAgility"      "19"
+        "AttributeAgilityGain"      "1.600000"
+
+        // Misc stats
+        "ArmorPhysical"             "1"
+        "MagicalResistance"         "25"
+
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "26"
+        "AttackDamageMax"           "34"
+        "AttackRate"                "1.900000"
+        "AttackAnimationPoint"      "0.400000"
+        "AttackAcquisitionRange"    "800"
+        "AttackRange"               "150"
+        "ProjectileSpeed"           "1250"
+        "MovementSpeed"             "295"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+        "Ability1"                  "sobek_voracious_appetite"
+        "Ability2"                  "koh_whiplash"
+        "Ability3"                  "sobek_lizzard_skin"
+        "Ability4"                  "generic_hidden"
+        "Ability5"                  "generic_hidden"
+        "Ability6"                  "sobek_absorption"
+        
+        // Talents
+        "Ability10"                 "special_bonus_movement_speed_90"              //10 Right
+        "Ability11"                 "special_bonus_magic_resistance_15"                 //10 Left
+        "Ability12"                 "special_bonus_unique_sobek_3"            //15 Right
+        "Ability13"                 "special_bonus_unquie_skin_dur"     //15 Left
+        "Ability14"                 "special_bonus_unique_sobek_2"     //20 Right
+        "Ability15"                 "special_bonus_unquie_hp_reg"              //20 Left
+        "Ability16"                 "special_bonus_unique_sobek_4"       //25 Right
+        "Ability17"                 "special_bonus_unique_sobek_1"       //25 Left
+        
+        // Card info
+        "Role"          "Carry,Support,Disabler,Escape,Nuker"
+        "Rolelevels"    "1,1,1,1,1"
+        "Complexity"    "2"
+        
+        // Misc
+        "NameAliases"       "wr"
+        "url"       "Windranger"
+        "LastHitChallengeRival"     "npc_dota_hero_treant" //TODO: Check if its used still
+        
+        //TODO: RenderablePortrait
+
+        // Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealthRegen"			"1.5"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+
+		// Health Bar	
+		"HealthBarOffset"			"-1"
+
+    }
+
+	//=================================================================================================================
+	// HERO: Scaw'mar, the Wildwing Scryer
+	//=================================================================================================================
+	"hero_scawmar"
+	{
+		"override_hero"				"npc_dota_hero_dawnbreaker"
+		"Role"              	"Carry,Disabler,Nuker"
+		"Rolelevels"            "1,1,3"
+		"Team"              	"Bad"
+		
+		"BotImplemented"		"0"	
+		//"DisableWearables" 		"1"
+
+		"AbilityLayout"				"4"
+		"Ability1"				"scawmar_illusion_line"			// Ability 1
+		"Ability2"				"scawmar_fade_blink"			// Ability 2
+		"Ability3"				"backwards_hit"			// Ability 3
+		"Ability4"				"scawmar_spirits_away"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"scawmar_scryers_circle"		// Ultimate
+
+		// Talents
+		//-------------------------------------------------------------------------------------------------------------
+
+		"Ability10"		"special_bonus_attack_base_damage_25"
+		"Ability11"		"special_bonus_unique_hildrin_ill_dur"
+		"Ability12"		"special_bonus_unique_hildrin_control_dur"
+		"Ability13"		"special_bonus_unique_hildrin_ill_in"
+		"Ability14"		"special_bonus_unique_hildrin_ill_out"
+		"Ability15"		"special_bonus_strength_40"
+		"Ability16"		"special_bonus_unique_hildrin_circle_in"
+		"Ability17"		"special_bonus_unique_hildrin_circle_count"
+	
+
+	}
+	//=================================================================================================================
+	// HERO: Sirocco
+	//=================================================================================================================
+	"hero_sirocco"
+	{
+		"override_hero"		"npc_dota_hero_sand_king"
+		"Role"              	"Support,Disabler,Nuker"
+		"Rolelevels"            "1,2,3"
+		"Team"              	"Bad"
+
+		"BotImplemented"		"0"
+
+		"Ability1"          "sirocco_shifting_sands"
+		"Ability2"          "sirocco_mirage"
+		"Ability3"          "sirocco_dehydration_aura"
+		"Ability4"			"hylonome_eldritch_pull"
+		"Ability6"          "sirocco_desert_curse"
+
+
+		"Ability10"		"special_bonus_hp_250"
+		"Ability11"		"special_bonus_unique_sirocco_ult_mana_loss"
+		"Ability12"		"special_bonus_cleave_40"
+		"Ability13"		"special_bonus_unique_sirocco_ult_rad"
+		"Ability14"		"special_bonus_mp_300"
+		"Ability15"		"special_bonus_unique_sirocco_out_dam"
+		"Ability16"		"special_bonus_unique_sirocco_mirage_dur"
+		"Ability17"		"special_bonus_unique_sirocco_ult_dur"
+		
+
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"			// Primary Attribute
+		"AttributeBaseStrength"		"18"						// Base strength
+		"AttributeStrengthGain"		"2.15"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"22"						// Base intelligence
+		"AttributeIntelligenceGain"	"2.65"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"12"						// Base agility
+		"AttributeAgilityGain"		"1.95"						// Agility bonus per level.
+		"ArmorPhysical"			"3"	
+		"AttackRate" 			"1.7"
+		"MovementSpeed" 		"305"
+	
+		"AttackDamageMin"		"22"					
+		"AttackDamageMax"		"29"
+	}
+		//=================================================================================================================
+	// HERO: Uther, the Lightbringer
+	//=================================================================================================================
+	"hero_uther"
+	{
+		"override_hero"				"npc_dota_hero_omniknight"
+		"AbilityLayout" 			"4"
+		"Ability1"					"uther_Hurl_Hammer"
+		"Ability2"					"uther_Threatening_Bolt"
+		"Ability3"					"uther_Argent_Smite"
+		"Ability4"					"uther_Hail_Back"
+		"Ability6"					"uther_omniscience_wave"
+
+		// Talents
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability10"		"special_bonus_intelligence_8"
+		"Ability11"		"special_bonus_movement_speed_25"
+		"Ability12"		"spec_bonus_uther_heal"
+		"Ability13"		"special_bonus_mp_regen_8"
+		"Ability14"		"spec_bonus_uther_bolt_rad"
+		"Ability15"		"special_bonus_strength_15"
+		"Ability16"		"spec_bonus_uther_bolt_dmg"
+		"Ability17"		"special_bonus_magic_resistance_40"
+	
+		"BotImplemented"			"0"
+	}
+	"npc_dota_hero_rubick"
+	{
+
+		"Ability1"					"telekinesis_datadriven"
+		"Ability2"					"puck_dream_coil_datadriven"
+		"Ability3"					"puppeteer_not_just_me"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"suna_mind_control"
+
+
+		"Ability12"		"spec_puppet_healdamage"
+		"Ability13"		"telekinesis_stun_dur"
+		"Ability14"		"special_bonus_intelligence_12"
+		"Ability15"		"spec_puppet_shroud_dur"
+		"Ability16"		"spec_puppet_rope_dur"
+		"Ability17"		"telekinesis_radius"
+		"Ability18"		"special_bonus_attack_base_damage_100"
+		"Ability19"		"spec_puppet_control_dur"
+	}
+	"npc_dota_hero_chaos_knight"
+	{	
+		"Ability1"		"paralyzing_cask_datadriven"
+		"Ability2"		"discord_reality_rift"
+		"Ability3"		"hells_raider_Combat_rhythm"
+		"Ability6"		"discord_apocalypse_riders"
+
+		"Ability10"		"special_bonus_unquie_cask_stun_dur"
+		"Ability11"		"spec_ride_dmg"
+		"Ability12"		"special_bonus_unquie_rift_speed"
+		"Ability13"		"spec_bolt_bounces"
+		"Ability14"		"spec_bolt_damage"
+		"Ability15"		"spec_ck_ill_count"
+		"Ability16"		"spec_ck_ill_dmg"
+		"Ability17"		"special_bonus_unquie_apoc_ride_dur"
+	}
+	"npc_dota_hero_luna"
+	{
+		"Ability1"		"luna_void_blast"
+		"Ability2"		"luna_void_beam"
+		"Ability3"		"void_strike"
+		"Ability4"		"void_spirit_astral_step_lua"
+		"Ability6"		"luna_void_wave"
+		"Ability10"		"special_bonus_unquie_void_blast_range"
+		"Ability11"		"special_bonus_mp_150"
+		"Ability12"		"special_bonus_unquie_void_wave"
+		"Ability13"		"special_bonus_unquie_void_beam_damage"
+		"Ability14"		"special_bonus_unquie_void_beam_duration"
+		"Ability15"		"special_bonus_unquie_astral_dur"
+		"Ability16"		"special_bonus_unquie_astral_damage"
+		"Ability17"		"special_bonus_unquie_double_touch"
+
+
+
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"26"
+		"AttackDamageMax"		"32"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.35000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"330"
+		"ProjectileModel"		"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"17"
+		"AttributeStrengthGain"		"2.000000"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"2.400000"
+		"AttributeBaseIntelligence"		"28"
+		"AttributeIntelligenceGain"		"3.30000"
+		"StatusHealthRegen"		"0.5"
+		"MovementSpeed"		"300"
+		"VisionNighttimeRange"		"800"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_luna"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_luna.vsndevts"
+
+	}
+	"npc_dota_hero_invoker"
+	{
+		"Ability1"		"quas_datadriven"
+		"Ability2"		"wex_datadriven"
+		"Ability3"		"exort_datadriven"
+		"Ability4"		"invoker_empty1_datadriven"
+		"Ability5"		"invoker_empty2_datadriven"
+		"Ability6"		"invoke_datadriven"
+		"Ability7"		"ice_wall_datadriven"
+		"Ability8"		"chaos_meteor_datadriven"
+		"Ability9"		"alacrity_datadriven"
+		"Ability10"		"ghost_walk_datadriven"
+		"Ability11"		"forge_spirit_datadriven"
+		"Ability12"		"tornado_datadriven"
+		"Ability13"		"deafening_blast_datadriven"
+		"Ability14"		"cold_snap_datadriven"
+		"Ability15"		"emp_datadriven"
+		"Ability16"		"sun_strike_datadriven"
+
+	}
+	"npc_dota_hero_dazzle"
+	{
+		"Ability1"		"prismere_last_prism"
+		"Ability2"		"prismere_multi_strike"
+		"Ability3"		"prismere_shiny_pressure"
+	}
+
+	"npc_dota_hero_warlock"
+	{
+		"Ability1"		"Gaping_maw"
+		"Ability2"		"Benevolent_Madness"
+		"Ability3"		"Capture_of_the_Elders"
+		"Ability4"		"become_yellow_king"
+		"Ability6"		"Call_of_cthulhu"
+
+		"Ability10"		"special_bonus_unquie_maw_duration"
+		"Ability11"		"special_bonus_unquie_madness"
+		"Ability12"		"special_bonus_unquie_maw_damage"
+		"Ability13"		"special_bonus_unquie_madness_bkb"
+		"Ability14"		"special_bonus_unquie_capture_root"
+		"Ability15"		"special_bonus_cooldown_reduction_20"
+		"Ability16"		"special_bonus_hp_600"
+		"Ability17"		"special_bonus_unquie_chtonic_structure_dur"
+	}
+		//=================================================================================================================
+	// HERO: Skoros, the Blindseer
+	//=================================================================================================================
+	"npc_dota_hero_abaddon"
+	{
+		"Team"              	"Bad"
+		"BotImplemented"			"0"
+
+		// Talents
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					"ability_abaddon_soul_steal"
+		"Ability2"					"erra_to_dust"
+		"Ability3"					"chi_strike_sp"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"erra_grave_guard"
+
+
+
+		"Ability10"					"special_bonus_unquie_chi_range"
+		"Ability11"					"special_bonus_attack_speed_20"
+		"Ability12"					"special_bonus_unquie_to_dust_dur"
+		"Ability13"					"special_bonus_unquie_abba_soul_steal"
+		"Ability14"					"special_bonus_unquie_to_dust_dmg"
+		"Ability15"					"special_bonus_unquie_to_dust_rad"
+		"Ability16"					"special_bonus_unquie_chi_cd"
+		"Ability17"					"special_bonus_unquie_grave_sinigami"
+	}
+	"npc_dota_hero_riki"
+	{
+		"Ability1"	"achlys_nights_embrace"
+		"Ability2"	"blink_strike_datadriven"
+		"Ability3"	"veerah_killer_instinct"
+		"Ability4"	"blink_strike_datadriven_ills"
+		"Ability6"	"ability_illusion_squal_lua"
+
+
+		"Ability10"	"special_bonus_unquie_veerah_splash"
+		"Ability11"	"special_bonus_unquie_manacost_veerah"
+		"Ability12"	"special_bonus_unquie_veerah_blink_bonus"
+		"Ability13"	""
+		"Ability14"	"special_bonus_unquie_evasion"
+		"Ability15"	"special_bonus_unquie_veerah_ills_dmg"
+		"Ability16"	"special_bonus_unquie_blink_silence"
+		"Ability17"	"special_bonus_unquie_2_attacks"
+	}
+	"npc_dota_hero_deus_novus"
+	{
+		"override_hero"		"npc_dota_hero_doom_bringer"
+		"Ability1"			"Defeated_satellite"
+	}
+	"npc_hero_huntress"
+	{
+	    "override_hero" 			"npc_dota_hero_mirana"
+		
+		"IsGod" "1"
+		
+		"GodRepickItem"				"item_shard_huntress"
+		
+		"Ability1" "huntress_aim_shot"
+		"Ability2" "huntress_owl"
+		"Ability3" "huntress_crippling_arrow"
+		"Ability4" "huntress_curse_arrow"
+		"Ability5" "generic_hidden"
+		"Ability6" "huntress_hunting_spirit"
+
+	    //10 LEVEL
+	    "Ability10"					"huntress_aim_shot_bonus_crit_tallent"
+	    "Ability11"					"huntress_aim_shot_bonus_bat_tallent"
+
+	    //15 LEVEL
+	    "Ability12"					"huntress_huntress_owl_radius_aura_tallent"
+	    "Ability13"					"huntress_huntress_owl_invisible_tallent"
+
+	    //20 LEVEL
+	    "Ability14"					"huntress_crippling_arrow_chance_tallent"
+	    "Ability15"					"huntress_crippling_arrow_duration_tallent"
+
+	    //25 LEVEL
+	    "Ability16"					"huntress_hunting_spirit_heavy_arrow_tallent"
+	    "Ability17"					"huntress_hunting_spirit_status_resist_tallent"
+
+	    "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+		"ArmorPhysical"		"2.000000"
+		"AttackDamageMin"	"24"
+		"AttackDamageMax"	"34"
+		"AttackRate"		"1.7"
+		"AttributeBaseStrength"		"24"
+		"AttributeStrengthGain"		"2.300000"
+		"AttributeBaseAgility"		"30"
+		"AttributeAgilityGain"		"3.000000"
+		"AttributeBaseIntelligence"		"24"
+		"AttributeIntelligenceGain"		"2.500000"	
+	}
+	"npc_dota_hero_reaver_lord"
+	{
+		"override_hero" 			"npc_dota_hero_terrorblade"
+		
+		"AbilityLayout"				"6"
+		"Ability1"					"reaver_lord_soul_devour_lua"	
+		"Ability2"					"reaver_lord_twink"
+		"Ability3"					"reaver_lord_superiority_instinct_lua"
+		"Ability4"					"reaver_lord_soul_collector_lua"
+		"Ability5"					"reaver_lord_soul_burn"
+		"Ability6"					"reaver_lord_attract_lua"
+		
+		"Ability10"					"special_bonus_unquie_devour_range"
+		"Ability11"					"special_bonus_hp_250"
+		"Ability12"					"special_bonus_unquie_instinct_damage"
+		"Ability13"					"special_bonus_unquie_devour_duration"
+		"Ability14"					"special_bonus_unquie_instinct_lifesteal"
+		"Ability15"					"special_bonus_unquie_attrackt_rad"
+		"Ability16"					"special_bonus_unquie_max_souls_soul_collector"
+		"Ability17"					"reaver_lord_special_bonus_blink_range"
+		
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackDamageMin"			"38"									// Damage range min.
+		"AttackDamageMax"			"42"									// Damage range max.	
+			
+		"AttackRate"				"1.7"									// Speed of attack.
+		
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"25"									// Base strength
+		"AttributeStrengthGain"		"2.5"
+		"AttributeBaseAgility"		"18"									// Base agility
+		"AttributeAgilityGain"		"3.2"
+		"AttributeBaseIntelligence"	"15"									// Base intelligence
+		"AttributeIntelligenceGain"		"2.10000"
+		
+		"MovementSpeed"				"300"	
+	}
+	"npc_hero_shadowsong"
+	{													
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"override_hero" 			"npc_dota_hero_antimage"
+			"Team"						"Bad"
+
+
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"					"shadowsong_magic_fire"
+			"Ability2"					"shadowsong_absorption"
+			"Ability3"					"angel_arena_death_aura"
+			"Ability4"					"generic_hidden"
+			"Ability5"					"generic_hidden"
+			"Ability6"					"shadowsong_dark_reflection"
+			
+			"Ability10"					"shadowsong_talent_magic_fire_aoe"
+			"Ability11"					"shadowsong_talent_magic_fire_cd_decrease"
+			"Ability12"					"shadowsong_special_bonus_absorbtion"
+			"Ability13"					"shadowsong_special_bonus_absorbtion_kill_bonus"
+			"Ability14"					"shadowsong_special_bonus_reflection_teammate"
+			"Ability15"					"shadowsong_special_bonus_reflection_magic_immune"
+			"Ability16"					"special_bonus_agility_25"
+			"Ability17"					"special_bonus_armor_15"
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"				"0"										// Physical protection.
+
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+			"AttackDamageMin"			"29"									// Damage range min.
+			"AttackDamageMax"			"34"									// Damage range max.	
+			
+			"AttackRate"				"1.7"									// Speed of attack.
+			"AttackAnimationPoint"		"0.3"										// Normalized time in animation cycle to attack.
+			
+			"AttackAcquisitionRange"	"620"									// Range within a target can be acquired.
+			"AttackRange"				"150"									// Range within a target can be attacked.
+			
+			"ProjectileModel"			""										// Particle system model for projectile.
+			"ProjectileSpeed"			"1200"										// Speed of projectile.
+
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+			"AttributeBaseStrength"		"25"									// Base strength
+			"AttributeStrengthGain"		"2.3"									// Strength bonus per level.
+			"AttributeBaseAgility"		"18"									// Base agility
+			"AttributeAgilityGain"		"2.9"									// Agility bonus per level.
+			"AttributeBaseIntelligence"	"15"									// Base intelligence
+			"AttributeIntelligenceGain"	"2.0"									// Intelligence bonus per level.
+			
+			"StatusHealth" "100" 
+			//"StatusHealthRegen" "1.2" 
+			//"StatusMana" "150" 
+			//"StatusManaRegen" "1.0" 
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"				"300"									// Speed.
+			"MovementTurnRate"			"0.5"									// Turning rate.
+			
+			"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"			"140"
+	}
+}

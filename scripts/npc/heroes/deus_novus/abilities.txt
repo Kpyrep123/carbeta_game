@@ -1,0 +1,74 @@
+"DOTAAbilities"
+{
+	"Defeated_satellite"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"             		"ability_lua"
+	    "ScriptFile"					"heroes/deus_novus/Defeated_satellite"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"  
+	    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+	    "FightRecapLevel"               "1"
+	    "AbilityTextureName"            "slardar_slithereen_crush"
+	
+	    // Precache
+	    //-------------------------------------------------------------------------------------------------------------
+	    "precache"
+	     {
+	      "soundfile"   ""
+	      "particle"    ""
+	     }
+	
+	    
+	    // Casting
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCastRange"              "0"
+	    "AbilityCastPoint"              "0"
+	
+	    // Time     
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCooldown"               "0"
+	    "AbilityDuration"               "0"
+	
+	    // Damage.
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityDamage"                 "0"
+	
+	    // Cost
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityManaCost"               "0"
+
+	    
+	    // Special
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"          	        "FIELD_INTEGER"
+	            "aura_radius"             	 "350"
+	        }
+	        "02"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "base_damage"              	"500"
+	        }
+	        "03"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "upgrade_cost"     			"75 72 69 66 63"
+	        }
+	        "04"
+	        {
+	            "var_type"                      "FIELD_FLOAT"
+	            "hp"     			"3000"
+	        }
+	        "05"
+	        {
+	            "var_type"                      "FIELD_FLOAT"
+	            "value"                 "1.6"
+	        }
+	    }
+	}
+}

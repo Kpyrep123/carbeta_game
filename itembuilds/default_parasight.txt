@@ -1,0 +1,65 @@
+"itembuilds"
+{
+	"author"		"SwordBacon"
+	"hero"			"npc_dota_hero_parasight"
+	"Title"			"Default build for Parasight"
+	
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_tango"
+			"item"		"item_clarity"
+			"item"		"item_clarity"
+			"item"		"item_clarity"
+		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{	
+			"item"		"item_soul_ring"
+			"item"		"item_arcane_boots"
+		}
+		
+		"#DOTA_Item_Build_Mid_Items"
+		{
+			"item"		"item_cyclone"
+			"item"		"item_force_staff"
+		}
+		
+		"#DOTA_Item_Build_Late_Items"
+		{
+			"item"		"item_octarine_core"
+			"item"		"item_sheepstick"
+		}
+		
+		"#DOTA_Item_Build_Misc_Items"
+		{
+			"item"		"item_bloodstone"
+			"item"		"item_blink"
+			"item"		"item_ghost"
+			"item"		"item_shivas_guard"
+			"item"		"item_necronomicon_3"
+			"item"		"item_orchid"
+			"item"		"item_vladmir"
+			"item"		"item_heart"
+			"item"		"item_blademail"
+			"item"		"item_helm_of_the_dominator"
+			"item"		"item_ethereal_blade"
+			"item"		"item_guardian_greaves"
+			"item"		"item_hurricane_pike"
+			"item"		"item_sphere"
+			"item"		"item_lotus_orb"
+			"item"		"item_glimmer_cape"
+			"item"		"item_rod_of_atos"
+			
+		}
+		"#DOTA_Item_Build_Slacks_Items"
+		{
+			"item"		"item_dagon_1"
+			"item"		"item_dagon_2"
+			"item"		"item_dagon_3"
+			"item"		"item_dagon_4"
+			"item"		"item_dagon_5"
+		}
+	}
+}

@@ -1,0 +1,65 @@
+"itembuilds"
+{
+	"author"		"SwordBacon"
+	"hero"			"npc_dota_hero_custom"
+	"Title"			"For Testing Purposes"
+	
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{	
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+		}
+		
+		"#DOTA_Item_Build_Mid_Items"
+		{
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+		}
+		
+		"#DOTA_Item_Build_Late_Items"
+		{
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+		}
+		
+		"#DOTA_Item_Build_Other_Items"
+		{
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+			"item"		"item_enchanted_mango"
+		}
+	}
+}

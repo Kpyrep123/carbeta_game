@@ -1,0 +1,8 @@
+pog_default
+{
+	material materials/overviews/pog_default.vmat
+	pos_x -5248
+	pos_y 5248
+	scale 10.250
+}
+

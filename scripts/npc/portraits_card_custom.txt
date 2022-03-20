@@ -1,0 +1,42 @@
+"DOTACardPortraitInfo"
+{
+	"DefaultActivity"		"ACT_DOTA_CAPTURE"
+	"UseModelScale"		"0"
+	
+	"npc_dota_hero_viscous_ooze"
+	{
+		"PortraitLightPosition"		"61.33 -27.93 246.25"
+		"PortraitLightAngles"		"89.25 172.13 0.00"
+		"PortraitLightFOV"		"61"
+		"PortraitLightDistance"		"202"
+		"PortraitLightColor"		"246 254 246"
+		"PortraitShadowColor"		"48 48 48"
+		"PortraitShadowScale"		"5.000000"
+		"PortraitAmbientColor"		"56 56 56"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitBackgroundColor1"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor2"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor3"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor4"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundTexture"		"materials/portraits_card/portrait_backgrounds/venomancer.vmat"
+		"PortraitAnimationActivity"		"ACT_DOTA_CAPTURE"
+		"PortraitAnimationCycle"		"0.000000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitLightScale"		"1.400000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-4.830 -5.890 -7.350"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"772.45 -255.42 265.49"
+				"PortraitAngles"		"8.46 161.60 0.00"
+				"PortraitFOV"		"7"
+			}
+		}
+	}
+}

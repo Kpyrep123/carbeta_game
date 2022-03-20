@@ -1,0 +1,6 @@
+"root"
+{
+	"item_explosive_hit_mega_datadriven"						"1"
+	"item_explosive_hit_super_datadriven"						"1"
+	"item_explosive_hit_datadriven"								"1"
+}

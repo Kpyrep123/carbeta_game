@@ -1,0 +1,103 @@
+//Dota Heroes file
+"DOTAHeroes"
+{
+	"Version"       "1"	
+	//=================================================================================================================
+    // HERO: Mifune
+    //=================================================================================================================
+    "npc_dota_hero_mifune"
+    {
+        "BaseClass"           "npc_dota_hero"
+        "HeroID"                    "144"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+
+        // Model info
+        "Model"                     "models/heroes/mifune/mifune.vmdl"
+        "ModelScale"                "1.15"
+        "LoadoutScale"              "1.0"
+        "HeroGlowColor"             "60 120 200"
+        "HealthBarOffset"           "160"
+        "particle_folder"           "particles/units/heroes/hero_juggernaut"
+
+        "MinimapIcon"               "mifune"
+        "MinimapIconSize"           "1000"
+        //"MinimapDisableTint"        "1"
+
+        // Sound info
+        "SoundSet"                  "Hero_Juggernaut"
+        "PickSound"                 "juggernaut_jug_spawn_03"
+        "BanSound"                  "juggernaut_jug_anger_04"
+        "HeroSelectSoundEffect"     "juggernaut_jug_spawn_03"
+        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+        "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_mifune.vsndevts"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
+        "AttributeBaseStrength"     "20"
+        "AttributeStrengthGain"     "2.0"
+        "AttributeBaseIntelligence" "16"
+        "AttributeIntelligenceGain" "2.0"
+        "AttributeBaseAgility"      "22"
+        "AttributeAgilityGain"      "3.0"
+
+        "ProjectileModel"           "particles/units/heroes/hero_parasight/parasight_base_attack.vpcf" // Particle system model for projectile.
+        "ProjectileSpeed"           "900"       // Speed of projectile.
+
+        // Misc stats
+        "ArmorPhysical"             "0"
+        "MagicalResistance"         "25"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "28"
+        "AttackDamageMax"           "37"
+        "AttackRate"                "1.5"
+        "AttackAnimationPoint"      "0.33"
+        "AttackAcquisitionRange"    "600"
+        "AttackRange"               "150"
+        "MovementSpeed"             "305"
+        "MovementTurnRate"          "1.0"
+        
+        "Ability1"              "mifune_raigeki" 
+        "Ability2"              "mifune_bushido" 
+        "Ability3"              "mifune_zanmato"
+        "Ability4"              "mifune_sacrifice"
+        "Ability5"              "generic_hidden"
+        "Ability6"              "mifune_genso"
+        "Ability7"              ""
+        "Ability8"              ""
+        "Ability9"              ""
+
+        "Ability10"             "special_bonus_mifune_1"
+        "Ability11"             "special_bonus_mifune_8"
+        "Ability12"             "special_bonus_mifune_7"
+        "Ability13"             "special_bonus_mifune_6"
+        "Ability14"             "special_bonus_mifune_4"
+        "Ability15"             "special_bonus_mifune_5"
+        "Ability16"             "special_bonus_mifune_2"
+        "Ability17"             "special_bonus_mifune_3"
+
+        // Card info
+        "Role"                  "Carry,Nuker"
+        "Rolelevels"            "3,2"
+        "Complexity"            "2"
+
+        "AttackSpeedActivityModifiers"
+        {
+            "fast"      "170"
+            "faster"    "275"
+            "fastest"   "350"
+        }
+
+        //"BountyXP"                    "0"                                 // Experience earn.
+        //"BountyGoldMin"               "0"                                     // Gold earned min.
+        //"BountyGoldMax"               "0"                                     // Gold earned max.
+
+        "MovementSpeedActivityModifiers"
+        {
+            "walk"      "0"
+            "run"       "345"
+            "run_fast"  "373"
+        }
+        "HasAggressiveStance"       "1"
+    }
+}

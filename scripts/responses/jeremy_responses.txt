@@ -1,0 +1,363 @@
+"JeremyResponses"
+{
+    "OnMoveOrder"
+    {
+        "Cooldown"    "6"
+
+        "Sounds"
+        {
+            "jeremy_move"          "1"
+        }
+    }
+
+    "OnAttackOrder"
+    {
+        "Cooldown"    "6"
+
+        "Sounds"
+        {
+            "jeremy_attack"    "1"
+        }
+    }
+
+    "OnTakeDamage"
+    {
+        "Priority"  "1"
+        "Cooldown"  "2"
+
+        "Sounds"
+        {
+            "jeremy_ouch"  "1"
+        }
+    }
+
+    "OnDeath"
+    {
+        "Priority"  "2"
+        "AllChat"   "1"
+        "Sounds"
+        {
+            "jeremy_death" "1"
+        }
+    }
+    "OnBuyback"
+    {
+        "Priority"  "2"
+        "AllChat"   "1"
+        "Delay"     "1"
+        "Cooldown"  "6"
+        "Sounds"
+        {
+            "jeremy_buyback"      "1"
+        }
+    }
+    "OnSpawn"
+    {
+        "Priority"  "2"
+        "AllChat"   "0"
+        "Delay"     "1.5"
+        "Cooldown"  "6"
+        "Sounds"
+        {
+            "jeremy_respawn"      "1"
+        }
+    }
+    "OnFirstSpawn"
+    {
+        "Priority"  "2"
+        "AllChat"   "0"
+        "Delay"     "1.5"
+        "Sounds"
+        {
+            "jeremy_spawn"      "1"
+        }
+    }
+
+    "OnHeroKill"
+    {
+        "Priority"  "2"
+        "Cooldown"  "5"
+        "AllChat"   "1"
+        "Delay"     "1"
+
+        "Sounds"
+        {
+            "jeremy_hero_kill"      "1"
+        }
+    }
+
+    "OnFirstBlood"
+    {
+        "Priority"  "2"
+        "Allchat"   "1"
+        "Global"    "1"
+        "Delay"     "1"
+
+        "Sounds"
+        {
+            "jeremy_firstblood"      "1"
+        }
+    }
+
+    "OnCreepKill"
+    {
+        "Priority"  "1"
+        "Delay"     "0.5"
+        "Cooldown"  "10"
+
+        "Sounds"
+        {
+            "jeremy_creep_kill"      "1"
+        }
+    }
+
+    "OnCreepDeny"
+    {
+        "Priority"  "1"
+        "Cooldown"  "20"
+        "Allchat"   "1"
+
+        "Sounds"
+        {
+            "jeremy_creep_deny"      "1"
+        }
+    }
+
+    // Ability casts
+    "OnAbilityCast"
+    {
+        "troy_battle_lunge"
+        {
+            "Priority"  "1"
+            "AllChat" "1"
+            "Sounds"
+            {
+                "jeremy_battle_lunge"      "1"
+            }
+        }
+        "troy_fury"
+        {
+            "Priority"  "1"
+            "AllChat" "1"
+            "Sounds"
+            {
+                "jeremy_fury"      "1"
+            }
+        }
+        "troy_the_arena"
+        {
+            "Priority"  "2"
+            "AllChat" "1"
+            "Sounds"
+            {
+                "jeremy_the_arena"      "1"
+            }
+        }
+    }
+
+    // Item pickup
+    "OnItemPickup"
+    {
+         "item_aegis"
+        {
+            "Priority"  "2"
+            "Delay"     "1"
+            "Sounds"
+            {
+                "jeremy_items_aegis"      "1"
+            }
+        }
+        "item_cheese"
+        {
+            "Priority"  "2"
+            "Cooldown"  "300"
+            "Delay"     "1"
+            "Sounds"
+            {
+                "jeremy_items_cheese"      "1"
+            }
+        }
+    }
+
+    // Item purchases
+    "OnItemPurchased"
+    {
+        "item_blink"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "jeremy_items_blink"      "1"
+            }
+        }
+
+        "item_mask_of_madness"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "jeremy_items_mask"      "1"
+            }
+        }
+
+        "item_assault"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "jeremy_items_ac"      "1"
+            }
+        }
+
+        "item_heart"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "jeremy_items_heart"      "1"
+            }
+        }
+
+        "item_radiance"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "jeremy_items_radiance"      "1"
+            }
+        }
+
+        "item_sheepstick"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "jeremy_items_sheep"      "1"
+            }
+        }
+
+        "item_ultimate_scepter"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "jeremy_items_aghs"      "1"
+            }
+        }
+
+        "item_blademail"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "jeremy_items_blademail"      "1"
+            }
+        }
+
+        "item_vanguard"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "jeremy_items_vanguard"      "1"
+            }
+        }
+    }
+
+    "OnVictory"
+    {
+        "Priority"  "2"
+        "Delay" "10"
+        "Sounds"
+        {
+         "jeremy_victory"      "1"
+        }
+    }
+
+    "OnDefeat"
+    {
+        "Priority"  "2"
+        "Delay" "10"
+        "Sounds"
+        {
+         "jeremy_defeat"      "1"
+        }
+    }
+
+    "OnDoubleDamageRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "jeremy_rune_double"      "1"
+        }
+    }
+
+    "OnHasteRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "jeremy_rune_haste"      "1"
+        }
+    }
+
+    "OnIllusionRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "jeremy_rune_illusion"      "1"
+        }
+    }
+
+    "OnInvisibilityRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "jeremy_rune_invis"      "1"
+        }
+    }
+
+    "OnRegenRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "jeremy_rune_regen"      "1"
+        }
+    }
+
+    "OnBountyRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "jeremy_rune_bounty"      "1"
+        }
+    }
+    
+    "OnArcaneRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "jeremy_rune_arcane"      "1"
+        }
+    }
+}

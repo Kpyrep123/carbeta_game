@@ -1,0 +1,476 @@
+// Scaldris Abilities File
+
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	//	Brax talent 1: thunderpup duration
+	//=================================================================================================================
+	"special_bonus_brax_1"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"15"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	//	Brax talent 2: thunderpup move speed
+	//=================================================================================================================
+	"special_bonus_brax_2"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"2"		// hardcoded in the ability
+			}
+		}
+	}
+
+	//=================================================================================================================
+	//	Brax talent 3: rush cast range
+	//=================================================================================================================
+	"special_bonus_brax_3"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"250"	// hardcoded in the ability
+			}
+		}
+	}
+
+	//=================================================================================================================
+	//	Brax talent 4: atomic drop damage
+	//=================================================================================================================
+	"special_bonus_brax_4"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"75"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	//	Brax talent 5: max thunderpups
+	//=================================================================================================================
+	"special_bonus_brax_5"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"8"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	//	Brax talent 6: atomic drop pure damage
+	//=================================================================================================================
+	"special_bonus_brax_6"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"1"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Brax: Atomic Drop
+	//=================================================================================================================
+	"brax_stomp"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"brax_stomp"
+		"ScriptFile"					"heroes/brax/brax_stomp.lua"
+		"MaxLevel"						"5"
+        "AbilityProcsMagicStick"		"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastRange"				"400"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0 19.0 18.0 17.0 16.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 90 100 110 120"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+			"particle"					"particles/hero/brax/atomic_drop_impact.vpcf"
+			"particle"					"particles/econ/items/sven/sven_warcry_ti5/sven_warcry_cast_arc_lightning.vpcf"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"effect_radius"				"200"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"50 60 70 80 90"
+				"LinkedSpecialBonus"		"special_bonus_brax_4"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow"						"-30 -35 -40 -45 -50"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"				"4.0"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ring_radius"				"100"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius_step"				"150"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blast_count"				"3"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blast_step"				"2"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_rings"					"3"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"ring_delay"				"0.5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Brax: Rush
+	//=================================================================================================================
+	"brax_rush"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"brax_rush"
+		"ScriptFile"					"heroes/brax/brax_rush.lua"
+		"HasShardUpgrade"				"1"
+		"MaxLevel"						"5"
+        "AbilityProcsMagicStick"		"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate"			"1.5"
+		"AbilityCastRange"				"500 600 650 700 800"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14.0 13.0 12.0 11.0 9.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"140 130 120 110 100"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_spirit_breaker.vsndevts"
+			"particle"					"particles/econ/items/storm_spirit/storm_spirit_orchid_hat/stormspirit_orchid_ball_lightning.vpcf"
+			"particle"					"particles/hero/brax/rush_pull.vpcf"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rush_speed"				"1500"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"100 115 125 135 150"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"pull_range"				"300"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"pull_end_radius"			"200"	// range * 0.39 = 46 degree angle
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"pull_duration"				"0.1"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"rush_delay"				"1.0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"rush_delay_talent"			"0.2"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rush_range"				"500 600 650 700 800"
+				"LinkedSpecialBonus"		"special_bonus_brax_3"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_radius"			"500"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Brax: Tornado
+	//=================================================================================================================
+	"brax_tornado"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"brax_tornado"
+		"ScriptFile"					"heroes/brax/brax_tornado.lua"
+		"MaxLevel"						"5"
+        "AbilityProcsMagicStick"		"1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"					"DOTA_Item.Mjollnir.Loop"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dps"						"12"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"450"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"30"
+				"LinkedSpecialBonus"		"special_bonus_brax_1"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_units"					"2 3 4 5 6"
+				"LinkedSpecialBonus"		"special_bonus_brax_5"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"heal"						"50 55 65 75 85"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tornado_radius"			"150"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tornado_speed"				"1500"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Brax: Kinetic Energy
+	//=================================================================================================================
+	"brax_kinetic_energy"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"brax_kinetic_energy"
+		"ScriptFile"					"heroes/brax/brax_kinetic_energy.lua"
+		"HasScepterUpgrade"				"1"
+		"MaxLevel"						"4"
+        "AbilityProcsMagicStick"		"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastRange"				"500"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"120 110 100 90"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 150 200 250"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts"
+			"particle"					"particles/hero/brax/kinetic_energy.vpcf"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"700"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"10 11 12 13"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_slow"					"10"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_slow"					"80"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_linger"				"1.0"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dps_scepter"				"75 125 175 225"
+			}
+		}
+	}
+}

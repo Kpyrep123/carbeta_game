@@ -1,0 +1,128 @@
+//Dota Heroes file
+"DOTAHeroes"
+{
+	"Version"       "1"	
+
+	"npc_dota_hero_warp_beast"
+    {
+        "BaseClass"     "npc_dota_hero_faceless_void"
+        "HeroID"        "138"
+        "IsCustom"		"1"
+        
+        "Model"             "models/items/courier/faceless_rex/faceless_rex.vmdl"
+        "ModelScale"        "1.8"
+        "DisableWearables"  "1"
+
+        "Portrait"      "vgui/hud/heroportraits/portrait_faceless_void"
+        "IdleExpression"        "scenes/faceless_void/faceless_void_exp_idle_01.vcd"
+        "SoundSet"      "Hero_FacelessVoid"
+        "Enabled"       "1"
+        "HeroUnlockOrder"       "3"
+        "Role"          "Carry,Escape,Nuker,Initiator,Pusher"
+        "Rolelevels"    "2,2,2,1,1,1"
+        "Complexity"    "3"
+        "Team"      "Bad"
+        "ModelScale"        "0.930000"
+        "LastHitChallengeRival"     "npc_dota_hero_sand_king"
+        "AbilityDraftDisabled"      "1"
+        "ARDMDisabled"      "1"
+        "LastHitChallengeRival"     "npc_dota_hero_bounty_hunter"
+        "HeroSelectSoundEffect"     "Hero_FacelessVoid.Pick"
+         "BotImplemented"            "0"
+
+        "Ability1"              "warp_beast_temporal_jump"
+        "Ability2"              "warp_beast_latch"
+        "Ability3"              "warp_beast_mana_eater"
+        "Ability4"              "warp_beast_silly_attack_mutator"
+        "Ability5"              "generic_hidden"
+        "Ability6"              "warp_beast_warp"
+
+        "Ability10"     "special_bonus_attack_damage_20"
+        "Ability11"     "special_bonus_strength_8"
+        "Ability12"     "special_bonus_lifesteal_15"
+        "Ability13"     "special_bonus_unique_warp_beast_latch_attackspeed"
+        "Ability14"     "special_bonus_unique_warp_beast_mana_eater"
+        "Ability15"     "special_bonus_unique_warp_beast_jump_radius"
+        "Ability16"     "special_bonus_mp_1000"
+        "Ability17"     "special_bonus_unique_warp_beast_warp_silence"
+
+
+        "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"            // Primary Attribute
+        "AttributeBaseStrength"     "22"                        // Base strength
+        "AttributeStrengthGain"     "1.7"                       // Strength bonus per level.
+        "AttributeBaseIntelligence" "19"                        // Base intelligence
+        "AttributeIntelligenceGain" "2.4"                       // Intelligence bonus per level.
+        "AttributeBaseAgility"      "30"                        // Base agility
+        "AttributeAgilityGain"      "2.0"                       // Agility bonus per level.
+
+        "BaseAttackSpeed"           "125"
+        "ArmorPhysical"             "2" 
+        "MagicalResistance"         "25"
+        
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "22"                        
+        "AttackDamageMax"           "26"
+        "AttackAnimationPoint"      "0.380000"
+        "AttackRate"                "1.7"
+        "AttackAcquisitionRange"        "600"
+        "AttackRange"       "150"
+
+        "VisionDaytimeRange"        "1800"
+        "VisionNighttimeRange"      "800"
+        "MovementSpeed"     "310"
+        "MovementTurnRate"      "1.000000"
+
+
+        // Bounds
+        //-------------------------------------------------------------------------------------------------------------
+        "BoundsHullName"            "DOTA_HULL_SIZE_HERO"
+        "RingRadius"                "70"
+
+        // Movement
+        //-------------------------------------------------------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+
+        // Status
+        //-------------------------------------------------------------------------------------------------------------
+        "StatusHealth"              "200"
+        "StatusHealthRegen"         "2.7500"
+        "StatusMana"                "75"
+        "StatusManaRegen"           "0.9"
+
+        // Team
+        //-------------------------------------------------------------------------------------------------------------
+        "TeamName"                  "DOTA_TEAM_GOODGUYS"
+        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+        "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+        // Vision
+        //-------------------------------------------------------------------------------------------------------------
+        "VisionDaytimeRange"        "1800"                                  // Range of vision during day light.
+        "VisionNighttimeRange"      "800"                                   // Range of vision at night time.
+
+        // Inventory
+        "HasInventory"              "1"
+
+        // Health Bar   
+        "HealthBarOffset"           "170"
+
+        "particle_folder"        "particles/units/heroes/hero_faceless_void"
+        "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+        "VoiceFile"     "soundevents/voscripts/game_sounds_vo_warp_beast.vsndevts"
+        "RenderablePortrait"
+        {
+            "Particles"
+            {
+                "particles/units/heroes/hero_faceless_void/faceless_void_loadout.vpcf"
+                {
+                    "0"
+                    {
+                        "type"      "follow_origin"
+                        "location"      "attach_hitloc"
+                    }
+                }
+            }
+        }
+    }
+}

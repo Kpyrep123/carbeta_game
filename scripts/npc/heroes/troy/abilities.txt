@@ -1,0 +1,526 @@
+// Troy Abilities File
+
+"DOTAAbilities"
+{
+	"troy_battle_lunge"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/troy/troy_battle_lunge.lua"
+		"AbilityTextureName"		"troy_battle_lunge"
+
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"AbilityCastPoint"			"0.7"
+		"AbilityCooldown"			"15"
+		"AOERadius"					"350"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_troy/troy_battle_lunge.vpcf"
+			"particle"  "particles/units/heroes/hero_troy/troy_battle_lunge_impact.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_cost"			"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow"			"-50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"status_resist_hero"	"16"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"status_resist_creep"	"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_hero"				"8"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun_duration"			"2"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lunge_duration"		"0.5"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lunge_height"			"250"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"100 175 250 325"
+				"LinkedSpecialBonus"	"special_bonus_troy_battle_lunge_damage"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"creep_damage_pct"		"100"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"600 700 800 900"
+				"LinkedSpecialBonus"	"special_bonus_troy_battle_lunge_range"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"4"
+			}
+		}
+	}
+
+	// Bonus Battle Lunge cast range
+	"special_bonus_troy_battle_lunge_range"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"300"	// Hardcoded in the ability
+			}
+		}
+	}
+
+	"special_bonus_troy_battle_lunge_damage"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"150"
+			}
+		}
+	}
+
+
+	"troy_fury"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/troy/troy_fury.lua"
+		"AbilityTextureName"		"troy_fury"
+
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+
+		"AbilityCastPoint"			"0.0"
+		"AbilityCastRange"			"300"
+		"AbilityCooldown"			"10"
+
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_troy/troy_fury.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_spirit_breaker.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"2.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_cost"			"12"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+				"LinkedSpecialBonus"	"special_bonus_troy_fury_radius"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_as_damage"		"6 9 12 15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_distance"	"350"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_height"		"100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.5"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"					"300"
+			}
+		}
+	}
+
+	"special_bonus_troy_fury_radius"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"100"
+			}
+		}
+	}
+
+	"troy_immolation"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/troy/troy_immolation.lua"
+		"AbilityTextureName"		"troy_immolation"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastRange"				"300"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_troy/troy_fort.vpcf"
+			"particle"  "particles/units/heroes/hero_troy/troy_fort_burn.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_regen"		"4 8 12 16"
+				"LinkedSpecialBonus"	"special_bonus_troy_immolation_duration"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dps_return"		"10"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_cap"		"40 60 80 100"
+				"LinkedSpecialBonus"	"special_bonus_troy_immolation_max_dps"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"5"				
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"tick_interval"		"0.2"
+			}
+		}
+	}
+
+	"special_bonus_troy_immolation_duration"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"8"
+			}
+		}
+	}
+
+	"special_bonus_troy_immolation_max_dps"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"100"
+			}
+		}
+	}
+
+	"troy_rage"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/troy/troy_rage.lua"
+		"AbilityTextureName"			"axe_berserkers_call"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+
+		"AbilityCastPoint"				"0.4"
+
+		"AbilityCooldown"				"80"
+		"AbilityManaCost"				"200 250 300"
+
+		"HasShardUpgrade"               "1"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_troy/troy_arena.vpcf"
+			"particle"  "particles/units/heroes/hero_troy/troy_arena_lava.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"20"
+				"LinkedSpecialBonus"	"special_bonus_troy_rage_duration"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_hp_boost"			"1000 1500 2000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_gained_from_health_percent"				"4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"self_dps"				"50 75 100"
+			}
+		}
+	}
+
+	"special_bonus_troy_rage_double_damage"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	"special_bonus_troy_rage_cast_time"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	"troy_ill_be_back"
+	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"				"heroes/troy/troy_ill_be_back.lua"
+		"AbilityTextureName"		"skeleton_king_reincarnation"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"AbilityCooldown"				"100"
+		"MaxLevel"		"1"
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"3.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"respawn_health_percent"					"50.0"
+			}
+		}
+	}
+
+	"troy_the_arena"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/troy/troy_the_arena.lua"
+		"AbilityTextureName"		"troy_the_arena"
+
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
+
+		"AbilityCastPoint"			"0.0"
+		"AbilityCastRange"			"350"
+		"AbilityCooldown"			"80"
+		"AbilityManaCost"			"200 250 300"
+		"HasScepterUpgrade"			"1"
+
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_troy/troy_arena.vpcf"
+			"particle"  "particles/units/heroes/hero_troy/troy_arena_lava.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"0.8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6.0"
+				"LinkedSpecialBonus"	"special_bonus_troy_arena_duration"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"50 100 150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_damage"			"150"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_hit_distance"		"100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_hit_height"		"100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"wall_hit_duration"		"0.3"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps_scepter"			"100"
+			}
+		}
+	}
+
+	"arena_cast_error_inside"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"				"heroes/troy/arena_cast_error_inside.lua"
+		"MaxLevel" 						"1"
+		"AbilityTextureName"			"disruptor_kinetic_field"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	}
+
+	"arena_cast_error_outside"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"				"heroes/troy/arena_cast_error_outside.lua"
+		"MaxLevel" 						"1"
+		"AbilityTextureName"			"disruptor_kinetic_field"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	}
+
+	// Instant arena spawn
+	"special_bonus_troy_instant_arena"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"1"
+			}
+		}
+	}
+
+	// Bonus arena duration
+	"special_bonus_troy_arena_duration"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"3"
+			}
+		}
+	}
+}

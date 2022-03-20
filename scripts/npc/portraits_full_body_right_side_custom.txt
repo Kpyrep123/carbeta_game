@@ -1,0 +1,7 @@
+"DOTAFullBodyRightSidePortraitInfo"
+{
+	"npc_dota_hero_viscous_ooze"
+	{
+		"UnitAngles" "0 -40 0"
+	}
+}

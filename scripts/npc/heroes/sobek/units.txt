@@ -1,0 +1,118 @@
+//Dota Heroes file
+"DOTAUnits"
+{
+	"Version"       "1"	
+	//=================================================================================================================
+    // HERO: Koh, the Bold
+    //=================================================================================================================
+    "npc_dota_hero_sobek"
+    {
+        "BaseClass"             "npc_dota_hero"         // Hero to override
+        "HeroID"                    "143"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+
+        // Model info
+        "Model"                     "models/creeps/neutral_creeps/n_creep_kobold/kobold_a/n_creep_kobold_a.vmdl"
+        "ModelScale"                "1.0"
+        "LoadoutScale"              "1.0"
+        "HeroGlowColor"             "200 200 200"
+        "IdleExpression"            "scenes/windrunner/windrunner_exp_idle_01.vcd"
+        "HealthBarOffset"           "160"
+        "ProjectileModel"           "particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
+
+        // Sound info
+        "SoundSet"                  "Hero_Koh"
+        "PickSound"                 "sobek_spawn"
+        "BanSound"                  "windrunner_wind_anger_01"
+        "HeroSelectSoundEffect"     "sobek_spawn"
+        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_koh.vsndevts"
+        "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_sobek.vsndevts"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "19"
+        "AttributeStrengthGain"     "2.500000"
+        "AttributeBaseIntelligence" "16"
+        "AttributeIntelligenceGain" "1.500000"
+        "AttributeBaseAgility"      "19"
+        "AttributeAgilityGain"      "2.000000"
+
+        // Misc stats
+        "ArmorPhysical"             "1"
+        "MagicalResistance"		"25"
+
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "26"
+        "AttackDamageMax"           "34"
+        "AttackRate"                "1.700000"
+        "AttackAnimationPoint"      "0.400000"
+        "AttackAcquisitionRange"    "800"
+        "AttackRange"               "150"
+        "ProjectileSpeed"           "1250"
+        "MovementSpeed"             "295"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+        "Ability1"                  "sobek_voracious_appetite"
+        "Ability2"                  "koh_whiplash"
+        "Ability3"                  "sobek_protective_hide"
+        "Ability4"                  "generic_hidden"
+        "Ability5"                  "generic_hidden"
+        "Ability6"                  "sobek_absorption"
+        
+        // Talents
+        "Ability10"                 "special_bonus_mp_regen_3"              //10 Right
+        "Ability11"                 "special_bonus_armor_7"                 //10 Left
+        "Ability12"                 "special_bonus_hp_regen_20"            //15 Right
+        "Ability13"                 "special_bonus_magic_resistance_20"     //15 Left
+        "Ability14"                 "special_bonus_unique_sobek_2"     //20 Right
+        "Ability15"                 "special_bonus_evasion_20"              //20 Left
+        "Ability16"                 "special_bonus_movement_speed_90"       //25 Right
+        "Ability17"                 "special_bonus_unique_sobek_1"       //25 Left
+        
+        // Card info
+        "Role"          "Carry,Support,Disabler,Escape,Nuker"
+        "Rolelevels"    "1,1,1,1,1"
+        "Complexity"    "2"
+        
+        // Misc
+        "NameAliases"       "wr"
+        "url"       "Windranger"
+        "LastHitChallengeRival"     "npc_dota_hero_treant" //TODO: Check if its used still
+        
+        //TODO: RenderablePortrait
+
+        // Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealthRegen"			"1.5"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+
+		// Health Bar	
+		"HealthBarOffset"     "200"
+
+    }
+}

@@ -1,0 +1,104 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Sandra Olivia: Undeniable Torture
+	//=================================================================================================================
+	"sandra_undeniable_torture"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"custom_abilities/sandra_undeniable_torture/sandra_undeniable_torture"
+		"AbilityTextureName"			"custom/imba_curseblade"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"5"
+		"AbilityProcsMagicStick"		"1"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
+			"particle"	"particles/units/heroes/hero_warlock/warlock_fatal_bonds_icon.vpcf"
+			"particle"	"particles/units/heroes/hero_bloodseeker/bloodseeker_bloodritual_explode.vpcf"
+			"particle"	"particles/units/heroes/hero_sandra/sandra_undeniable_torture.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"666"
+		"AbilityCastPoint"				"0.3"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12.0"
+		"AbilityManaCost"				"100"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal"				"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lifeshare"				"35 37 40 42 50"
+				"LinkedSpecialBonus"	"spec_bonus_olivia_lifeshare"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_channel"			"3 4 5 6 7"
+				"LinkedSpecialBonus"	"spec_bonus_olivia_chanel_time"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"350 375 400 425 450"
+			}
+		}
+	}
+	"spec_bonus_olivia_lifeshare"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"20"	// Hardcoded in the ability
+			}
+		}
+	}
+	"spec_bonus_olivia_chanel_time"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"2"	// Hardcoded in the ability
+			}
+		}
+	}
+}

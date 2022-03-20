@@ -1,0 +1,59 @@
+--[[Author: TheGreatGimmick
+    Date: May 16, 2017
+    Modifier that switches dummy items for the real one]]
+
+modifier_darwin_buff = class({}) 
+
+
+function modifier_darwin_buff:DeclareFunctions()
+	local funcs = {
+            --MODIFIER_PROPERTY_BASE_MANA_REGEN,
+            MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+            MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+            MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT, 
+    }
+
+	return funcs
+end
+
+function modifier_darwin_buff:OnCreated( kv )   
+    --if IsServer() then
+        print("")
+        print("Calculating Darwin Bonuses")
+        
+        local caster = self:GetParent()
+        local ability = self:GetAbility()
+        local ability_level = ability:GetLevel() - 1
+
+        local current_time = GameRules:GetGameTime()
+        local survival_time = (current_time - caster.last_death_time)/60
+
+        self.darwin_speed = --[[ability:GetLevelSpecialValueFor("startspeed", ability_level) + ]](ability:GetLevelSpecialValueFor("speed", ability_level))*survival_time
+        self.darwin_mana = --[[ability:GetLevelSpecialValueFor("startregen", ability_level) + ]](ability:GetLevelSpecialValueFor("regen", ability_level))*survival_time
+        self.darwin_health = --[[ability:GetLevelSpecialValueFor("startregen", ability_level) + ]](ability:GetLevelSpecialValueFor("regen", ability_level))*survival_time
+        print("Speed: "..self.darwin_speed)
+        print("Regen: "..self.darwin_mana)
+    --end
+end
+
+--[[
+function modifier_darwin_buff:GetModifierBaseRegen ()
+    return self.darwin_mana
+end
+]]
+
+function modifier_darwin_buff:GetModifierConstantManaRegen ()
+    return self.darwin_mana
+end
+
+function modifier_darwin_buff:GetModifierConstantHealthRegen ()
+    return self.darwin_health
+end
+
+function modifier_darwin_buff:GetModifierMoveSpeedBonus_Constant ()
+    return self.darwin_speed
+end
+
+function modifier_darwin_buff:IsHidden() 
+	return true
+end

@@ -1,0 +1,72 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Riven: Runic Blade
+	//=================================================================================================================
+	"riven_runic_blade"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"custom_abilities/riven_runic_blade/riven_runic_blade"
+		"AbilityTextureName"			"custom/scaldris_jet_blaze"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"5"
+        "AbilityProcsMagicStick"		"1"
+        //		"precache"
+//		{
+//			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_<hero>.vsndevts"
+//			"particle"	"particles/units/heroes/hero_<hero>/<hero>_<ability>.vpcf"
+//		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_per_stack"			"10 15 20 25 30"
+
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stack_duration"			"4"
+			}
+		}
+	}
+
+	"spec_riven_crit_dur"
+	{
+			"BaseClass"				"special_bonus_undefined"
+			"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"		"FIELD_INTEGER"
+					"value"			"350"	// Hardcoded in the ability
+				}
+			}
+	}
+}

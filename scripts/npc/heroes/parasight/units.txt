@@ -1,0 +1,259 @@
+//Dota Heroes file
+"DOTAUnits"
+{
+	"Version"       "1"	
+	//=================================================================================================================
+    // HERO: Parasight the Fungal Warrior
+    //=================================================================================================================
+    "npc_dota_hero_parasight"
+    {
+        "BaseClass"             "npc_dota_hero"         // Hero to override
+        "HeroID"                    "129"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        
+        // Model info
+        "Model"                     "models/items/furion/treant/shroomling_treant/shroomling_treant.vmdl"
+        "ModelScale"                "1.4"
+        "LoadoutScale"              "1.4"
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "160"
+        
+        // Sound info
+        "SoundSet"                  "Hero_Viper"
+        "PickSound"                 "parasight_spawn"
+        "BanSound"                  "treant_treant_anger_11"
+        "HeroSelectSoundEffect"     "parasight_spawn"
+        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_parasight.vsndevts"
+        "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_parasight.vsndevts"
+        
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "23"
+        "AttributeStrengthGain"     "2.000000"
+        "AttributeBaseIntelligence" "22"
+        "AttributeIntelligenceGain" "2.300000"
+        "AttributeBaseAgility"      "14"
+        "AttributeAgilityGain"      "1.400000"
+
+        "ProjectileModel"           "particles/units/heroes/hero_parasight/parasight_base_attack.vpcf" // Particle system model for projectile.
+        "ProjectileSpeed"           "900"       // Speed of projectile.
+        
+        // Misc stats
+        "ArmorPhysical"             "3"
+        "MagicalResistance"		"25"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+        "AttackDamageMin"           "22"
+        "AttackDamageMax"           "34"
+        "AttackRate"                "1.700000"
+        "AttackAnimationPoint"      "0.400000"
+        "AttackAcquisitionRange"    "800"
+        "AttackRange"               "600"
+        "ProjectileSpeed"           "1250"
+        "MovementSpeed"             "295"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+        "Ability1"                  "parasight_catalytic_spore"
+        "Ability2"                  "parasight_fungal_pod"
+        "Ability3"                  "parasight_combust"
+        "Ability4"                  "parasight_sporocarp"
+        "Ability5"                  "generic_hidden"
+        "Ability6"                  "parasight_parasitic_invasion"
+        
+        // Talents
+        "Ability10"                 "special_bonus_gold_income_10"          //10 Right
+        "Ability11"                 "special_bonus_cast_range_100"          //10 Left
+        "Ability12"                 "special_bonus_unique_parasight_1"      //15 Right
+        "Ability13"                 "special_bonus_cooldown_reduction_12"   //15 Left
+        "Ability14"                 "special_bonus_unique_parasight_3"      //20 Right    
+        "Ability15"                 "special_bonus_unique_parasight_2"      //20 Left
+        "Ability16"                 "special_bonus_unique_parasight_5"      //25 Right
+        "Ability17"                 "special_bonus_unique_parasight_4"      //25 Left
+        
+        // Card info
+        "Role"          "Carry,Support,Disabler,Escape,Nuker"
+        "Rolelevels"    "1,1,1,1,1"
+        "Complexity"    "2"
+        
+        // Misc
+        "NameAliases"       "wr"
+        "url"       "Windranger"
+        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+        
+        //TODO: RenderablePortrait
+
+        // Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"200"
+		"StatusHealthRegen"			"1.5000"
+		"StatusMana"				"75"
+		"StatusManaRegen"			"0.9"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+
+		// Health Bar	
+		"HealthBarOffset"     "180"
+
+    }
+
+    "npc_parasight_fungal_pod"
+    {
+        // General
+        //----------------------------------------------------------------
+        "Model"                     "models/items/wards/esl_wardchest_toadstool/esl_wardchest_toadstool.vmdl"   // Model.
+        "BaseClass"                 "npc_dota_ward_base"
+        "SoundSet"                  "0"                      // Name of sound set.
+        "Level"                     "1"
+        "ModelScale"                "1"
+
+        // Abilities
+        //----------------------------------------------------------------
+        "Ability1"                  "parasight_fungal_pod_combust"  // Ability 1
+        "Ability2"                  ""                              // Ability 2
+        "Ability3"                  ""                              // Ability 3
+        "Ability4"                  ""                              // Ability 4
+
+        // Armor
+        //----------------------------------------------------------------
+        "ArmorPhysical"             "0"                      // Physical protection.
+
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+        "AttackDamageMin"           "0"                      // Damage range min.
+        "AttackDamageMax"           "0"                      // Damage range max.   
+        "AttackRate"                "1.0"                    // Speed of attack.
+        "AttackAnimationPoint"      "0.0"                    // Normalized time in animation cycle to attack.
+        "AttackAcquisitionRange"    "0"                      // Range within a target can be acquired.
+        "AttackRange"               "0"                      // Range within a target can be attacked.
+        "ProjectileModel"           ""                       // Particle system model for projectile.
+        "ProjectileSpeed"           "0"                      // Speed of projectile.           
+
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyXP"                  "0"                       // Experience earn.
+        "BountyGoldMin"             "0"                       // Gold earned min.
+        "BountyGoldMax"             "0"                       // Gold earned max.
+
+        // Bounds
+        //----------------------------------------------------------------
+        //"BoundsHullName"            "DOTA_HULL_SIZE_HERO"
+        //"RingRadius"                "50"
+        "HealthBarOffset"             "200"        
+
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+        "MovementSpeed"             "0"                      // Speed.
+        "MovementTurnRate"          "0"                      // Turning rate.
+
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"              "150"                    // Base health.
+        "StatusHealthRegen"         "0.0"                    // Health regeneration rate.
+        
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"        "400"                    // Range of vision during day light.
+        "VisionNighttimeRange"      "400"                    // Range of vision at night time.
+
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"                  "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+    }
+
+    "npc_parasight_sporocarp_ward"                          
+    {                                       
+        // General
+        //----------------------------------------------------------------
+        "Model"                     "models/items/wards/ward_bramble_snatch/ward_bramble_snatch.vmdl"   // Model.
+        "BaseClass"                 "npc_dota_ward_base"
+        "SoundSet"                  "0"                      // Name of sound set.
+        "Level"                     "1"
+        "ModelScale"                "1"
+
+        // Abilities
+        //----------------------------------------------------------------
+        "Ability1"                  ""                              // Ability 1
+        "Ability2"                  ""                              // Ability 2
+        "Ability3"                  ""                              // Ability 3
+        "Ability4"                  ""                              // Ability 4
+
+        // Armor
+        //----------------------------------------------------------------
+        "ArmorPhysical"             "0"                      // Physical protection.
+
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+        "AttackDamageMin"           "0"                      // Damage range min.
+        "AttackDamageMax"           "0"                      // Damage range max.   
+        "AttackRate"                "1.0"                    // Speed of attack.
+        "AttackAnimationPoint"      "0.0"                    // Normalized time in animation cycle to attack.
+        "AttackAcquisitionRange"    "0"                      // Range within a target can be acquired.
+        "AttackRange"               "0"                      // Range within a target can be attacked.
+        "ProjectileModel"           ""                       // Particle system model for projectile.
+        "ProjectileSpeed"           "0"                      // Speed of projectile.           
+
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyXP"                  "0"                       // Experience earn.
+        "BountyGoldMin"             "0"                       // Gold earned min.
+        "BountyGoldMax"             "0"                       // Gold earned max.
+
+        // Bounds
+        //----------------------------------------------------------------
+        //"BoundsHullName"          "DOTA_HULL_SIZE_HERO"
+        //"RingRadius"              "50"
+        "HealthBarOffset"           "200"        
+
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+        "MovementSpeed"             "0"                      // Speed.
+        "MovementTurnRate"          "0"                      // Turning rate.
+
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"              "100"                    // Base health.
+        "StatusHealthRegen"         "0.0"                    // Health regeneration rate.
+        
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"        "400"                    // Range of vision during day light.
+        "VisionNighttimeRange"      "400"                    // Range of vision at night time.
+
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"                  "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+    }
+}

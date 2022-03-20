@@ -1,0 +1,100 @@
+//Dota Heroes file
+"DOTAHeroes"
+{
+	"Version"       "1"	
+
+	//=================================================================================================================
+	// HERO: Viscous Ooze
+	//=================================================================================================================
+	"npc_dota_hero_viscous_ooze"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"     "npc_dota_hero"
+		"HeroID"        "130"
+		"IsCustom"                  "1"
+		"DisableWearables"      "1"
+
+		"BotImplemented"        "0"
+		"NewHero"               "1"
+		"HeroPool1"             "0"
+		"AbilityDraftDisabled"  "1"
+		"ARDMDisabled"          "1"
+		"LoadoutScale"          "1"
+		"Press"                 "1"
+		"ForceEnable"           "1"
+		"HeroUnlockOrder"       "1"
+		"CMTournamentIgnore"        "0"
+		"new_player_enable"     "0"
+		"Model"                 "models/heroes/viscous_ooze/viscous_ooze_animation.vmdl"
+		// "Portrait"            "vgui/hud/heroportraits/portrait_viscous_ooze"
+		"SoundSet"              "Hero_Venomancer"
+		"Enabled"               "1"
+		"Role"                  "Carry,Jungler,Durable"
+		"Rolelevels"            "3,1,2"
+		"Team"                  "Bad"
+		"ModelScale"        "1.180000"
+		"LoadoutScale"      "0.830000"
+		//"NameAliases"     "Abaddon"
+		//"url"     "Abaddon"
+		//"PickSound"       "abaddon_abad_spawn_01"
+		//"BanSound"        "abaddon_abad_anger_07"
+		//"NoCombine"       "1"
+		//"CMEnabled"       "1"
+		//"LastHitChallengeRival"       "npc_dota_hero_chaos_knight"
+		//"HeroSelectSoundEffect"       "Hero_Abaddon.Pick"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"			// Primary Attribute
+		"AttributeBaseStrength"		"40"						// Base strength
+		"AttributeStrengthGain"		"2.5"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"8"						// Base intelligence
+		"AttributeIntelligenceGain"	"0.6"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"10"						// Base agility
+		"AttributeAgilityGain"		"0.75"						// Agility bonus per level.
+
+		// Abilities
+        //-------------------------------------------------------------------------------------------------------------
+        "Ability1"              "viscous_ooze_slime_trail"      // Ability 1
+        "Ability2"              "viscous_ooze_split_oozelings"      // Ability 2
+        "Ability3"              "viscous_ooze_sticky_membrane"      // Ability 3
+        "Ability4"              "viscous_ooze_treasure_magic"       // Ability 4
+        "Ability5"				"generic_hidden"
+        "Ability6"              "viscous_ooze_consume_items"        // Ultimate
+        "Ability7"              "viscous_ooze_size_mutator"     // Innate
+
+        // Talents
+        //-------------------------------------------------------------------------------------------------------------
+        "Ability10"                 "special_bonus_mp_regen_2"              //10 Right
+        "Ability11"                 "special_bonus_armor_4"            //10 Left
+        "Ability12"                 "special_bonus_movement_speed_25"          //15 Right
+        "Ability13"                 "special_bonus_unique_viscous_ooze_1"   //15 Left
+        "Ability14"                 "special_bonus_attack_speed_50"             //20 Right    
+        "Ability15"                 "special_bonus_unique_viscous_ooze_2"       //20 Left
+        "Ability16"                 "special_bonus_unique_viscous_ooze_3"       //25 Right
+        "Ability17"                 "special_bonus_unique_viscous_ooze_4"       //25 Left
+
+        "ProjectileModel"			"particles/units/heroes/hero_viscous_ooze/viscous_ooze_base_attack/viscous_ooze_base_attack.vpcf"		// Particle system model for projectile.
+		"ProjectileSpeed"			"800"									// Speed of projectile.
+
+	  
+		//"particle_folder"     "particles/units/heroes/hero_abaddon"
+		"GameSoundsFile"      "soundevents/game_sounds_heroes/game_sounds_viscous_ooze.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_viscous_ooze.vsndevts"
+		// "RenderablePortrait"
+		// {
+		// 	"Particles"
+		// 	{
+		// 		"particles/units/heroes/hero_meepo/meepo_loadout.vpcf"
+		// 		{
+		// 			"0"
+		// 			{
+		// 				"type"      "follow_origin"
+		// 				"location"      "attach_hitloc"
+		// 			}
+		// 		}
+		// 	}
+		// }
+	}
+}

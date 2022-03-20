@@ -1,0 +1,112 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Mysterious Artifact
+	//=================================================================================================================
+	"item_mysterious_artifact"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1107"
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_mysterious_artifact"
+		
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"322"	
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+
+		"ItemInitialCharges"			"1"
+		"ItemStockMax"					"1"
+		"ItemStockInitial"				"0"
+		"ItemStockTime"					"600"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/viscous_ooze/artifact_spawner"
+				"Function"		"SpawnOoze"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Gold Counters - used for storing networth
+	//=================================================================================================================
+	"item_gold_counter_100"
+	{
+		"ID"						"1108"
+		"BaseClass"					"item_datadriven"
+		"ItemCost"					"100"
+		"ItemPurchasable"			"0"
+	}
+	"item_gold_counter_200"
+	{
+		"ID"						"1109"
+		"BaseClass"					"item_datadriven"
+		"ItemCost"					"200"
+		"ItemPurchasable"			"0"
+	}
+	"item_gold_counter_400"
+	{
+		"ID"						"1110"
+		"BaseClass"					"item_datadriven"
+		"ItemCost"					"400"
+		"ItemPurchasable"			"0"
+	}
+	"item_gold_counter_800"
+	{
+		"ID"						"1111"
+		"BaseClass"					"item_datadriven"
+		"ItemCost"					"800"
+		"ItemPurchasable"			"0"
+	}
+	"item_gold_counter_1600"
+	{
+		"ID"						"1112"
+		"BaseClass"					"item_datadriven"
+		"ItemCost"					"1600"
+		"ItemPurchasable"			"0"
+	}
+	"item_gold_counter_3200"
+	{
+		"ID"						"1113"
+		"BaseClass"					"item_datadriven"
+		"ItemCost"					"3200"
+		"ItemPurchasable"			"0"
+	}
+	"item_gold_counter_6400"
+	{
+		"ID"						"1114"
+		"BaseClass"					"item_datadriven"
+		"ItemCost"					"6400"
+		"ItemPurchasable"			"0"
+	}
+	"item_gold_counter_12800"
+	{
+		"ID"						"1115"
+		"BaseClass"					"item_datadriven"
+		"ItemCost"					"12800"
+		"ItemPurchasable"			"0"
+	}
+	"item_gold_counter_25600"
+	{
+		"ID"						"1116"
+		"BaseClass"					"item_datadriven"
+		"ItemCost"					"25600"
+		"ItemPurchasable"			"0"
+	}
+	"item_gold_counter_51200"
+	{
+		"ID"						"1117"
+		"BaseClass"					"item_datadriven"
+		"ItemCost"					"51200"
+		"ItemPurchasable"			"0"
+	}
+}

@@ -1,0 +1,330 @@
+"WarpBeastResponses"
+{
+    "OnMoveOrder"
+    {
+        "Cooldown"    "6"
+
+        "Sounds"
+        {
+            "warp_beast_move"          "1"
+        }
+    }
+
+    "OnAttackOrder"
+    {
+        "Cooldown"    "6"
+
+        "Sounds"
+        {
+            "warp_beast_attack"    "1"
+        }
+    }
+
+    "OnTakeDamage"
+    {
+        "Priority"  "1"
+        "Cooldown"  "2"
+
+        "Sounds"
+        {
+            "warp_beast_ouch"  "1"
+        }
+    }
+
+    "OnDeath"
+    {
+        "Priority"  "2"
+        "AllChat"   "1"
+        "Sounds"
+        {
+            "warp_beast_death" "1"
+        }
+    }
+    "OnBuyback"
+    {
+        "Priority"  "2"
+        "AllChat"   "1"
+        "Delay"     "1"
+        "Cooldown"  "6"
+        "Sounds"
+        {
+            "warp_beast_buyback"      "1"
+        }
+    }
+    "OnSpawn"
+    {
+        "Priority"  "2"
+        "AllChat"   "0"
+        "Delay"     "1.5"
+        "Cooldown"  "6"
+        "Sounds"
+        {
+            "warp_beast_respawn"      "1"
+        }
+    }
+    "OnFirstSpawn"
+    {
+        "Priority"  "2"
+        "AllChat"   "0"
+        "Delay"     "1.5"
+        "Sounds"
+        {
+            "warp_beast_spawn"      "1"
+        }
+    }
+
+    "OnHeroKill"
+    {
+        "Priority"  "2"
+        "Cooldown"  "5"
+        "AllChat"   "1"
+        "Delay"     "1"
+
+        "Sounds"
+        {
+            "warp_beast_hero_kill"      "1"
+        }
+    }
+
+    "OnFirstBlood"
+    {
+        "Priority"  "2"
+        "Allchat"   "1"
+        "Global"    "1"
+        "Delay"     "1"
+
+        "Sounds"
+        {
+            "warp_beast_firstblood"      "1"
+        }
+    }
+
+    "OnCreepKill"
+    {
+        "Priority"  "1"
+        "Delay"     "0.5"
+        "Cooldown"  "10"
+
+        "Sounds"
+        {
+            "warp_beast_creep_kill"      "1"
+        }
+    }
+
+    "OnCreepDeny"
+    {
+        "Priority"  "1"
+        "Cooldown"  "20"
+        "Allchat"   "1"
+
+        "Sounds"
+        {
+            "warp_beast_creep_deny"      "1"
+        }
+    }
+
+    // Ability casts
+    "OnAbilityCast"
+    {
+        "warp_beast_temporal_jump"
+        {
+            "Priority"  "1"
+            "AllChat" "0"
+            "Cooldown"  "12"
+            "Sounds"
+            {
+                "warp_beast_temporal_jump"      "1"
+            }
+        }
+        "warp_beast_latch"
+        {
+            "Priority"  "1"
+            "AllChat" "0"
+            "Cooldown"  "12"
+            "Sounds"
+            {
+                "warp_beast_latch"      "1"
+            }
+        }
+        "warp_beast_warp"
+        {
+            "Priority"  "2"
+            "AllChat" "1"
+            "Cooldown"  "12"
+            "Sounds"
+            {
+                "warp_beast_warp"      "1"
+            }
+        }
+    }
+
+    // Item pickup
+    "OnItemPickup"
+    {
+         "item_aegis"
+        {
+            "Priority"  "2"
+            "Delay"     "1"
+            "Sounds"
+            {
+                "warp_beast_items_aegis"      "1"
+            }
+        }
+        "item_cheese"
+        {
+            "Priority"  "2"
+            "Cooldown"  "300"
+            "Delay"     "1"
+            "Sounds"
+            {
+                "warp_beast_items_cheese"      "1"
+            }
+        }
+    }
+
+    // Item purchases
+    "OnItemPurchased"
+    {
+        "item_blink"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "warp_beast_items_blink"      "1"
+            }
+        }
+
+        "item_dagon"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "warp_beast_items_dagon"      "1"
+            }
+        }
+
+        "item_bloodthorn"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "warp_beast_items_bloodthorn"      "1"
+            }
+        }
+
+        "item_bloodstone"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "warp_beast_items_bloodstone"      "1"
+            }
+        }
+
+        "item_sheepstick"
+        {
+            "Delay"     "1"
+            "Sounds"
+            {
+                "warp_beast_items_sheep"      "1"
+            }
+        }
+    }
+
+    "OnVictory"
+    {
+        "Priority"  "2"
+        "Delay" "10"
+        "Sounds"
+        {
+         "warp_beast_victory"      "1"
+        }
+    }
+
+    "OnDefeat"
+    {
+        "Priority"  "2"
+        "Delay" "10"
+        "Sounds"
+        {
+         "warp_beast_defeat"      "1"
+        }
+    }
+
+    "OnDoubleDamageRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "warp_beast_rune_double"      "1"
+        }
+    }
+
+    "OnHasteRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "warp_beast_rune_haste"      "1"
+        }
+    }
+
+    "OnIllusionRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "warp_beast_rune_illusion"      "1"
+        }
+    }
+
+    "OnInvisibilityRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "warp_beast_rune_invis"      "1"
+        }
+    }
+
+    "OnRegenRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "warp_beast_rune_regen"      "1"
+        }
+    }
+
+    "OnBountyRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "warp_beast_rune_bounty"      "1"
+        }
+    }
+    
+    "OnArcaneRune"
+    {
+        "Priority"  "2"
+        "AllChat" "1"
+        "Delay" "0.5"
+        "Sounds"
+        {
+            "warp_beast_rune_arcane"      "1"
+        }
+    }
+}

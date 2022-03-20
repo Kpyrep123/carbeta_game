@@ -1,0 +1,85 @@
+"itembuilds"
+{
+	"author"		"SwordBacon"
+	"hero"			"npc_dota_hero_viscous_ooze"
+	"Title"			"Recommended items for Viscous Ooze"
+	
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_tango"
+			"item"		"item_flask"
+			"item"		"item_ring_of_protection"
+			"item"		"item_branches"
+			"item"		"item_enchanted_mango"
+		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{	
+			"item"		"item_soul_ring"
+			"item"		"item_boots"
+			"item"		"item_magic_stick"
+			"item"		"item_ring_of_basilius"
+			"item"		"item_wind_lace"
+		}
+		
+		"#DOTA_Item_Build_Mid_Items"
+		{
+			"item"		"item_hand_of_midas"
+			"item"		"item_travel_boots"
+			"item"		"item_ancient_janggo"
+		}
+		
+		"#DOTA_Item_Build_Late_Items"
+		{
+			"item"		"item_heart"
+			"item"		"item_octarine_core"
+			"item"		"item_ultimate_scepter"
+		}
+		
+		"#DOTA_Item_Build_Misc_Items"
+		{
+			"item"		"item_cyclone"
+			"item"		"item_veil_of_discord"
+			"item"		"item_kaya"
+			"item"		"item_armlet"
+			"item"		"item_sange_and_yasha"
+			"item"		"item_necronomicon_3"
+			"item"		"item_helm_of_the_dominator"
+			"item"		"item_black_king_bar"
+			"item"		"item_sphere"
+			"item"		"item_nullifier"
+			"item"		"item_sheepstick"
+			"item"		"item_blade_mail"
+			"item"		"item_assault"
+			"item"		"item_blink"
+			"item"		"item_hurricane_pike"
+			"item"		"item_skadi"
+			"item"		"item_mjollnir"
+			"item"		"item_monkey_king_bar"
+			"item"		"item_desolator"
+			"item"		"item_greater_crit"
+			"item"		"item_moon_shard"
+			"item"		"item_silver_edge"
+			"item"		"item_satanic"
+			"item"		"item_butterfly"
+			"item"		"item_radiance"
+			"item"		"item_shivas_guard"
+			"item"		"item_rod_of_atos"
+			"item"		"item_lotus_orb"
+			"item"		"item_solar_crest"
+			"item"		"item_heavens_halberd"
+			"item"		"item_guardian_greaves"
+			"item"		"item_ethereal_blade"
+			"item"		"item_dagon_5"
+			"item"		"item_abyssal_blade"
+			"item"		"item_bloodthorn"
+			"item"		"item_meteor_hammer"
+			"item"		"item_aeon_disk"
+			"item"		"item_bloodstone"
+			"item"		"item_rapier"
+			"item"		"item_refresher"
+		}
+	}
+}

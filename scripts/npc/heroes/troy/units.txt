@@ -1,0 +1,120 @@
+//Dota Heroes file
+"DOTAUnits"
+{
+	"Version"       "1"
+
+	//=================================================================================================================
+	// HERO: Jeremy Khan
+	//=================================================================================================================
+	"npc_dota_hero_troy"
+	{
+		"BaseClass"					"npc_dota_hero"
+		"HeroID"                    "139"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
+
+		// Model info
+		"Model"                     "models/heroes/jeremy/jeremy.vmdl"
+		"ModelScale"                "1.0"
+		"LoadoutScale"              "1.0"
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "160"
+
+		// Sound info
+		"SoundSet"                  "Hero_Axe"
+		"GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+		"VoiceFile"                 "soundevents/voscripts/game_sounds_vo_jeremy_khan.vsndevts"
+
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"     "22"
+		"AttributeStrengthGain"     "2.5"
+		"AttributeBaseIntelligence" "15"
+		"AttributeIntelligenceGain" "1.6"
+		"AttributeBaseAgility"      "21"
+		"AttributeAgilityGain"      "2.0"
+
+		// Misc stats
+		"ArmorPhysical"             "0"
+		"MagicalResistance"         "25"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"           "24"
+		"AttackDamageMax"           "34"
+		"AttackRate"                "1.700000"
+		"AttackAnimationPoint"      "0.400000"
+		"AttackAcquisitionRange"    "800"
+		"AttackRange"               "150"
+		//"ProjectileSpeed"           "1250"
+		"MovementSpeed"             "305"
+		"MovementTurnRate"          "0.600000"
+
+		// Abilities
+		"Ability1"                  "troy_battle_lunge"
+		"Ability2"                  "troy_fury"
+		"Ability3"                  "troy_immolation"
+		"Ability4"                  "generic_hidden"
+		"Ability5"                  "troy_ill_be_back"
+		"Ability6"                  "troy_rage"
+		
+		// Talents
+		"Ability10"                 "special_bonus_magic_resistance_15"          //10 Right
+		"Ability11"                 "special_bonus_strength_8"          //10 Left
+		"Ability12"                 "special_bonus_troy_battle_lunge_range"      //15 Right
+		"Ability13"                 "special_bonus_troy_immolation_duration"   //15 Left
+		"Ability14"                 "special_bonus_troy_fury_radius"      //20 Right    
+		"Ability15"                 "special_bonus_troy_battle_lunge_damage"      //20 Left
+		"Ability16"                 "special_bonus_troy_rage_double_damage"      //25 Right
+		"Ability17"                 "special_bonus_troy_immolation_max_dps"      //25 Left
+		
+		// Card info
+		"Role"          "Carry,Disabler,Durable,Nuker"
+		"Rolelevels"    "1,2,2,3"
+		"Complexity"    "2"
+		
+		// Misc
+		"NameAliases"       "wr"
+		"url"       "Windranger"
+		"LastHitChallengeRival"     "npc_dota_hero_axe" //TODO: Check if its used still
+		
+		//TODO: RenderablePortrait
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+
+		// Health Bar	
+		"HealthBarOffset"		"200"
+	}
+
+	"npc_arena_dummy"
+	{
+		"BaseClass"            "npc_dota_base_additive"
+		"AttackCapabilities"   "DOTA_UNIT_CAP_NO_ATTACK"
+		"VisionDaytimeRange"   "0"  
+		"VisionNighttimeRange"  "0"
+		"UnitRelationshipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_NONE"
+		"Ability1"              "arena_cast_error_outside"
+		"Ability2"				"arena_cast_error_inside"
+	}
+}

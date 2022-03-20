@@ -1,0 +1,110 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Fairy Queen: Quell
+	//=================================================================================================================
+	"fairy_queen_quell"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"custom_abilities/fairy_queen_quell/fairy_queen_quell"
+		"AbilityTextureName"			"Fire_Spirits_icon"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"5"
+        "AbilityProcsMagicStick"		"1"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+			"particle"	"particles/custom_indicator_cone.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_2"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.0"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"70 75 80 85 90"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_distance"				"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_width"					"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"					"2000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"					"150 175 200 225 250"
+				"LinkedSpecialBonus"		"spec_fairy_damage"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_strong"				"180 190 200 220 230"
+				"LinkedSpecialBonus"		"spec_fairy_damage"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_duration"		"4 5 6 7 8"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"as_bonus"				"40 45 50 55 60"
+			}
+		}
+	}
+	"spec_fairy_damage"
+	{
+			"BaseClass"				"special_bonus_undefined"
+			"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"		"FIELD_INTEGER"
+					"value"			"90"	// Hardcoded in the ability
+				}
+			}
+	}
+}

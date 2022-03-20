@@ -1,0 +1,635 @@
+// Mifune Abilities File
+
+"DOTAAbilities"
+{
+	//=====================================================================================================
+	// MIFUNE: Raigeki
+	//=====================================================================================================
+	"mifune_raigeki"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/mifune/mifune_raigeki"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"0.9"
+		"AbilityTextureName"			"mifune_raigeki"
+
+		"AbilityCastRange"				"600 700 750 800 900"
+		"AbilityCastPoint"				"0.3"
+
+		"AbilityCooldown"				"18 17 16 15 14"
+		"AbilityManaCost"				"100 105 115 125 135"
+		        "MaxLevel"						"5"
+		        "AbilityProcsMagicStick"		"1"
+				
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"80 100 120 140 160"
+				"LinkedSpecialBonus"			"special_bonus_mifune_1"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"150"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"range"							"600 700 750 800 900"
+				"LinkedSpecialBonus"			"special_bonus_mifune_2"	// hardcoded cast range talent
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"speed"							"5000"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"path_radius"					"200"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"end_radius"					"300"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"blind_duration"				"2.5"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_mifune/mifune_shockwave.vpcf"
+			"particle"	"particles/units/heroes/hero_mifune/raigeki_end.vpcf"
+		}
+	}
+
+	//=====================================================================================================
+	// MIFUNE: Bushido
+	//=====================================================================================================
+	"mifune_bushido"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/mifune/mifune_bushido"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityTextureName"			"mifune_bushido"
+        "MaxLevel"						"5"
+        "AbilityProcsMagicStick"		"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50 45 40 35 30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"evasion"						"30"
+				"LinkedSpecialBonus"			"special_bonus_mifune_4"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"duration"						"7"
+			}
+		}
+
+		"precache"
+		{
+			"particle" "particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_omni_slash_tgt.vpcf"
+			"particle" "particles/units/heroes/hero_mifune/bushido_unit.vpcf"
+		}
+	}
+
+	//=====================================================================================================
+	// MIFUNE: Zanmato
+	//=====================================================================================================
+	"mifune_zanmato"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/mifune/mifune_zanmato"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"mifune_zanmato"
+
+		"AbilityCooldown"				"9 8 7 6 5"
+		"AbilityManaCost"				"0"
+        "MaxLevel"						"5"
+        "AbilityProcsMagicStick"		"1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"60 70 80 90 100"
+				"LinkedSpecialBonus"		"special_bonus_mifune_3"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"				"0.6"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_amount"				"-100"
+			}
+		}
+		
+		"precache"
+		{
+			"soundfile"						"soundevents/game_sounds_heroes/game_sounds_mifune.vsndevts"
+			"particle"						"particles/units/heroes/hero_mifune/zanmato_trail.vpcf"
+			"particle"						"particles/units/heroes/hero_mifune/new_zanmato_slash.vpcf"
+		}
+	}
+
+	//=====================================================================================================
+	// MIFUNE: Genso
+	//=====================================================================================================
+	"mifune_genso"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/mifune/mifune_genso"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"mifune_genso"
+		"LinkedAbility"					"mifune_sacrifice"
+
+		"AbilityCastRange"				"900"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"AbilityCastPoint"				"0.3"	
+		"HasScepterUpgrade"				"1"
+		"AbilityCooldown"				"90"
+		"AbilityManaCost"				"100 125 150 175"
+        "MaxLevel"						"4"
+        "AbilityProcsMagicStick"		"1"
+		
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"duration"						"14"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"hero_health"					"2"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"armor_reduction"				"-3 -4 -5 -6"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_interval"					"1.0"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_duration"					"0.25"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dps"							"60 90 120 150"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"400"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius_increase"				"100"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_radius"					"950"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"ms_slow"						"-6 -8 -10 -12"
+			}
+		}
+	}
+
+	//=====================================================================================================
+	// MIFUNE: Aghs
+	//=====================================================================================================
+	"mifune_sacrifice"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/mifune/mifune_sacrifice"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"			"mifune_sacrifice"
+
+		"AbilityCastRange"				"0"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"AbilityCastPoint"				"0.1"
+
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"50"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_health"					"3"
+			}
+		}
+	}
+
+	"mifune_soul_armor"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/mifune/mifune_genso"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"mifune_genso"
+
+		"AbilityCastRange"				"900"
+		"MaxLevel"						"3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_reduction"		"-3 -4 -5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_increase"		"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_decrease"		"0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_radius"			"950"
+			}
+		}
+	}
+
+	"mifune_soul_slow"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/mifune/mifune_genso"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"mifune_genso"
+
+		"AbilityCastRange"				"900"
+		"MaxLevel"						"3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ms_slow"				"-6 -8 -10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_increase"		"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_decrease"		"0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_radius"			"950"
+			}
+		}
+	}
+
+	"mifune_soul_damage"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/mifune/mifune_genso"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"mifune_genso"
+
+		"AbilityCastRange"				"900"
+		"MaxLevel"						"3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"60 90 120"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_increase"		"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_decrease"		"0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_radius"			"950"
+			}
+		}
+	}
+
+	"mifune_soul_doom"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/mifune/mifune_genso"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"mifune_genso"
+
+		"AbilityCastRange"				"900"
+		"MaxLevel"						"3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_interval"			"1.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"0.25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_increase"		"100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_decrease"		"0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_radius"			"950"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Mifune Talent 1: +50 Raigeki Damage
+	//=================================================================================================================
+	"special_bonus_mifune_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_unique_centaur_2"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"value"		"50"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Mifune Talent 2: +1000 Raigeki range
+	//=================================================================================================================
+	"special_bonus_mifune_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_unique_centaur_2"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"value"		"500"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Mifune Talent 3: +50 Zanmato damage
+	//=================================================================================================================
+	"special_bonus_mifune_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_unique_centaur_2"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"value"		"125"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Mifune Talent 4: 100% Bushido Evasion
+	//=================================================================================================================
+	"special_bonus_mifune_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_unique_centaur_2"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"value"		"30"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Mifune Talent 5: hide chest colors
+	//=================================================================================================================
+	"special_bonus_mifune_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_unique_centaur_2"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"value"		"1"
+			}
+		}
+	}
+
+	// Mifune Talent 6: bushido move speed
+	"special_bonus_mifune_6"
+	{
+		"BaseClass"						"special_bonus_unique_centaur_2"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"value"		"40"
+			}
+		}
+	}
+
+	// Mifune Talent 7: zanmato slow duration
+	"special_bonus_mifune_7"
+	{
+		"BaseClass"						"special_bonus_unique_centaur_2"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"value"		"0.4"
+			}
+		}
+	}
+
+	// Mifune Talent 8: bushido cooldown reduction
+	"special_bonus_mifune_8"
+	{
+		"BaseClass"						"special_bonus_unique_centaur_2"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"value"		"4"
+			}
+		}
+	}
+}

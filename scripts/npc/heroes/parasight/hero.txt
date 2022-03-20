@@ -1,0 +1,85 @@
+//Dota Heroes file
+"DOTAHeroes"
+{
+	"Version"       "1"	
+	//=================================================================================================================
+	// HERO: Parasight the Fungal Warrior
+	//=================================================================================================================
+	"npc_dota_hero_parasight"
+	{
+		"BaseClass"             "npc_dota_hero"         // Hero to override
+		"HeroID"                    "129"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
+		
+		// Model info
+		"Model"                     "models/items/furion/treant/shroomling_treant/shroomling_treant.vmdl"
+		"ModelScale"                "1.4"
+		"LoadoutScale"              "1.4"
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "160"
+		
+		// Sound info
+		"SoundSet"                  "Hero_Treant"
+		"PickSound"                 "parasight_spawn"
+		"BanSound"                  "treant_treant_anger_11"
+		"HeroSelectSoundEffect"     "parasight_spawn"
+		"GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_parasight.vsndevts"
+		"VoiceFile"                 "soundevents/voscripts/game_sounds_vo_parasight.vsndevts"
+		
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"     "23"
+		"AttributeStrengthGain"     "2.000000"
+		"AttributeBaseIntelligence" "22"
+		"AttributeIntelligenceGain" "2.300000"
+		"AttributeBaseAgility"      "14"
+		"AttributeAgilityGain"      "1.400000"
+
+		"ProjectileModel"           "particles/units/heroes/hero_parasight/parasight_base_attack.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"           "900"       // Speed of projectile.
+		
+		// Misc stats
+		"ArmorPhysical"             "3"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"           "22"
+		"AttackDamageMax"           "34"
+		"AttackRate"                "1.700000"
+		"AttackAnimationPoint"      "0.400000"
+		"AttackAcquisitionRange"    "800"
+		"AttackRange"               "600"
+		"ProjectileSpeed"           "1250"
+		"MovementSpeed"             "295"
+		"MovementTurnRate"          "0.600000"
+		
+		// Abilities
+		"Ability1"                  "parasight_catalytic_spore"
+		"Ability2"                  "parasight_fungal_pod"
+		"Ability3"                  "parasight_combust"
+		"Ability4"                  "parasight_sporocarp"
+        "Ability5"      			"generic_hidden"
+		"Ability6"                  "parasight_parasitic_invasion"
+		
+		// Talents
+		"Ability10"                 "special_bonus_gold_income_10"          //10 Right
+		"Ability11"                 "special_bonus_cast_range_100"          //10 Left
+		"Ability12"                 "special_bonus_unique_parasight_1"      //15 Right
+		"Ability13"                 "special_bonus_cooldown_reduction_12"   //15 Left
+		"Ability14"                 "special_bonus_unique_parasight_3"      //20 Right    
+		"Ability15"                 "special_bonus_unique_parasight_2"      //20 Left
+		"Ability16"                 "special_bonus_unique_parasight_5"      //25 Right
+		"Ability17"                 "special_bonus_unique_parasight_4"      //25 Left
+		
+		// Card info
+		"Role"          "Carry,Support,Disabler,Escape,Nuker"
+		"Rolelevels"    "1,1,1,1,1"
+		"Complexity"    "2"
+		
+		// Misc
+		"NameAliases"       "wr"
+		"url"       "Windranger"
+		"LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+		
+		//TODO: RenderablePortrait
+	}
+}

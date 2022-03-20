@@ -1,0 +1,31 @@
+"DOTAAbilities"
+{
+    "spell_lab_souls_damage"
+    {
+        "BaseClass"                                                            "ability_lua"
+        "ScriptFile"                                                           "abilities/spell_lab/souls/damage.lua"
+        "AbilityTextureName"                                                   "bloodseeker_thirst_lua"
+        "AbilityType"                                                          "DOTA_ABILITY_TYPE_BASIC"
+        "AbilityBehavior"                                                      "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "HasScepterUpgrade"                                                    "0"
+        "precache"
+        {
+            "particle"                                                     "particles/spell_lab/soul_remnant.vpcf"
+            "particle"                                                     "particles/spell_lab/souls_gain.vpcf"
+        }
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                                             "FIELD_FLOAT"
+        		"per_soul"						"0.4 0.6 0.8 1.0"
+            }
+            "02"
+            {
+                "var_type"                                             "FIELD_FLOAT"
+        		"max"						"50 75 90 110"
+            }
+        }
+        
+    }
+}

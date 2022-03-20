@@ -1,0 +1,51 @@
+"DOTAAbilities"
+{
+	// Undroppable scepter
+	// Concept by SUNSfan
+	// Implementation by Firetoad
+	// Date: July 13, 2018
+
+	//	Undroppable scepter
+	"item_draghanims_scepter"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"2113"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_draghanims_scepter.lua"
+		"AbilityTextureName" 			"ultimate_scepter"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4200"
+		"ItemShopTags"					"int;str;agi;mana_pool;health_pool;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"aghs;ultimate;aghanim's scepter;ags"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"		// heroes for whom this is a problem solve it in their code - ogre magi, meepo
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+		"ItemSellable"					"0"
+		"AllowedInBackpack"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"175"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"175"
+			}
+		}
+	}
+}

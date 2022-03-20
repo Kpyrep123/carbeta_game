@@ -1,0 +1,170 @@
+//Dota Heroes file
+"DOTAUnits"
+{
+	"Version"       "1"
+
+	//=================================================================================================================
+	// HERO: Brax
+	//=================================================================================================================
+	"npc_dota_hero_brax"
+	{
+		"BaseClass"					"npc_dota_hero"         // Hero to override
+		"HeroID"                    "142"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
+
+		// Model info
+		"Model"                     "models/heroes/thunderboar/thunderboar.vmdl"
+		"ModelScale"                "1.3"
+		"LoadoutScale"              "1.3"
+		"HeroGlowColor"             "255 100 100"
+		"HealthBarOffset"           "160"
+
+		// Sound info
+		"SoundSet"                  "Hero_Stormspirit"
+		"PickSound"                 "ss_spawn_01"
+		"BanSound"                  "ss_anger_01"
+		"HeroSelectSoundEffect"     "ss_spawn_01"
+		"GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+		"VoiceFile"                 "soundevents/voscripts/game_sounds_vo_stormspirit.vsndevts"
+
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"     "22"
+		"AttributeStrengthGain"     "2.800000"
+		"AttributeBaseIntelligence" "21"
+		"AttributeIntelligenceGain" "2.200000"
+		"AttributeBaseAgility"      "16"
+		"AttributeAgilityGain"      "1.800000"
+
+		// Misc stats
+		"ArmorPhysical"             "1.5"
+		"MagicalResistance"			"25"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"ProjectileModel"           "" // Particle system model for projectile.
+		"ProjectileSpeed"           "900"       // Speed of projectile.
+		"AttackDamageMin"           "30"
+		"AttackDamageMax"           "34"
+		"AttackRate"                "1.700000"
+		"AttackAnimationPoint"      "0.550000"
+		"AttackAcquisitionRange"    "800"
+		"AttackRange"               "150"
+		"MovementSpeed"             "290"
+		"MovementTurnRate"          "1.000000"
+
+		// Abilities
+		"Ability1"                  "brax_stomp"
+		"Ability2"                  "brax_rush"
+		"Ability3"                  "brax_tornado"
+		"Ability4"                  "generic_hidden"
+        "Ability5"      			"generic_hidden"
+		"Ability6"                  "brax_kinetic_energy"
+		
+		// Talents
+		"Ability10"					"special_bonus_brax_1"
+		"Ability11"					"special_bonus_armor_5"
+		"Ability12"					"special_bonus_brax_2"
+		"Ability13"					"special_bonus_evasion_15"
+		"Ability14"					"special_bonus_brax_3" 
+		"Ability15"					"special_bonus_strength_20"
+		"Ability16"					"special_bonus_brax_4"
+		"Ability17"					"special_bonus_brax_5"
+		
+		// Card info
+		"Role"          "Carry,Disabler,Durable,Nuker"
+		"Rolelevels"    "1,2,2,3"
+		"Complexity"    "2"
+		
+		// Misc
+		"NameAliases"       "brax"
+		"url"       "Brax"
+		"LastHitChallengeRival"     "npc_dota_hero_storm_spirit" //TODO: Check if its used still
+		
+		//TODO: RenderablePortrait
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"200"
+		"StatusHealthRegen"			"1.5000"
+		"StatusMana"				"75"
+		"StatusManaRegen"			"0.9"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+
+		// Health Bar	
+		"HealthBarOffset"		"200"
+	}
+
+	//=================================================================================================================
+	// Brax: Tornado
+	//=================================================================================================================
+	"npc_dota_brax_tornado_tornado"
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/development/invisiblebox.vmdl"
+		"BaseClass"					"npc_dota_beastmaster_boar"
+		"Level"						"1"
+		"ModelScale"				"0.4"
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"
+		"AttackDamageMax"			"0"
+		"AttackRate"				"1.0"
+		"AttackAnimationPoint"		"0.0"
+		"AttackAcquisitionRange"	"0"
+		"AttackRange"				"0"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"60"
+		"HealthBarOffset"			"90"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"550"
+		"MovementTurnRate"			"1.0"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1"
+		"StatusHealthRegen"			"0.0"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"100"
+		"VisionNighttimeRange"		"100"
+	}
+}

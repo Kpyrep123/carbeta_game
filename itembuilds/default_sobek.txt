@@ -1,0 +1,63 @@
+"itembuilds"
+{
+	"author"		"SwordBacon"
+	"hero"			"npc_dota_hero_sobek"
+	"Title"			"Default build for Koh the Bold"
+	
+	"Items"
+	{
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_tango"
+			"item"		"item_flask"
+			"item"		"item_stout_shield"
+			"item"		"item_enchanted_mango"
+			
+		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{
+			
+			"item"		"item_phase_boots"
+			"item"		"item_magic_stick"
+		}
+		
+		"#DOTA_Item_Build_Mid_Items"
+		{
+	
+			"item"		"item_magic_wand"
+			"item"		"item_armlet"
+		}
+		
+		"#DOTA_Item_Build_Late_Items"
+		{
+			"item"		"item_ultimate_scepter"
+			"item"		"item_heart"
+		}	
+
+		
+		"#DOTA_Item_Build_Misc_Items"
+		{
+			"item"		"item_blink"
+			"item"		"item_blade_mail"
+			"item"		"item_crimson_guard"
+			"item"		"item_pipe"
+			"item"		"item_force_staff"
+			"item"		"item_glimmer_cape"
+			"item"		"item_assault_cuirass"
+			"item"		"item_heavens_halberd"
+			"item"		"item_shivas_guard"
+			"item"		"item_radiance"
+			"item"		"item_mjollnir"
+			"item"		"item_sphere"
+			"item"		"item_lotus_orb"
+			"item"		"item_black_king_bar"
+			"item"		"item_abyssal_blade"
+			"item"		"item_cyclone"
+			"item"		"item_hand_of_midas"
+			"item"		"item_echo_sabre"
+			"item"		"item_urn_of_shadows"
+
+		}
+	}
+}

@@ -1,0 +1,237 @@
+//Dota Heroes file
+"DOTAUnits"
+{
+	"Version"       "1"	
+
+	"npc_dota_hero_viscous_ooze"
+	{
+		"BaseClass"					"npc_dota_hero_necrolyte"	// Class of entity of link to.
+		"MinimapIcon"		"icons/npc_dota_hero_viscous_ooze"
+		"IsCustom"				"1"
+		"BotImplemented"		"0"
+		"NewHero"		"1"
+		"HeroPool1"		"0"
+		"AbilityDraftDisabled"	"1"
+		"ARDMDisabled"			"1"
+		"LoadoutScale"			"1"
+		"DisableWearables"		"1"
+		"Press"			"1"
+		"ForceEnable"	"1"
+		"Legs"	"6"
+		"HeroUnlockOrder"		"1"
+		"CMTournamentIgnore"		"0"
+		"new_player_enable"		"0"
+		"Model"		"models/heroes/viscous_ooze/viscous_ooze_animation.vmdl"
+		// "Portrait"		"vgui/hud/heroportraits/portrait_venomancer"
+		"IdleExpression"		"scenes/venomancer/venomancer_exp_idle_01.vcd"
+		"IdleSoundLoop"		"Hero_Venomancer.IdleLoop"
+		"SoundSet"		"Hero_Necrolyte"
+		"Enabled"		"1"
+		"Role"			"Carry,Jungler,Durable"
+		"Rolelevels"	"3,1,2"
+		"Team"		"Bad"
+		"HeroID"		"130"
+		"ModelScale"		"0.880000"
+		"LoadoutScale"		"0.630000"
+		"NameAliases"		"Viscous Ooze"
+		"url"		"Viscous Ooze"
+		"GibType"		"goo"
+		"GibTintColor"	"42 112 32 255"
+		//"PickSound"		"abaddon_abad_spawn_01"
+		//"BanSound"		"abaddon_abad_anger_07"
+		"NoCombine"		"1"
+		"CMEnabled"		"1"
+		"LastHitChallengeRival"		"npc_dota_hero_viper"
+		"HeroSelectSoundEffect"		"Hero_Venomancer.Pick"
+
+		// Abilities
+        //-------------------------------------------------------------------------------------------------------------
+        "Ability1"              "viscous_ooze_slime_trail"      // Ability 1
+        "Ability2"              "viscous_ooze_split_oozelings"      // Ability 2
+        "Ability3"              "viscous_ooze_sticky_membrane"      // Ability 3
+        "Ability4"              "viscous_ooze_treasure_magic"       // Ability 4
+        "Ability5"              "generic_hidden"
+        "Ability6"              "viscous_ooze_consume_items"        // Ultimate
+        "Ability7"              "viscous_ooze_size_mutator"     // Innate
+
+        // Talents
+        //-------------------------------------------------------------------------------------------------------------
+        "Ability10"                 "special_bonus_mp_regen_2"              //10 Right
+        "Ability11"                 "special_bonus_armor_4"            //10 Left
+        "Ability12"                 "special_bonus_movement_speed_25"          //15 Right
+        "Ability13"                 "special_bonus_unique_viscous_ooze_1"   //15 Left
+        "Ability14"                 "special_bonus_attack_speed_50"             //20 Right    
+        "Ability15"                 "special_bonus_unique_viscous_ooze_2"       //20 Left
+        "Ability16"                 "special_bonus_unique_viscous_ooze_3"       //25 Right
+        "Ability17"                 "special_bonus_unique_viscous_ooze_4"       //25 Left
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"-1"									// Physical protection.
+		"MagicalResistance"			"25"									// Magical protection (percentage).
+
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"35"										// Damage range min.
+		"AttackDamageMax"			"45"										// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
+		"AttackRate"				"1.900"									// Speed of attack.
+		"AttackAnimationPoint"		"0.650"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"400"									// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_viscous_ooze/viscous_ooze_base_attack/viscous_ooze_base_attack.vpcf"		// Particle system model for projectile.
+		"ProjectileSpeed"			"800"									// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"			// Primary Attribute
+		"AttributeBaseStrength"		"40"						// Base strength
+		"AttributeStrengthGain"		"2.5"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"8"						// Base intelligence
+		"AttributeIntelligenceGain"	"0.6"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"10"						// Base agility
+		"AttributeAgilityGain"		"0.75"						// Agility bonus per level.
+
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"250"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"			"200"
+		"StatusHealthRegen"		"1.5000"
+		"StatusMana"			"75"
+		"StatusManaRegen"		"0.9"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+		
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+		
+		//Particles
+		"particle_folder"		"particles/units/heroes/hero_venomancer"
+		
+		//Inventory
+		"HasInventory"				"1"
+		//Voice
+		"VoiceBackgroundSound"		""
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_viscous_ooze.vsndevts"
+		"HealthBarOffset"		"200"
+
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_venomancer/venomancer_loadout.vpcf"
+				{
+					"0"
+					{
+						"type"		"follow_attachment"
+						"location"		"attach_hitloc"
+					}
+				}
+			}
+		}
+		"ItemSlots"
+		{
+			
+		}
+	}
+	
+	"oozeling_1"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+		"Model"						"models/heroes/viscous_ooze/oozeling.vmdl"	// Model.
+		//"SoundSet"					"Hero_Venomancer"					// Name of sound set.
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				"1.1"
+	
+		// Precache
+		//----------------------------------------------------------------
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"			"0"			// Magical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"0"			// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.5"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"10"		// Range within a target can be attacked.
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"70"
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"400"			// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"				"10"		// Experience earn.
+		"BountyGoldMin"				"21"		// Gold earned min.
+		"BountyGoldMax"				"24"		// Gold earned max.
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"50"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"				"DOTA_TEAM_GOODGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+			
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"250"		// Range of vision during day light.
+		"VisionNighttimeRange"		"250"		// Range of vision at night time.
+	
+		//Inventory
+		"HasInventory"				"0"
+	}
+}

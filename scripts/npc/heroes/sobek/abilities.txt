@@ -1,0 +1,460 @@
+// Sobek Abilities File
+
+"DOTAAbilities"
+{
+	"sobek_voracious_appetite"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/sobek/sobek_voracious_appetite.lua"
+		"AbilityTextureName"		"koh_voracious_appetite"
+
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"AbilityCastRange"			"275"
+		"AbilityCooldown"			"30 27 24 21 18"
+		"AbilityManaCost"			"35"
+		"AbilityCastPoint"			"0.0"
+		        "MaxLevel"						"5"
+		        "AbilityProcsMagicStick"		"1"
+				
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_sobek/sobek_voracious_appetite_consume.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_str"				"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_amount"			"-25 -30 -32 -35 -40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_duration"			"3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"14 15 16 17 20"
+			}
+		}
+	}
+
+	// Coded by Ziz
+	"koh_whiplash"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/sobek/koh_whiplash.lua"
+		"AbilityTextureName"		"koh_whiplash"
+
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
+		        "MaxLevel"						"5"
+		        "AbilityProcsMagicStick"		"1"
+				
+		"AbilityCastRange"			"700"
+		"AbilityCooldown"			"20 19 18 17 16"
+		"AbilityManaCost"			"80 90 100 110 120"
+		"AbilityCastPoint"			"0.2"
+		"AbilityCastAnimation"		"ACT_DOTA_ATTACK"
+		"HasShardUpgrade" 			"1"
+
+		"precache"
+		{
+			"particle"				"particles/hero/koh/whiplash.vpcf"
+			"particle"				"particles/hero/koh/whiplash_tip_impact.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"base_damage"		"150 190 230 250 270"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"str_damage"		"100 120 130 140 160"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"root_duration"		"1.0 1.25 1.5 1.75 2.0"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"whip_radius"		"150"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"whip_length"		"700"
+			}
+		}
+	}
+
+	"sobek_protective_hide"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/sobek/sobek_protective_hide.lua"
+		"AbilityTextureName"		"koh_protective_hide"
+
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"heal_duration"		"7"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_healed"		"5 10 15 20"
+			}
+		}
+	}
+
+
+	"sobek_absorption"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/sobek/sobek_absorption.lua"
+		"AbilityTextureName"		"koh_absorption"
+
+		"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
+		"HasScepterUpgrade"			"1"
+
+		"AbilityCastRange"			"700"
+		"AbilityCooldown"			"140.0 120.0 110.0 100.0"
+		"AbilityManaCost"			"250 300 350 400"
+		"AbilityCastPoint"			"0.0"
+		"MaxLevel"						"4"
+		"AbilityProcsMagicStick"		"1"
+		
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_sobek/sobek_absorption.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_pct"		"2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"effect_radius"		"600"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"cd"					"130.0 100.0 90.0 80.0"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"base_damage"			"120.0 140.0 180.0 200.0"
+			}
+		}
+	}
+	
+	// Talent: Voracious Appetite pure and pierces spell immunity
+	//=================================================================================================================
+	"special_bonus_unique_sobek_1"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"1"
+			}
+		}
+	}
+
+	// Talent: Whiplash stuns instead of rooting
+	//=================================================================================================================
+	"special_bonus_unique_sobek_2"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"1"
+			}
+		}
+	}
+		"special_bonus_unique_sobek_3"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"350"
+			}
+		}
+	}
+	"special_bonus_unique_sobek_4"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"-20"
+			}
+		}
+	}
+		//=================================================================================================================
+	// Anti-mage: Spell Shield
+	//=================================================================================================================
+	"sobek_lizzard_skin"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/sobek/lizzardskin.lua"
+		"AbilityTextureName"			"koh_protective_hide"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"5"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+			"particle"	"particles/units/heroes/hero_antimage/antimage_spellshield.vpcf"
+			"particle"	"particles/units/heroes/hero_antimage/antimage_spellshield_reflect.vpcf"
+		}
+
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_magic_resistance"		"5 10 15 20 25"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"hp_regen"			"1.0 1.25 1.5 1.75 2.0"
+				
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"bonus_armor"			"1.0 1.25 1.5 1.75 2.0"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"duration"			"4.0"
+				"LinkedSpecialBonus"	"special_bonus_unquie_skin_dur"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"max_stacks"			"10.0"
+				"LinkedSpecialBonus"	"special_bonus_unquie_hp_reg"
+			}
+		}
+	}
+	"special_bonus_unquie_hp_reg"
+	{
+			"BaseClass"				"special_bonus_undefined"
+			"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"		"FIELD_FLOAT"
+					"value"			"5.0"	// Hardcoded in the ability
+				}
+			}
+	}
+	"special_bonus_unquie_skin_dur"
+	{
+			"BaseClass"				"special_bonus_undefined"
+			"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"		"FIELD_FLOAT"
+					"value"			"1.5"	// Hardcoded in the ability
+				}
+			}
+	}	
+	"special_bonus_unquie_magic_res"
+	{
+			"BaseClass"				"special_bonus_undefined"
+			"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"		"FIELD_FLOAT"
+					"value"			"15.0"	// Hardcoded in the ability
+				}
+			}
+	}	
+	"sobek_burrowstrike_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/sobek/borrow/borrow.lua"
+		"AbilityTextureName"			"sand_king_burrowstrike_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
+			"particle"	"particles/units/heroes/hero_sandking/sandking_burrowstrike.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"350 450 550 650"
+		"AbilityCastPoint"				"0.0"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14 13 12 11"
+		"AbilityManaCost"				"110 120 130 140"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"85 150 215 280"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"burrow_width"		"150"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"burrow_duration"	"1.9 2.0 2.1 2.2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"burrow_speed"		"2000"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"burrow_anim_time"	"0.52"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"tooltip_range"		"350 450 550 650"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range_scepter"		"700 900 1100 1300"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"burrow_speed_scepter"		"3000"
+			}
+		}
+	}
+}

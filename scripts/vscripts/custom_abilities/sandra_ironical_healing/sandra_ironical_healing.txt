@@ -1,0 +1,80 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Sandra Olivia: Ironical Healing
+	//=================================================================================================================
+	"sandra_ironical_healing"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"custom_abilities/sandra_ironical_healing/sandra_ironical_healing"
+		"AbilityTextureName"			"custom/shaman_ancient_forces"
+		"FightRecapLevel"				"1"
+		"AbilityProcsMagicStick"		"1"
+		"MaxLevel"						"5"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+			"particle"	"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+			"particle"	"particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0 7.5 7.0 6.5 6.0"
+		"AbilityManaCost"				"50"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"90 160 240 300 360"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_pct"			"10 11 12 13 14"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"17"
+				"LinkedSpecialBonus"	"spec_bonus_olivia_selfdamage_dur"
+			}
+		}
+	}
+	"spec_bonus_olivia_selfdamage_dur"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"-7"	// Hardcoded in the ability
+			}
+		}
+	}
+}

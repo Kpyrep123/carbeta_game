@@ -1,0 +1,326 @@
+// Parasight Abilities File
+
+"DOTAAbilities"
+{
+    "parasight_catalytic_spore"
+    {
+        "BaseClass"                 "ability_lua"
+        "ScriptFile"                "heroes/parasight/parasight_catalytic_spore.lua"
+        "AbilityTextureName"        "parasight_catalytic_spore"
+
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+        "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_CUSTOM"
+        "AbilityUnitTargetFlags"    "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+
+        "AbilityCastRange"          "600"
+        "AbilityCooldown"           "20"
+        "AbilityManaCost"           "70"
+
+        "precache"
+        {
+            "particle"  "particles/units/heroes/hero_parasight/parasight_catalytic_spore_combust_base.vpcf"
+        }
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "max_growth_time"       "20"
+                "LinkedSpecialBonus"    "special_bonus_unique_parasight_4"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "min_stun"              "0.01"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "max_stun"              "2.5 3.0 3.5 4.0"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "radius"           "400"
+            }
+        }
+    }
+
+    "parasight_fungal_pod"
+    {
+        "BaseClass"                 "ability_lua"
+        "ScriptFile"                "heroes/parasight/parasight_fungal_pod.lua"
+        "AbilityTextureName"        "parasight_fungal_pod"
+
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_POINT"
+        "AbilityCastRange"          "300"
+        "AbilityCooldown"           "18 16 14 12"
+        "AbilityManaCost"           "120 130 140 150"
+
+        "AbilityCastPoint"          "0.1"
+
+        "precache"
+        {
+            "particle"  "particles/units/heroes/hero_parasight/parasight_fungal_pod_ambient.vpcf"
+            "particle"  "particles/units/heroes/hero_parasight/parasight_fungal_pod_combust.vpcf"
+        }
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "max_growth_duration"   "20"
+                "LinkedSpecialBonus"    "special_bonus_unique_parasight_4"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "min_heal"              "100"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "max_heal"              "200 250 300 350"
+                "LinkedSpecialBonus"    "special_bonus_unique_parasight_3"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "max_damage"            "300 400 500 600"
+                "LinkedSpecialBonus"    "special_bonus_unique_parasight_2"
+            }
+            "05"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "heal_duration"         "5.0"
+            }
+            "06"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "heal_radius"           "350"
+            }
+            "07"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "max_limit"              "6"
+                "LinkedSpecialBonus"    "special_bonus_unique_parasight_1"
+            }
+        }
+    }
+
+    "parasight_combust"
+    {
+        "BaseClass"                 "ability_lua"
+        "ScriptFile"                "heroes/parasight/parasight_combust.lua"
+        "AbilityTextureName"        "parasight_combust"
+
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+        "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_BUILDING"
+        "AbilityUnitTargetFlags"    "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
+        "MaxLevel"                  "1"
+        "AbilityCastRange"          "0"
+        "AbilityCooldown"           "0"
+        "AbilityManaCost"           "0"
+        "AbilityProcsMagicStick"        "0"
+
+        "AbilitySpecial"
+        {
+        }
+    }
+
+    "parasight_fungal_pod_combust"
+    {
+        "BaseClass"                 "ability_lua"
+        "ScriptFile"                "heroes/parasight/parasight_fungal_pod_combust.lua"
+        "AbilityTextureName"        "parasight_fungal_pod"
+
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityCastRange"          "350"
+        "AbilityCooldown"           "0"
+        "AbilityManaCost"           "0"
+
+        "AbilitySpecial"
+        {
+        }
+    }
+
+    "parasight_sporocarp"
+    {
+        "BaseClass"                 "ability_lua"
+        "ScriptFile"                "heroes/parasight/parasight_sporocarp.lua"
+        "AbilityTextureName"        "parasight_sporocarp"
+
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"            "FIELD_INTEGER"
+                "vision"       "400 600 800 1000"
+            }
+            "02"
+            {
+                "var_type"            "FIELD_INTEGER"
+                "duration"        "15 30 45 60"
+            }
+        }
+    }
+    
+    "parasight_parasitic_invasion"
+    {
+        "BaseClass"                 "ability_lua"
+        "ScriptFile"                "heroes/parasight/parasight_parasitic_invasion.lua"
+        "AbilityTextureName"        "parasight_parasitic_invasion"
+
+        "AbilityType"               "DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO"
+
+        "AbilityCooldown"           "145 120 100"
+        "AbilityManaCost"           "150 200 250"
+
+        "AbilityCastRange"                "600 1000 1400"
+        "AbilityCastPoint"                "0.3"
+
+        "precache"
+        {
+            "particle"  "particles/units/heroes/hero_parasight/parasight_parasitic_invasion.vpcf"
+        }
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "max_growth_duration"   "20"
+                "LinkedSpecialBonus"    "special_bonus_unique_parasight_4"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "invasion_duration"  "60"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "max_control_duration"   "6.0 8.0 10.0"
+            }
+        }
+    }
+    // Talent: +3 Max Fungal Pods
+    //=================================================================================================================
+    "special_bonus_unique_parasight_1"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "special_bonus_undefined"
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "MaxLevel"  "1"
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "value"             "3"
+            }
+        }
+    }
+    // Talent: +300 Fungal Pod Damage
+    //=================================================================================================================
+    "special_bonus_unique_parasight_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "special_bonus_undefined"
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "MaxLevel"  "1"
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "value"             "300"
+            }
+        }
+    }
+    // Talent: +200 Fungal Pod Damage
+    //=================================================================================================================
+    "special_bonus_unique_parasight_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "special_bonus_undefined"
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "MaxLevel"  "1"
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "value"             "200"
+            }
+        }
+    }
+    // Talent: -12s Max Growth Time
+    //=================================================================================================================
+    "special_bonus_unique_parasight_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "special_bonus_undefined"
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "MaxLevel"  "1"
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "value"             "-12"
+            }
+        }
+    }
+    // Talent: Sporocarp provides Truesight
+    //=================================================================================================================
+    "special_bonus_unique_parasight_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "special_bonus_undefined"
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "MaxLevel"  "1"
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "value"             "1"
+            }
+        }
+    }
+}

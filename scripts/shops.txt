@@ -189,9 +189,8 @@
 		"item"		"item_bloodthorn"
 		"item"		"item_imba_abyssal_blade"	
 		"item"		"item_holy_book"
-		"item"		"item_bee_sting"
-		"item"		"item_skull_of_shantak"
-		"item"		"item_stone_of_tears"
+		"item"		"item_ethereal_blade"
+
 					
 	}
 		

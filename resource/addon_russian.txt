@@ -3477,5 +3477,16 @@
 "DOTA_Tooltip_ability_nova_nuclear_strike_damage"									"УРОН:"
 "DOTA_Tooltip_ability_nova_nuclear_strike_radius"									"РАДИУС:"
 "DOTA_Tooltip_ability_nova_nuclear_strike_scepter_description"						"После взрыва ракета разрывается на 25 касетных снарядов которые разлетаются в случайное место в радиусе от 300 до 1000 и наносят противникам 150 урона в радиусе 300 в месте разрыва. "
+
+"DOTA_Tooltip_ability_ability_illusion_squal_lua"											"Punitive Detachment"
+"DOTA_Tooltip_ability_ability_illusion_squal_lua_description"								"Направляет на выбранного противника несколько иллюзий которые используют на него способность Blink Strike. Иллюзии имеют сниженный исходящий урон."
+"DOTA_Tooltip_ability_ability_illusion_squal_lua_lore"										"Отряд который использовался для свержения королей."
+"DOTA_Tooltip_ability_ability_illusion_squal_lua_max_attacks"								"ВСЕГО АТАК:"
+"DOTA_Tooltip_ability_ability_illusion_squal_lua_outgoingDamage"							"%УМЕНЬШЕНИЕ УРОНА:"
+"DOTA_Tooltip_ability_special_bonus_unquie_2_attacks"										"+2 атаки от Punitive Detachment"
+"DOTA_Tooltip_ability_special_bonus_unquie_sqwal_dmg"										"-15% к снижению урона Punitive Detachment"
+
+
+
 }				
 }

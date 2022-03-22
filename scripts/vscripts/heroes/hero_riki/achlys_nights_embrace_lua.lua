@@ -8,7 +8,7 @@ function achlys_nights_embrace_lua:OnSpellStart(  )
 	
 	ParticleManager:CreateParticle("particles/achlys_nights_embrace.vpcf", PATTACH_ABSORIGIN, self:GetCaster())
 	EmitSoundOn("Hero_Bane.Enfeeble", self:GetCaster())
-	Timers:CreateTimer(0.2, function()
+	Timers:CreateTimer(0.5, function()
 		caster:AddNewModifier(caster, ability, "modifier_achlys_nights_embrace_lua", {duration = duration})
 	end)
 end

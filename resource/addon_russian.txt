@@ -3119,7 +3119,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unquie_blink_silence_description"	"Длительность эффекта складывается с предыдущим за каждое использование. "
 		"DOTA_Tooltip_ability_special_bonus_unquie_veerah_ills_dmg"				"+10% к урону иллюзий Killer's Sqwal"
 		"DOTA_Tooltip_ability_special_bonus_unquie_veerah_blink_bonus"			"+40 к урону BlinkStrike"
-		"DOTA_Tooltip_ability_special_bonus_unquie_veerah_splash"				"Атаки по противникам в линии между героем и целью. "
+		"DOTA_Tooltip_ability_special_bonus_unquie_veerah_splash"				"Атаки по противникам в линии между героем и целью Blink Strike. "
 		"DOTA_Tooltip_ability_special_bonus_unquie_evasion"						"+50% уклонения если в радиусе 400 нет героев. "
 
 
@@ -3490,5 +3490,21 @@
 
 "DOTA_Tooltip_modifier_achlys_nights_embrace_lua"									"Shadow"
 "DOTA_Tooltip_ability_special_bonus_unquie_manacost_veerah"							"-2% стоимости маны Night Embrace"
+"DOTA_Tooltip_ability_blink_strike_datadriven_Description"	"Герой телепортируется за спину цели и, если это враг, наносит ему урон."
+"DOTA_Tooltip_ability_blink_strike_datadriven"											"Blink Strike"
+"DOTA_Tooltip_ability_blink_strike_datadriven_lore"										"Удар который оттачивался годами."
+"DOTA_Tooltip_ability_blink_strike_datadriven_bonus_damage"								"УРОН:"
+"DOTA_Tooltip_ability_blink_strike_datadriven_tooltip_range"							"ДАЛЬНОСТЬ:"	
+
+"DOTA_Tooltip_modifier_status_bleed"												"Bleeding"
+"DOTA_Tooltip_ability_veerah_killer_instinct_lua"											"Killer's Instinct"
+"DOTA_Tooltip_ability_veerah_killer_instinct_lua_description"								"Если в радиусе 400 от Виры есть вражеский герой, то она получает дополнительные скорость атаки и передвижения, а её атаки могут вызвать кровотечение с шансом %chance_pct%%
+<font color='#b50d0d'>Кровотечение: </font> Наносит 35% от базового урона владельца каждые 0,5 сек в течение 3,5 сек."
+
+
+
+"DOTA_Tooltip_ability_veerah_killer_instinct_lua_ms_bonus"									"СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
+"DOTA_Tooltip_ability_veerah_killer_instinct_lua_as_bonus"									"СКОРОСТЬ АТАКИ:"
+
 }				
 }

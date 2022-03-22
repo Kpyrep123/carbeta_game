@@ -126,7 +126,7 @@ function modifier_illusion_squal_lua:OnIntervalThink()
 	local subab = illusion:FindAbilityByName("blink_strike_datadriven_ills")
 	local point = self:GetParent():GetAbsOrigin()
 	local dmg = illusion:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_outdmg", {duration = 1})
-	dmg:SetStackCount(self:GetAbility():GetSpecialValueFor("outgoingDamage")) + self:GetCaster():GetTalentValue("special_bonus_unquie_sqwal_dmg")
+	dmg:SetStackCount(self:GetAbility():GetSpecialValueFor("outgoingDamage") + self:GetCaster():GetTalentValue("special_bonus_unquie_sqwal_damage"))
 	local forward = (point - origin):Normalized()
 		illusion:SetForwardVector(forward)
 		illusion:SetControllableByPlayer(0, false)
@@ -154,6 +154,9 @@ function modifier_outdmg:IsHidden() return true end
 function modifier_outdmg:IsPurgable() return false end
 function modifier_outdmg:GetTexture() return end
 function modifier_outdmg:GetEffectName() return end
+function modifier_outdmg:GetAttributes(  )
+return MODIFIER_ATTRIBUTE_PERMANENT
+end
 
 function modifier_outdmg:OnCreated()
 if not IsServer() then return end

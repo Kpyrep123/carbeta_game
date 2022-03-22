@@ -1180,18 +1180,18 @@
 		"DOTA_Tooltip_ability_arkosh_cloak_of_dark_bonus_spell_damage_pct"	"%СНИЖЕНИЕ МАГ. СОПРОТИВЛЕНИЯ?"
 
 
-       "DOTA_Tooltip_ability_achlys_nights_embrace"                                              "Night's Embrace"
-        "DOTA_Tooltip_ability_achlys_nights_embrace_Description"                                  "Вираа становится самой Ночью и исчезает, становясь невидимой и питаясь тенями, пока она не будет готова ввязаться в драку. При следующей атаке наносит физический урон, зависящий от времени, проведенного невидимым под действием этого эффекта. Если Ахлис виден в невидимости, бонус к урону не накапливается."
-        "DOTA_Tooltip_ability_achlys_nights_embrace_Note0"                                        "Невидимость пропадёт если Вираа потеряет всю ману."
-        "DOTA_Tooltip_ability_achlys_nights_embrace_Lore"                                         "Никто не выживает в ее тени."
-        "DOTA_Tooltip_ability_achlys_nights_embrace_mana_cost_pct"                                "%МАНЫ В СЕКУНДУ:"
-        "DOTA_Tooltip_ability_achlys_nights_embrace_damage_per_sec"                               "УВЕЛИЧЕНИ УРОНА В СЕКУНДУ:"
-        "DOTA_Tooltip_ability_achlys_nights_embrace_duration"                                     "ДЛИТЕЛЬНОСТЬ:"
-        "DOTA_Tooltip_ability_achlys_nights_embrace_fade_time"                                    "ЗАДЕРЖКА ДО НЕВИДИМОСТИ:"
-        "DOTA_Tooltip_ability_achlys_nights_embrace_scepter_Description"                    "Night's Embrace больше не раскрывает Виру, если она атакует или произносит заклинания."
+       	"DOTA_Tooltip_ability_achlys_nights_embrace_lua"                                              "Night's Embrace"
+        "DOTA_Tooltip_ability_achlys_nights_embrace_lua_Description"                                  "Вираа становится самой Ночью и исчезает, становясь невидимой и питаясь тенями, пока она не будет готова ввязаться в драку. При следующей атаке наносит физический урон, зависящий от времени, проведенного невидимым под действием этого эффекта. Если Вира видна противнику, бонус к урону не накапливается."
+        "DOTA_Tooltip_ability_achlys_nights_embrace_lua_Note0"                                        "Невидимость пропадёт если Вираа потеряет всю ману."
+        "DOTA_Tooltip_ability_achlys_nights_embrace_lua_Lore"                                         "Никто не выживает в ее тени."
+        "DOTA_Tooltip_ability_achlys_nights_embrace_lua_mana_cost_pct"                                "%МАНЫ В СЕКУНДУ:"
+        "DOTA_Tooltip_ability_achlys_nights_embrace_lua_damage_per_sec"                               "УВЕЛИЧЕНИ УРОНА В СЕКУНДУ:"
+        "DOTA_Tooltip_ability_achlys_nights_embrace_lua_duration"                                     "ДЛИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_achlys_nights_embrace_lua_fade_time"                                    "ЗАДЕРЖКА ДО НЕВИДИМОСТИ:"
+        "DOTA_Tooltip_ability_achlys_nights_embrace_lua_scepter_Description"                    "Night's Embrace больше не раскрывает Виру, если она атакует или произносит заклинания."
         "DOTA_Tooltip_modifier_achlys_nights_embrace"                                       "Night's Embrace"
         "DOTA_Tooltip_modifier_achlys_nights_embrace_Description"                           "Невидима. Потеря маны и увеличение урона до следующей атаки."
-
+        "DOTA_Tooltip_ability_special_bonus_unquie_veerah_bonus_dmg"						"+5 к урону в секунду от Night's Embrace"
 		"DOTA_Tooltip_ability_achlys_sorrow_rising"					"Safras groth"
 		"DOTA_Tooltip_ability_achlys_sorrow_rising_description"		"С потерей здоровья приобретает способность уворачиваться от атак противников, а с потерей маны повышает урон наносимый его способностяим."
 		"DOTA_Tooltip_ability_achlys_sorrow_rising_evasion_per_hp_pct"	"%УВОРОТ ЗА ПРОЦЕНТ ХП:"
@@ -2053,6 +2053,7 @@
 		"DOTA_Tooltip_ability_item_bf_ms_bonus"					"+$move_speed"
 		"DOTA_Tooltip_ability_item_bf_evade"					"%+$evasion"
 		"DOTA_Tooltip_ability_item_bf_bonus_damage"					"+ДОП. БАЗОВЫЙ УРОН:"
+		"DOTA_Tooltip_ability_special_bonus_unquie_bleed_chance"	"+12% к шансу нанести кровотечение от Killer's Instinct"
 
 
 		"DOTA_Tooltip_ability_item_cloak_of_veng"				"Resonating Cape"
@@ -3484,9 +3485,10 @@
 "DOTA_Tooltip_ability_ability_illusion_squal_lua_max_attacks"								"ВСЕГО АТАК:"
 "DOTA_Tooltip_ability_ability_illusion_squal_lua_outgoingDamage"							"%УМЕНЬШЕНИЕ УРОНА:"
 "DOTA_Tooltip_ability_special_bonus_unquie_2_attacks"										"+2 атаки от Punitive Detachment"
-"DOTA_Tooltip_ability_special_bonus_unquie_sqwal_dmg"										"-15% к снижению урона Punitive Detachment"
+"DOTA_Tooltip_ability_special_bonus_unquie_sqwal_damage"										"-15% к снижению урона Punitive Detachment"
 
 
-
+"DOTA_Tooltip_modifier_achlys_nights_embrace_lua"									"Shadow"
+"DOTA_Tooltip_ability_special_bonus_unquie_manacost_veerah"							"-2% стоимости маны Night Embrace"
 }				
 }

@@ -1572,9 +1572,9 @@
 	}
 	"npc_dota_hero_riki"
 	{
-		"Ability1"	"achlys_nights_embrace"
+		"Ability1"	"achlys_nights_embrace_lua"
 		"Ability2"	"blink_strike_datadriven"
-		"Ability3"	"veerah_killer_instinct"
+		"Ability3"	"veerah_killer_instinct_lua"
 		"Ability4"	"blink_strike_datadriven_ills"
 		"Ability6"	"ability_illusion_squal_lua"
 
@@ -1582,11 +1582,11 @@
 		"Ability10"	"special_bonus_unquie_veerah_splash"
 		"Ability11"	"special_bonus_unquie_manacost_veerah"
 		"Ability12"	"special_bonus_unquie_veerah_blink_bonus"
-		"Ability13"	""
+		"Ability13"	"special_bonus_unquie_2_attacks"
 		"Ability14"	"special_bonus_unquie_evasion"
-		"Ability15"	"special_bonus_unquie_veerah_ills_dmg"
+		"Ability15"	"special_bonus_unquie_bleed_chance"
 		"Ability16"	"special_bonus_unquie_blink_silence"
-		"Ability17"	"special_bonus_unquie_2_attacks"
+		"Ability17"	"special_bonus_unquie_sqwal_damage"
 	}
 	"npc_dota_hero_deus_novus"
 	{

@@ -7101,14 +7101,14 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "ability_lua"
-        "ScriptFile"				""
+        "ScriptFile"				"heroes/hero_riki/achlys_nights_embrace_lua.lua"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
         "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
         "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
         "AbilityTextureName"            "selfmade/riki_smoke_screen"
         "AbilityProcsMagicStick"        "1"
         "HasScepterUpgrade"             "1"
-        "MaxLevel"						"5"
+        "MaxLevel"					"5"
         "AbilityProcsMagicStick"		"1"
         		
         // Precache
@@ -7140,6 +7140,7 @@
             {
                 "var_type"                  "FIELD_INTEGER"
                 "mana_cost_pct"             "4"
+                "LinkedSpecialBonus"		"special_bonus_unquie_manacost_veerah"
             }
             "02"
             {
@@ -7160,207 +7161,26 @@
             {
                 "var_type"                  "FIELD_INTEGER"
                 "damage_per_tick"               "2 3 4 5"
+                "LinkedSpecialBonus"			"special_bonus_unquie_veerah_bonus_dmg"
 
             }
         }
     }
-	   //=================================================================================================================
-    // Achlys - Night's Embrace
-    //=================================================================================================================
-    "achlys_nights_embrace"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
-        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
-        "AbilityTextureName"            "selfmade/riki_smoke_screen"
-        "AbilityProcsMagicStick"        "1"
-        "HasScepterUpgrade"             "1"
-        "MaxLevel"						"5"
-        "AbilityProcsMagicStick"		"1"
-        		
-        // Precache
-        //-------------------------------------------------------------------------------------------------------------
-        "precache"
-         {
-          "soundfile"   "soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
-          "soundfile"   "soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
-          "particle"    "particles/achlys_nights_embrace.vpcf"
-          "particle"    "particles/achlys_nights_embrace_invis.vpcf"
-          "particle"    "particles/generic_hero_status/status_invisibility_start.vpcf"
-         }
+"special_bonus_unquie_veerah_bonus_dmg"
+{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-        // Time     
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "25"
-        "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
-        "AbilityDuration"               "15"
-        
-        // Cost
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"               "50"
-        
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"                  "FIELD_INTEGER"
-                "mana_cost_pct"             "4"
-            }
-            "02"
-            {
-                "var_type"                  "FIELD_INTEGER"
-                "damage_per_sec"            "10 15 20 25"
-            }
-            "03"
-            {
-                "var_type"                  "FIELD_INTEGER"
-                "duration"                  "15"
-            }
-            "04"
-            {
-                "var_type"                  "FIELD_FLOAT"
-                "fade_time"                 "0.2"
-            }
-            "05"
-            {
-                "var_type"                  "FIELD_INTEGER"
-                "damage_per_tick"               "2 3 4 5"
-
-            }
-        }
-
-        "OnSpellStart"
-        {
-            "FireEffect"
-            {
-                "EffectName"    "particles/achlys_nights_embrace.vpcf"
-                "Target"    "CASTER"
-                "EffectAttachType"  "attach_origin"
-            }
-            "FireSound"
-            {
-                "Target"    "CASTER"
-                "EffectName"    "Hero_Bane.Enfeeble"
-            }
-            "ApplyModifier"
-            {
-                "Target"    "CASTER"
-                "ModifierName"  "modifier_achlys_nights_embrace_fade"
-            }
-        }
-
-        "Modifiers"
-        {
-            "modifier_achlys_nights_embrace_fade"
-            {
-                "Duration"  "%fade_time"
-                "IsHidden"  "1"
-                "IsBuff"    "1"
-                "EffectName"    "particles/generic_hero_status/status_invisibility_start.vpcf"
-                "EffectAttachType"  "follow_origin"
-                "OnDestroy"
-                {
-                    "ApplyModifier"
-                    {
-                        "Target"    "CASTER"
-                        "ModifierName"  "modifier_achlys_nights_embrace"
-                    }
-                    "RunScript"
-                    {
-                        "ScriptFile"    "abilities/nextgeneration/hero_achlys/achlys_nights_embrace"
-                        "Function"      "AddInvis"
-                    }
-                }
-            }
-            "modifier_achlys_nights_embrace"
-            {
-                "Duration"  "%duration"
-
-                "EffectName"        "particles/achlys_nights_embrace_invis.vpcf"
-                "EffectAttachType"  "follow_origin"
-                
-                "IsBuff"    "1"
-                "OnCreated"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"    "abilities/nextgeneration/hero_achlys/achlys_nights_embrace"
-                        "Function"      "AddDamage"
-                    }
-                }
-                "OnAttackLanded"
-                {
-                    "FireSound"
-                    {
-                        "EffectName"    "Hero_ShadowDemon.ShadowPoison.Release"
-                        "Target"        "TARGET"
-                    }
-                    "RemoveModifier"
-                    {
-                        "Target"    "CASTER"
-                        "ModifierName"  "modifier_achlys_nights_embrace_damage"
-                    }
-                    "RunScript"
-                    {
-                        "ScriptFile"    "abilities/nextgeneration/hero_achlys/achlys_nights_embrace"
-                        "Function"      "ScepterCheck"
-                    }
-                }
-                "OnAbilityExecuted"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"    "abilities/nextgeneration/hero_achlys/achlys_nights_embrace"
-                        "Function"      "ScepterCheck"
-                    }
-                }
-                "States"
-                {
-                    "MODIFIER_STATE_INVISIBLE"  "MODIFIER_STATE_VALUE_ENABLED" 
-                }
-                "ThinkInterval" "0.2"
-                "OnIntervalThink"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"    "abilities/nextgeneration/hero_achlys/achlys_nights_embrace"
-                        "Function"      "AddDamage"
-                    }
-                }
-                "OnDestroy"
-                {
-                    "RemoveModifier"
-                    {
-                        "Target"    "CASTER"
-                        "ModifierName"  "modifier_achlys_nights_embrace_damage"
-                    }
-                    "RemoveModifier"
-                    {
-                        "Target"    "CASTER"
-                        "ModifierName"  "modifier_hidden_invis"
-                    }
-                    "FireSound"
-                    {
-                        "Target"    "CASTER"
-                        "EffectName"    "Hero_Bane.Nightmare.End"
-                    }
-                }
-            }
-            "modifier_achlys_nights_embrace_damage"
-            {
-                "IsHidden"  "1"
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "%damage_per_tick"
-                }
-            }
-        }
-    }
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"5.0"	// Hardcoded in the ability
+			}
+		}
+}
 "special_bonus_unquie_manacost_veerah"
 {
 		"BaseClass"				"special_bonus_undefined"
@@ -15864,11 +15684,12 @@
 			}
 		}
 	}
-	"veerah_killer_instinct"
+	"veerah_killer_instinct_lua"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
+		"BaseClass"				"ability_lua"
+		"ScriptFile"				"heroes/hero_riki/killer_instinct.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"selfmade/riki_tricks_of_the_trade"
 		"MaxLevel"						"5"
@@ -15881,8 +15702,8 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"marksmanship_agility_bonus"	"40 50 60 70 80"
+				"var_type"						"FIELD_FLOAT"
+				"ms_bonus"	"40.0 45.0 50.0 55.0 60.0"
 			}
 			"02"
 			{
@@ -15898,28 +15719,19 @@
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"as_bonus"			"30.0 50.0 70.0 90.0 110.0"
+				"as_bonus"			"30.0 40.0 50.0 60.0 70.0"
 			}
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"duration"			"6.0"
 			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"damage"			"10.0 14.0 16.0 18.0 20.0"
-			}
-			"07"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"slow"			"-3.0 -4.0 -5.0 -6.0 -7.0"
-			}
-			"08"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"heal"			"10.0 14.0 16.0 18.0 20.0"
-			}
+			"04"
+	        {
+	        	"var_type"	"FIELD_FLOAT"
+	        	"chance_pct"			"25.0"
+	        	"LinkedSpecialBonus"	"special_bonus_unquie_bleed_chance"
+	        }
 		}
 		
 		// Data driven
@@ -15929,110 +15741,22 @@
 			"particle"							"particles/units/heroes/hero_drow/drow_marksmanship.vpcf"
 			"particle"							"particles/units/heroes/hero_drow/drow_marksmanship_start.vpcf"
 		}
-		
-		"Modifiers"
+	}
+"special_bonus_unquie_bleed_chance"
+{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
 		{
-			"modifier_marksmanship_passive_datadriven"
+			"01"
 			{
-				"Passive"						"1"
-				"IsHidden"						"1"
-				"IsPurgable"					"0"
-			
-				"ThinkInterval"					"%think_interval"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"heroes/hero_drow_ranger/marksmanship.lua"
-						"Function"				"marksmanship_detection"
-					}
-				}
-			}
-			
-			"modifier_marksmanship_effect_datadriven"
-			{
-				"IsPurgable"					"0"
-				
-				"OnCreated"
-				{
-					"FireEffect"
-					{
-						"Target"				"CASTER"
-						"EffectName"			"particles/units/heroes/hero_drow/drow_marksmanship_start.vpcf"
-						"EffectAttachType"		"start_at_customorigin"
-						"ControlPointEntities"
-						{
-							"CASTER"			"attach_attack1"
-						}
-					}
-				
-					"AttachEffect"
-					{
-						"Target"				"CASTER"
-						"EffectName"			"particles/units/heroes/hero_drow/drow_marksmanship.vpcf"
-						"EffectAttachType"		"follow_origin"
-						"ControlPoints"
-						{
-							"02"				"150 150 150"
-						}
-					}
-				}
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%marksmanship_agility_bonus"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%as_bonus"
-				}
-				"OnAttackLanded"
-				// "%attack_damage" is set to the damage value before mitigation
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_drow_ranger/marksmanship.lua"
-						"Function"		"instinct_venom"
-					}
-				}
-			}
-			"modifier_killer_venom"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"EffectName"		"particles/econ/items/venomancer/toxicant/veno_toxicant_tail.vpcf"
-				"EffectAttachType"	"follow_origin"
-			
-				"ThinkInterval"  "1.0"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%damage"
-					}
-				}
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
-				}
-			}
-			"modifier_shard_evasion"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-			
-				"EffectName"		"particles/units/heroes/hero_phantom_assassin/phantom_assassin_blur.vpcf"
-				"EffectAttachType"	"follow_origin"
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_EVASION_CONSTANT" "50"
-				}
+				"var_type"		"FIELD_FLOAT"
+				"value"			"12.0"	// Hardcoded in the ability
 			}
 		}
-	}
+}
 "blink_strike_datadriven"
 {
 	// General
@@ -16248,131 +15972,6 @@
 			}
 		}
 }
-"ability_veerah_illusion_sqwal"
-{
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    "BaseClass"             "ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO" 
-    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
-    "FightRecapLevel"               "1"
-    "AbilityTextureName"            "selfmade/riki_permanent_invisibility"
-
-    // Precache
-    //-------------------------------------------------------------------------------------------------------------
-    "precache"
-     {
-      "soundfile"   ""
-      "particle"    "particles/econ/items/void_spirit/void_spirit_immortal_2021/void_spirit_immortal_2021_astral_step_dmg_smoke_b.vpcf"
-     }
-
-    
-    // Casting
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"              "600"
-    "AbilityCastPoint"              "0.3"
-
-    // Time     
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"               "90 80 70 60"
-
-    // Cost
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"               "125 175 225 275"
-
-    // Stats
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityModifierSupportValue"   "0.5"   // Applies multiple modifiers
-
-    
-    // Special
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
-        {
-            "var_type"          	        "FIELD_FLOAT"
-            "duration"             	 "0.7"
-        }
-        "02"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "out_dmg"              	"10 15 20 25"
-            "LinkedSpecialBonus"		"special_bonus_unquie_veerah_ills_dmg"
-        }
-        "03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "attacks"     			"4 5 6 7"
-            "LinkedSpecialBonus"		"special_bonus_unquie_2_attacks"
-        }
-    }
-
-    "OnSpellStart"
-    {
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_vision"
-			"Target" 		"TARGET"
-			"Duration"		"2"
-		}
-		"FireEffect"
-		{
-			"EffectName"        "particles/units/heroes/hero_void_spirit/dissimilate/void_spirit_dissimilate_dmg_smoke.vpcf"
-			"EffectAttachType"  "follow_origin"
-			"Target"            "CASTER"
-		}
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/hero_riki/blink_strike.lua"
-			"Function"		"Ult"
-		}
-    }
-    "Modifiers"
-    {
-    		"modifier_vision"
-    		{
-    			"Passive"			"0"
-    			"IsHidden"			"1"
-    			"IsDebuff"			"1"
-    		
-    			"EffectName"		"particle_name"
-    			"EffectAttachType"	"follow_origin"
-    		
-    			"States"
-    			{
-    				"MODIFIER_STATE_PROVIDES_VISION"		"MODIFIER_STATE_VALUE_ENABLED"
-    				"MODIFIER_STATE_INVISIBLE"			"MODIFIER_STATE_VALUE_DISABLED"
-    			}
-    			"ThinkInterval"  "0.4"
-    			"OnIntervalThink"
-    			{
-    				"RunScript"
-				{
-					"ScriptFile"	"heroes/hero_riki/blink_strike.lua"
-					"Function"		"UltModifier"
-				}
-    			}
-    		}
-    		"modifier_flying"
-    		{
-    			"Passive"			"0"
-    			"IsHidden"			"0"
-    			"IsDebuff"			"0"
-    		
-    			"EffectName"		"particle_name"
-    			"EffectAttachType"	"follow_origin"
-    		
-    			"States"
-    			{
-    				"MODIFIER_STATE_FLYING"		"MODIFIER_STATE_VALUE_ENABLED"
-    			}
-    		}
-    }
-
-}
 "ability_illusion_squal_lua"
 {
     // General
@@ -16432,17 +16031,18 @@
         {
         	"var_type"	"FIELD_FLOAT"
         	"outgoingDamage"			"75.0 70.0 65.0 60.0"
-        	"LinkedSpecialBonus"		"special_bonus_unquie_2_attacks"
+        	"LinkedSpecialBonus"		"special_bonus_unquie_sqwal_damage"
         }
         "03"
         {
         	"var_type"	"FIELD_FLOAT"
-        	"incomingDamage"			"0"
+        	"incomingDamage"			"100"
         }
+
     }
 
 }
-"special_bonus_unquie_sqwal_dmg"
+"special_bonus_unquie_sqwal_damage"
 {
 		"BaseClass"				"special_bonus_undefined"
 		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"

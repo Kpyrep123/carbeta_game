@@ -36,8 +36,10 @@ function modifier_veerah_killer_instinct_lua:OnIntervalThink()
 		if self:GetCaster():HasModifier("modifier_shard_evasion") then 
 			self:GetCaster():RemoveModifierByName("modifier_shard_evasion")
 		end
-	elseif count == 0 and self:GetCaster():HasModifier("modifier_veerah_killer_instinct_lua_buff") then
-		self:GetCaster():RemoveModifierByName("modifier_veerah_killer_instinct_lua_buff")
+	elseif count == 0 then
+		if self:GetCaster():HasModifier("modifier_veerah_killer_instinct_lua_buff") then
+			self:GetCaster():RemoveModifierByName("modifier_veerah_killer_instinct_lua_buff")
+		end
 		if self:GetCaster():HasTalent("special_bonus_unquie_evasion") then 
 			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_shard_evasion", {})
 		end

@@ -792,7 +792,7 @@
 	{
 		"ability1"		"nova_rapid_fire"
 		"ability2"		"nova_force_dash"
-		"ability3"		"nova_Interrupt_Matrix"
+		"ability3"		"ability_nova_protective_drone"
 		"ability4"		"nova_rapid_fire_sub"
 		"Ability5"		"become_nova"
 		"ability6"		"nova_nuclear_strike"
@@ -1585,7 +1585,7 @@
 		"Ability13"	"special_bonus_unquie_2_attacks"
 		"Ability14"	"special_bonus_unquie_evasion"
 		"Ability15"	"special_bonus_unquie_bleed_chance"
-		"Ability16"	"special_bonus_unquie_blink_silence"
+		"Ability16"	"special_bonus_unquie_veerah_bonus_dmg"
 		"Ability17"	"special_bonus_unquie_sqwal_damage"
 	}
 	"npc_dota_hero_deus_novus"

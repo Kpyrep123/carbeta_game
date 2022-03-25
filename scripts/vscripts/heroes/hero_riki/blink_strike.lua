@@ -33,7 +33,7 @@ function BlinkStrike( keys )
 			caster:PerformAttack(enemy, true, true, true, true, false, false, true)
 			ApplyDamage({victim = enemy, attacker = caster, damage = bonus_damage, damage_type = ability:GetAbilityDamageType()})
 
-			if caster:HasTalent("special_bonus_unquie_blink_silence") then 
+			if caster:HasShard() then 
 
 			enemy:AddNewModifier( caster, nil, "generic_lua_silence", { duration = duration , stacking = 1 } )
 		end

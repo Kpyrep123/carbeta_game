@@ -827,6 +827,7 @@
         "AbilityManaCost"               "120 130 140 150 180"
 
         "MaxLevel"					"5"
+        "LinkedAbility"				"huskar_berserkers_blood_lod_passive"
     
 
         "Precache"
@@ -900,24 +901,6 @@
             }
         }
         
-        "OnOwnerSpawned"
-        {
-            "RunScript"
-            {
-                "ModifierName"                                         "modifier_huskar_berserkers_blood_lod"
-                "ScriptFile"                                           "heroes/hero_huskar/berserkers_blood_lod.lua"
-                "Function"                                             "ApplyLuaModifier"
-            }
-        }
-        "OnUpgrade"
-        {
-            "RunScript"
-            {
-                "ModifierName"                                         "modifier_huskar_berserkers_blood_lod"
-                "ScriptFile"                                           "heroes/hero_huskar/berserkers_blood_lod.lua"
-                "Function"                                             "ApplyLuaModifier"
-            }
-        }
 		"OnSpellStart"
         {
             "FireSound"
@@ -1123,6 +1106,44 @@
                 }
             }
         }
+    }
+    "huskar_berserkers_blood_lod_passive"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"             		"ability_lua"
+        "ScriptFile"				"heroes/hero_huskar/berserkers_blood_lod.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"  
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "FightRecapLevel"               "1"
+        "AbilityTextureName"            "Blood_thirst"
+         "MaxLevel"						"5"
+         "AbilityProcsMagicStick"		"1"
+        		
+    
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                                             "FIELD_FLOAT"
+                "attack_speed_bonus_per_stack"                         "3.4 3.8 4.2 4.6 5.0"
+            }
+            "02"
+            {
+                "var_type"                                             "FIELD_FLOAT"
+                "damage_per_stack"                                     "2.9 3.3 3.6 3.8 4.0"
+            }
+            "03"
+            {
+            	"var_type"												"FIELD_INTEGER"
+            	"move_speed_bonus_per_stack"							"6 7 8 9 10"
+            }
+        }    
     }
 "bakedanuki_frolic_aura"
 	{
@@ -2894,7 +2915,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_gold"		"15 15 15 15 20"
+				"damage_per_gold"		"10"
 				"LinkedSpecialBonus"	"special_bonus_unique_rahl_3"
 			}
 			"04"
@@ -8967,12 +8988,13 @@
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "BaseClass"             "ability_datadriven"
+    "BaseClass"             	"ability_lua"
+    "ScriptFile"			"custom_abilities/feral_ghoul/feral_ghoul_feral_hunt.lua"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
     "AbilityTextureName"    "feral_scythe"
     "AbilityProcsMagicStick"		"1"
-		"MaxLevel"						"5"
-        "AbilityProcsMagicStick"		"1"
+	"MaxLevel"				"5"
+     "AbilityProcsMagicStick"		"1"
 
     // Precache
     //-------------------------------------------------------------------------------------------------------------
@@ -8998,12 +9020,13 @@
         "01"
         {
         	"var_type"					"FIELD_INTEGER"
-        	"crit_chance"				"50"
+        	"crit_chance"				"15 20 25 30 35"
+        	"LinkedSpecialBonus"		"special_bonus_unquie_ferral_hunt_chance"
         }
         "02"
         {
             "var_type"              "FIELD_INTEGER"
-            "movement_slow"         "-20 -25 -30 -35 -40"
+            "movement_slow"         "20 25 30 35 40"
         }
         "03"
         {
@@ -9013,117 +9036,62 @@
         "04"
         {
             "var_type"              "FIELD_FLOAT"
-            "duration"              "7.0"
+            "duration"              "5.0"
         }
         "05"
         {
         	"var_type"				"FIELD_INTEGER"
         	"damage_damage"			"20 25 30 35 40"
+        	"LinkedSpecialBonus"		"special_bonus_unquie_schyce_dmg"
+        }
+        "06"
+        {
+        	"var_type"					"FIELD_INTEGER"
+        	"attack_speed_bonus"			"30 40 50 60 70"
+        }
+        "07"
+        {
+        	"var_type"	"FIELD_FLOAT"
+        	"status_chance"			"25.0"
         }
     }
-
-    "OnSpellStart"
-    {
-        "ApplyModifier"
-        {
-            "Target" "CASTER"
-            "ModifierName" "modifier_sprint_datadriven"
-        }
-    }
-    "Modifiers"
-    {
-        "modifier_sprint_datadriven"
-        {
-            "IsBuff" "1"
-            "Duration" "%duration"
-            "EffectName"    "particles/econ/items/lifestealer/lifestealer_immortal_backbone/lifestealer_immortal_backbone_rage.vpcf"
-            "EffectAttachType"  "follow_origin"
-
-
-            "OnAttackLanded"
-            {
-				"Random"
-				{
-					"Chance"		"%crit_chance"
-					"PseudoRandom"		"DOTA_PSEUDO_RANDOM_SLARDAR_BASH"
-
-					"OnSuccess"
-					{
-			        	"RunScript"
-				        {
-				            "ScriptFile"    "heroes/hero_queenofpain/shadow_strike.lua"
-				            "Function"      "shadow_strike"
-				            "modifier"      "modifier_shadow_strike_debuff_datadriven"
-				        }
-						"FireEffect"
-						{
-							"EffectName"        "particles/econ/items/pudge/pudge_arcana/electric/pudge_arcana_dismember_soil_b_electric.vpcf"
-							"EffectAttachType"  "follow_origin"
-							"Target"            "TARGET"
-						}
-						"ApplyModifier"
-						{
-							"ModifierName"	"modifier_hunt"
-							"Target" 		"TARGET"
-							"Duration"		"%duration"
-						}
-					}
-				}
-            }
-        }
-
-        "modifier_shadow_strike_debuff_datadriven"
-        {
-            "IsDebuff"  "1"
-            "IsPurgable"	"1"
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "-1"
-            }
-        }
-        "modifier_hunt"
-        {
-            "IsDebuff"              "1"
-            "IsPurgable"            "1"
-            "IsHidden"				"1"
-           
-            "ThinkInterval"         "%damage_interval"
-            "OnIntervalThink"
-            {
-                "RunScript"
-		        {
-		            "ScriptFile"    "heroes/hero_queenofpain/shadow_strike.lua"
-                    "Function"      "IntToDamage"
-                    "Target"        "TARGET"
-		        }
-		        "Damage"
-		        {
-		        	"Target"		"TARGET"
-		        	"Type"			"DAMAGE_TYPE_MAGICAL"
-		        	"Damage"		"%damage_damage"
-		        }
-		       	"AttachEffect"
-				{
-					"EffectName"        "particles/econ/items/pudge/pudge_arcana/electric/pudge_arcana_dismember_soil_b_electric.vpcf"
-					"EffectAttachType"  "follow_origin"
-					"Target"            "TARGET"
-				}
-				"Heal"
-				{
-					"Target"        "CASTER"
-					"HealAmount"	"%damage_damage"
-				}
-            }
-        }
-    }
-
 }   
+"special_bonus_unquie_schyce_dmg"
+{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"10.0"	// Hardcoded in the ability
+			}
+		}
+}
+"special_bonus_unquie_ferral_hunt_chance"
+{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"15.0"	// Hardcoded in the ability
+			}
+		}
+}
 "broken_heart"
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "BaseClass"             "ability_datadriven"
+    "BaseClass"             		"ability_lua"
+    "ScriptFile"				"custom_abilities/feral_ghoul/broken_heart.lua"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"  
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
@@ -9141,7 +9109,7 @@
       "particle"    "particles/units/heroes/hero_slardar/slardar_crush_entity.vpcf"
 
      }
-
+     "AbilityCooldown"		"1.0 0.9 0.8 0.7 0.6"
     // Special
     //-------------------------------------------------------------------------------------------------------------
     "AbilitySpecial"
@@ -9168,109 +9136,90 @@
         	"LinkedSpecialBonus"			"special_bonus_unique_ghoul_1"
         }
     }
-
-    "Modifiers"
-    {
-    	"maiden_death"
-    	{	
-    		"Passive"           "1"
-            "IsHidden"          "1"
-            "IsBuff"            "1"
-            "AllowIllusionDuplicate"     "0"
-    		"OnAttacked"
-		    {
-		    	"Random"
-				{
-					"Chance"		"%boom_chance"
-					"PseudoRandom"		"DOTA_PSEUDO_RANDOM_SLARDAR_BASH"
-					"OnSuccess"
-					{
-			        "FireEffect"
-			        {
-			            "EffectName"    "particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe.vpcf"
-			            "EffectAttachType"  "attach_origin"
-			            "Target"    "CASTER"
-			           	"ControlPoints"
-	                   	{
-	                   	    "01"    "200 200 200"
-	                   	}
-			        }
-			        "FireSound"
-			        {
-			        	"EffectName"	"Hero_LifeStealer.Rage"
-			        	"Target" 		"CASTER"
-			        }
-			        "ActOnTargets"
-			        {
-			            "Target"
-			            {
-			                "Center" "CASTER"
-			                "Radius" "%crush_radius"
-			                "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-			                "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-			                "Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-			            }
-			            "Action"
-			            {
-			                "ApplyModifier"
-			                {
-			                    "Target" "TARGET"
-			                    "ModifierName"  "modifier_slithereen_crush_slow_datadriven"
-			                }
-			                "RunScript"
-			                {
-			                	"ScriptFile"	"heroes/hero_life_stealer/Heart_boom.lua"
-			                	"Function"		"heartBoomSmall"
-			                }
-
-			            }
-			        }
-			    }
-		   		}
-		    }
-		    "OnDeath"
-		    {
-		        "FireEffect"
-		        {
-		            "EffectName"    "particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_aoe.vpcf"
-		            "EffectAttachType"  "attach_origin"
-		            "Target"    "CASTER"
-		           	"ControlPoints"
-                   	{
-                   	    "01"    "200 200 200"
-                   	}
-		        }
-		        "FireSound"
-		        {
-		        	"EffectName"	"Hero_LifeStealer.Rage"
-		        	"Target" 		"CASTER"
-		        }
-		        "ActOnTargets"
-		        {
-		            "Target"
-		            {
-		                "Center" "CASTER"
-		                "Radius" "%crush_radius"
-		                "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-		                "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-		                "Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		            }
-		            "Action"
-		            {
-		                "RunScript"
-		                {
-		                	"ScriptFile"	"heroes/hero_life_stealer/Heart_boom.lua"
-		                	"Function"		"heartBoom"
-		                }
-		            }
-		        }
-		    }
-    	}
-    }
-
 }
+"special_bonus_unquie_broken_heart_rad"
+{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"100.0"	// Hardcoded in the ability
+			}
+		}
+}
+"ability_ferral_goul_libation"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             		"ability_lua"
+    "ScriptFile"				"custom_abilities/feral_ghoul/ability_ferral_goul_libation.lua"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"  
+    "AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    	"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"		"libation"
+	"AbilityCastAnimation"		"ACT_DOTA_ATTACK"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+     "AbilityCooldown"               "50"
+     "AbilityManaCost"               "50 75 100 125 150"
+     "AbilityCastRange"              "300 325 350 375 400"
+     "AbilityCastPoint"              "0.3"
+     "AbilityCastAnimation"          "ACT_DOTA_ATTACK_EVENT"
+     "AbilityProcsMagicStick"        "1"
+     "HasScepterUpgrade"             "1"
+     "AbilityChannelAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+     "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
+     "MaxLevel"						"5"
+     "AbilityProcsMagicStick"		"1"
 
+    // Precache
+    //-------------------------------------------------------------------------------------------------------------
+    "precache"
+     {
+		"particle"  "particles/libation_casting_blade_kill.vpcf"
+          "particle"  "particles/hylonome_tentacle_tako.vpcf"
+          "particle"  "particles/other/hylonome_libation_attack_buff.vpcf"
+          "particle"  "particles/hylonome_libation.vpcf"
+          "soundfile" "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+          "soundfile" "soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
+          "soundfile" "soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+     }
+    
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"          	        "FIELD_INTEGER"
+            "duration"             	 "8"
+        }
+        "02"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "damage"              	"20 25 30 35 40"
+        }
+        "03"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "pull_speed"     			"100 150 200 250 300"
+        }
+        "05"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "distance"              "400 425 450 475 500"
+            "LinkedSpecialBonus"	"special_bonus_unique_ghoul_3"
+        }
+    }
+}
 "ghoul_scythe"
 {
     // General
@@ -11170,8 +11119,8 @@
 		"AbilityTextureName"			"custom/hylonome_battle_rhythm"
 		"AbilityCastAnimation"			"ACT_DOTA_RUN"
 		"AbilityCooldown"				"16.0"
-		        "MaxLevel"						"5"
-		        "AbilityProcsMagicStick"		"1"
+		"MaxLevel"						"5"
+		"AbilityProcsMagicStick"		"1"
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -14947,7 +14896,6 @@
 		// Time	 
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"			   "110 100 90 80"
-		"LinkedSpecialBonus"			"special_bonus_unquie_grave_sinigami"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------

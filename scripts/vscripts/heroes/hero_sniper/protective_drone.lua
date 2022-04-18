@@ -201,8 +201,26 @@ function modifier_nova_protective_drone:GetReflectSpell( params )
         if params.ability==nil or self.reflect_exceptions[params.ability:GetAbilityName()] then
             return 0
         end
+    local buildings = FindUnitsInRadius(
+        self:GetCaster():GetTeamNumber(),   -- int, your team number
+        Vector(0,0,0),  -- point, center point
+        nil,    -- handle, cacheUnit. (not known)
+        FIND_UNITS_EVERYWHERE,  -- float, radius. or use FIND_UNITS_EVERYWHERE
+        DOTA_UNIT_TARGET_TEAM_FRIENDLY, -- int, team filter
+        DOTA_UNIT_TARGET_HERO,  -- int, type filter
+        DOTA_UNIT_TARGET_FLAG_INVULNERABLE, -- int, flag filter
+        0,  -- int, order filter
+        false   -- bool, can grow cache
+    )
 
-        if self:GetParent():HasShard() and self:GetAbility():IsFullyCastable() then
+    local fountain = nil
+    for _,building in pairs(buildings) do
+        if building:GetName()=="npc_dota_hero_sniper" then
+            fountain = building
+            break
+        end
+    end
+        if fountain:HasShard() and self:GetAbility():IsFullyCastable() then
             -- use resources
             self.reflect = true
 
@@ -224,7 +242,11 @@ function modifier_nova_protective_drone:GetReflectSpell( params )
             -- cast the ability
             self:GetParent():SetCursorCastTarget( sourceAbility:GetCaster() )
             selfAbility:CastAbility()
-
+            if selfAbility:GetName() == "huskar_berserkers_blood_lod" then
+            Timers:CreateTimer(0.03, function()
+                self:GetParent():RemoveModifierByName("modifier_huskar_berserkers_blood_lod")
+            end)
+        end
             -- play effects
             self:PlayEffects( true )
             return 1

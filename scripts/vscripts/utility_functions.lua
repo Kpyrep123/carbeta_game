@@ -106,7 +106,6 @@ function SetTimer( cmdName, time )
     nCOUNTDOWNTIMER = time
 end
 
-
 function CDOTA_BaseNPC:HasTalent(talentName)
     local talent = self:FindAbilityByName(talentName)
     if talent and talent:GetLevel() > 0 then
@@ -115,6 +114,7 @@ function CDOTA_BaseNPC:HasTalent(talentName)
 
     return false
 end
+
 
 function CDOTA_BaseNPC:GetTalentValue(talentName)
     local talent = self:FindAbilityByName(talentName)

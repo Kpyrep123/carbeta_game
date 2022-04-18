@@ -160,14 +160,18 @@ function modifier_midas_golden_touch:OnAttacked( params )
 		end
 
 		local gold = self.damage_per_gold * params.damage / 100
+		local gold_max = self:GetParent():GetHealth() * self.damage_per_gold / 100
 		gold = math.floor( gold + 0.5 )
-		if params.damage > self:GetParent():GetHealth() then
-			local gold_max = self:GetParent():GetHealth() * self.damage_per_gold
-		PlayerResource:ModifyGold( params.attacker:GetPlayerOwnerID(), gold_max, false, DOTA_ModifyGold_Unspecified )
+		if params.damage >= self:GetParent():GetHealth() then
+			PlayerResource:ModifyGold( params.attacker:GetPlayerOwnerID(), gold_max, false, DOTA_ModifyGold_Unspecified )
+			print(gold_max)
+			self:PlayEffects( params.attacker, gold_max )
 		else 
-		PlayerResource:ModifyGold( params.attacker:GetPlayerOwnerID(), gold, false, DOTA_ModifyGold_Unspecified )
+			PlayerResource:ModifyGold( params.attacker:GetPlayerOwnerID(), gold, false, DOTA_ModifyGold_Unspecified )
+			print(gold)
+			self:PlayEffects( params.attacker, gold )
 		end
-		self:PlayEffects( params.attacker, gold )
+		
 	end
 end
 

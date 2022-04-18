@@ -213,6 +213,11 @@
 				"var_type"					"FIELD_FLOAT"
 				"ring_delay"				"0.5"
 			}
+			"11"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"status_chance"			"25.0"
+			}
 		}
 	}
 
@@ -258,6 +263,9 @@
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_spirit_breaker.vsndevts"
 			"particle"					"particles/econ/items/storm_spirit/storm_spirit_orchid_hat/stormspirit_orchid_ball_lightning.vpcf"
 			"particle"					"particles/hero/brax/rush_pull.vpcf"
+			"particle"  "particles/statuses/electro.vpcf"
+			"particle"  "particles/econ/items/alchemist/alchemist_smooth_criminal/alchemist_smooth_criminal_unstable_concoction_explosion_fire_dark.vpcf"
+			"particle"  "models/veng/particles/arena/econ/units/heroes/hero_stargazer/gamma_ray_sunray_flame_immortal1.vpcf"
 		}
 
 		// Special
@@ -309,6 +317,11 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"scepter_radius"			"500"
+			}
+			"10"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"status_chance"			"25.0"
 			}
 		}
 	}
@@ -470,6 +483,11 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"dps_scepter"				"75 125 175 225"
+			}
+			"07"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"status_chance"			"25.0"
 			}
 		}
 	}

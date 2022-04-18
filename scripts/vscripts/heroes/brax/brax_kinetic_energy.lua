@@ -53,6 +53,29 @@ function brax_kinetic_energy:OnSpellStart()
 				for _, unit in pairs(units) do
 					if unit:GetTeam() ~= caster:GetTeam() then
 						ApplyDamage({victim = unit, attacker = caster, damage = dps_scepter, damage_type = DAMAGE_TYPE_MAGICAL})
+						local chance = self:GetSpecialValueFor("status_chance")
+						if RollPercentage(chance) then 
+						if unit:HasModifier("modifier_status_fire") then 
+							local fire = unit:FindModifierByName("modifier_status_fire"):GetStackCount()
+							local mod = unit:AddNewModifier(self:GetCaster(), self, "modifier_status_radiatoin", {duration = 5})
+							unit:RemoveModifierByName("modifier_status_fire")
+							mod:SetStackCount(fire + 1) 
+						elseif unit:HasModifier("modifier_status_cold") then 
+							local cold = unit:FindModifierByName("modifier_status_cold"):GetStackCount()
+							local mod = unit:AddNewModifier(self:GetCaster(), self, "modifier_status_magnet", {duration = 5})
+							mod:SetStackCount(cold + 1)
+							unit:RemoveModifierByName("modifier_status_cold")
+						elseif unit:HasModifier("modifier_status_toxin") then 
+							local toxin = unit:FindModifierByName("modifier_status_toxin"):GetStackCount()
+							local mod = unit:AddNewModifier(self:GetCaster(), self, "modifier_status_corrupt", {duration = 5})
+							mod:SetStackCount(toxin + 1)
+							unit:RemoveModifierByName("modifier_status_toxin")
+						else
+							local mod = unit:AddNewModifier(self:GetCaster(), self, "modifier_status_electro", {duration = 5})
+							mod:SetStackCount(mod:GetStackCount() + 1)
+						end
+					end
+								
 					elseif unit == caster then
 						ApplyDamage({victim = unit, attacker = caster, damage = dps_scepter, damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL})
 					end

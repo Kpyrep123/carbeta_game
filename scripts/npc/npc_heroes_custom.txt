@@ -51,6 +51,7 @@
 			//25
 			"Ability16"		""
 			"Ability17"		""
+			"Ability25"		"special_bonus_attributes"
 			"ArmorPhysical"		"2"
 			"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 			"AttackDamageMin"		"25"
@@ -1052,9 +1053,17 @@
 	{
 		"ability1"	"feral_ghoul_feral_hunt"
 		"ability2"	"broken_heart"
-		"ability3"	"hylonome_libation"
+		"ability3"	"ability_ferral_goul_libation"
 		"ability6"	"ghoul_scythe"
+		"Ability10"	"special_bonus_unquie_schyce_dmg"
+		"Ability11"	""
+
+		"Ability12"	"special_bonus_unquie_ferral_hunt_chance"
+		"Ability13"	"special_bonus_unquie_broken_heart_rad"
+
+		"Ability14"	""
 		"ability15"	"special_bonus_unique_ghoul_2"
+		
 		"ability16"	"special_bonus_unique_ghoul_3"
 		"ability17"	"special_bonus_unique_ghoul_1"
 

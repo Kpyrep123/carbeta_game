@@ -9,6 +9,16 @@ function chi_strike_sp:GetBehavior()
 	return behav
 end
 
+function chi_strike_sp:GetCooldown( level )
+	local upgrade_cooldown = 0 
+	local talent = self:GetCaster():FindAbilityByName("special_bonus_unquie_chi_cd")
+	if talent and talent:GetLevel() > 0 then
+		upgrade_cooldown = 3
+	end
+
+	return self.BaseClass.GetCooldown( self, level ) - upgrade_cooldown
+end
+
 function chi_strike_sp:GetIntrinsicModifierName() return "chi_strike_sp_mod" end
 
 function chi_strike_sp:OnProjectileHit(hTarget, vLocation)

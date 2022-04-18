@@ -21,6 +21,7 @@ end
 ---------------------------------------------------------------------------
 -- Required .lua files
 ---------------------------------------------------------------------------
+require("lib/physics")
 require( "events" )
 require( "items" )
 require( "utility_functions" )

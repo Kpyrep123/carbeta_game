@@ -1,3 +1,19 @@
+LinkLuaModifier("modifier_status_fire", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_cold", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_toxin", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_electro", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+
+LinkLuaModifier("modifier_status_viral", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_corrupt", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_gas", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_explosion", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_radiatoin", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_magnet", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+
+LinkLuaModifier("modifier_status_bleed", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_bash", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_piercing", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+
 function ApplyModf(keys)
 	local ability = keys.ability
 	local caster = keys.caster
@@ -24,6 +40,7 @@ function RandomStun(keys)
 	if target:HasModifier(modifier) == false then
 		ability:ApplyDataDrivenModifier(caster, target, modifier, {duration = stun*(1 - target:GetStatusResistance())})
 	end
+
 end
 
 function Run(keys)
@@ -54,4 +71,6 @@ function RandomDamage(keys)
 	local damage = RandomInt(damage_min, damage_max)
 	ApplyDamage({attacker = caster, victim = target, ability = ability, damage_type = ability:GetAbilityDamageType(), damage = damage})
 	SendOverheadEventMessage(target, OVERHEAD_ALERT_DAMAGE, target, damage, caster)
+	local bash = target:AddNewModifier(caster, ability, "modifier_status_bash", {duration = 5})
+	bash:SetStackCount(bash:GetStackCount() + 1)
 end

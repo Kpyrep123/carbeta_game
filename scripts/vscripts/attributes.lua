@@ -15,6 +15,7 @@ function ability_hero_attributes_cursed:GetIntrinsicModifierName(  )
 end
 
 function ability_hero_attributes_cursed:Spawn(  )
+	
 	self:SetLevel(1)
 end
 

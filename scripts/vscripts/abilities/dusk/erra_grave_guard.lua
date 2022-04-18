@@ -12,6 +12,16 @@ end
 
 modifier_grave_guard = class({})
 
+function erra_grave_guard:GetCooldown( level )
+	local upgrade_cooldown = 0 
+	local talent = self:GetCaster():FindAbilityByName("special_bonus_unquie_grave_sinigami")
+	if talent and talent:GetLevel() > 0 then
+		upgrade_cooldown = 20
+	end
+
+	return self.BaseClass.GetCooldown( self, level ) - upgrade_cooldown
+end
+
 function modifier_grave_guard:DeclareFunctions()
 	local funcs = {
 		MODIFIER_EVENT_ON_TAKEDAMAGE
@@ -38,7 +48,7 @@ if IsServer() then
 
 		local mana_cost = self:GetAbility():GetManaCost(self:GetAbility():GetLevel())
 
-		local cooldown = self:GetAbility():GetCooldown(self:GetAbility():GetLevel()-1) + self:GetCaster():GetTalentValue("special_bonus_unquie_grave_sinigami")
+		local cooldown = self:GetAbility():GetCooldown(self:GetAbility():GetLevel()-1)
 
 		if hp < threshold then
 

@@ -6,6 +6,21 @@ LinkLuaModifier("modifier_brax_rush_motion", "heroes/brax/brax_rush.lua", LUA_MO
 LinkLuaModifier("modifier_brax_rush_talent_far_cast_checker", "heroes/brax/brax_rush.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_brax_rush_talent_far_cast", "heroes/brax/brax_rush.lua", LUA_MODIFIER_MOTION_NONE)
 
+LinkLuaModifier("modifier_status_fire", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_cold", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_toxin", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_electro", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+
+LinkLuaModifier("modifier_status_viral", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_corrupt", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_gas", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_explosion", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_radiatoin", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_magnet", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+
+LinkLuaModifier("modifier_status_bleed", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_bash", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_piercing", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
 brax_rush = class({})
 
 -------------------------------
@@ -264,5 +279,27 @@ function brax_rush:KnockUp(target)
 		}
 		target:RemoveModifierByName("modifier_knockback")
 		target:AddNewModifier(caster, self, "modifier_knockback", knockback_table)
+		local chance = self:GetSpecialValueFor("status_chance")
+		if RollPercentage(chance) then 
+			if target:HasModifier("modifier_status_fire") then 
+				local fire = target:FindModifierByName("modifier_status_fire"):GetStackCount()
+				local mod = target:AddNewModifier(self:GetCaster(), self, "modifier_status_radiatoin", {duration = 5})
+				target:RemoveModifierByName("modifier_status_fire")
+				mod:SetStackCount(fire + 1) 
+			elseif target:HasModifier("modifier_status_cold") then 
+				local cold = target:FindModifierByName("modifier_status_cold"):GetStackCount()
+				local mod = target:AddNewModifier(self:GetCaster(), self, "modifier_status_magnet", {duration = 5})
+				mod:SetStackCount(cold + 1)
+				target:RemoveModifierByName("modifier_status_cold")
+			elseif target:HasModifier("modifier_status_toxin") then 
+				local toxin = target:FindModifierByName("modifier_status_toxin"):GetStackCount()
+				local mod = target:AddNewModifier(self:GetCaster(), self, "modifier_status_corrupt", {duration = 5})
+				mod:SetStackCount(toxin + 1)
+				target:RemoveModifierByName("modifier_status_toxin")
+			else
+				local mod = target:AddNewModifier(self:GetCaster(), self, "modifier_status_electro", {duration = 5})
+				mod:SetStackCount(mod:GetStackCount() + 1)
+			end
+		end
 	end
 end

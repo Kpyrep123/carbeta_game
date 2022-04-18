@@ -42,7 +42,7 @@ function chi_strike_sp_mod:OnAttack (keys)
 	if keys.attacker == self:GetParent() and not self:GetParent():IsIllusion() and hAbility:IsCooldownReady() then
 		hAbility.original_target = keys.target
 		self:DoProjectile(keys.target)
-		hAbility:StartCooldown(hAbility:GetCooldown(hAbility:GetLevel()) + self:GetParent():GetTalentValue("special_bonus_unquie_chi_cd"))
+		hAbility:StartCooldown(hAbility:GetCooldown(hAbility:GetLevel()))
 	end
 	end
 end
@@ -57,7 +57,7 @@ function chi_strike_sp_mod:OnAttackLanded(keys)
 	if hAbility.chi_on == nil or hAbility.chi_on == false then
 		hAbility.original_target = keys.target
 		self:DoProjectile(keys.target)
-		hAbility:StartCooldown(hAbility:GetCooldown(hAbility:GetLevel()) + self:GetParent():GetTalentValue("special_bonus_unquie_chi_cd"))
+		hAbility:StartCooldown(hAbility:GetCooldown(hAbility:GetLevel()))
 	end
 	end
 	end

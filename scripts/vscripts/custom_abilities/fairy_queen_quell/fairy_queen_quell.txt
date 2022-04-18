@@ -90,6 +90,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"as_bonus"				"40 45 50 55 60"
 			}
+			"09"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"chance"			"25.0"
+			}
 		}
 	}
 	"spec_fairy_damage"

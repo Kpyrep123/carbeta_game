@@ -14,8 +14,8 @@ end
 
 ALL_HERO_TALENTS = {
 	["npc_dota_hero_bloodseeker"] = {
-		{"seeker_style_1", "pudge_style_1", {"blood_rite_datadriven", "pudge_meat_hook_lua", "huskar_berserkers_blood_lod", "ability_hero_attributes_cursed", "generic_hidden", "bellatrix_live_transfusion"}, {"special_bonus_mp_400", "special_bonus_cursed_1", "special_bonus_cursed_2", "special_bonus_mp_regen_250", "special_bonus_hp_regen_16", "special_bonus_corruption_25", "special_bonus_hp_600", "special_bonus_cursed_3"}, "DOTA_ATTRIBUTE_AGILITY", {20,21,22}},
-		{"seeker_style_2", "pudge_style_2", {"ability_spike_tearing_blow", "spike_heal", "angel_arena_shell", "ability_hero_attributes_spike", "generic_hidden", "spike_conclusion_lua"}, {"special_bonus_strength_6", "special_bonus_attack_damage_20", "special_bonus_unquie_spike_heal_dur", "special_bonus_unquie_blow_dur", "special_bonus_unquie_coold_red", "special_bonus_unquie_blow_dmg", "spike_special_bonus_shell_25", "spike_special_bonus_attack"}, "DOTA_ATTRIBUTE_STRENGTH", {20,29,2}},
+		{"seeker_style_1", "pudge_style_1", {"blood_rite_datadriven", "pudge_meat_hook_lua", "huskar_berserkers_blood_lod", "ability_hero_attributes_cursed", "huskar_berserkers_blood_lod_passive", "bellatrix_live_transfusion"}, {"special_bonus_mp_400", "special_bonus_cursed_1", "special_bonus_cursed_2", "special_bonus_mp_regen_250", "special_bonus_hp_regen_16", "special_bonus_corruption_25", "special_bonus_hp_600", "special_bonus_cursed_3",}, "DOTA_ATTRIBUTE_AGILITY", {20,21,22}},
+		{"seeker_style_2", "pudge_style_2", {"ability_spike_tearing_blow", "spike_heal", "angel_arena_shell", "ability_hero_attributes_spike", "generic_hidden", "spike_conclusion_lua"}, {"special_bonus_strength_6", "special_bonus_attack_damage_20", "special_bonus_unquie_spike_heal_dur", "special_bonus_unquie_blow_dur", "special_bonus_unquie_coold_red", "special_bonus_unquie_blow_dmg", "spike_special_bonus_shell_25", "spike_special_bonus_attack"}, "DOTA_ATTRIBUTE_STRENGTH", {20,29,7}},
 	},
 	["npc_dota_hero_drow_ranger"] = {
 		{"azura_style_1", "azura", {"wave_of_silence_datadriven", "azura_gaze_of_exile", "azura_multishot_crossbow", "hoodwink_sharpshooter_release_custom", "generic_hidden", "hoodwink_sharpshooter_custom"}, {"special_bonus_unquie_gaze_damage", "special_bonus_attack_damage_25", "special_bonus_unquie_azura_creep_damage", "special_bonus_unquie_gaze_radius", "special_bonus_unique_azura_2", "special_bonus_unquie_sharo_max", "hoodwink_sharp_2", "special_bonus_Sharp_1"}, "DOTA_ATTRIBUTE_AGILITY", {22,20,15}},
@@ -64,7 +64,7 @@ function TalentsManager:SelectTalent(kv)
     for i=0,24 do
         local ability = hero:GetAbilityByIndex(i)
         if ability then
-            if string.find(ability:GetAbilityName(), "special_bonus_") then
+            if string.find(ability:GetAbilityName(), "special_bonus_") and ability:GetAbilityName() ~= "special_bonus_attributes" then
                 print("Удален талант: ", ability:GetAbilityName())
                 hero:RemoveAbility(ability:GetAbilityName())
             end
@@ -83,7 +83,7 @@ function TalentsManager:SelectTalent(kv)
             end
         end
     end
-
+    hero:AddAbility("special_bonus_attributes")
     -- Замена Уникального атрибута
 
     if attribute == "DOTA_ATTRIBUTE_STRENGTH" then

@@ -223,6 +223,8 @@ function fairy_queen_quell.projectiles:Destroy( projectile )
 	self[projectile] = nil
 end
 
+LinkLuaModifier("modifier_status_fire", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
+
 function fairy_queen_quell:OnProjectileHitHandle( target, location, iProjectileHandle )
 	if not target then
 		self.projectiles:Destroy( iProjectileHandle )
@@ -273,7 +275,11 @@ function fairy_queen_quell:OnProjectileHitHandle( target, location, iProjectileH
 			{ duration = debuff_duration*(1 - target:GetStatusResistance()) } -- kv
 		)
 	end
-
+	local chance = self:GetSpecialValueFor("chance")
+	if RollPercentage(chance) then 
+		local fire = target:AddNewModifier(self:GetCaster(), self, "modifier_status_fire", {duration = 4})
+		fire:SetStackCount(fire:GetStackCount() + 1)
+	end
 	-- play effects
 	local sound_cast = "Hero_SkywrathMage.ArcaneBolt.Impact"
 	EmitSoundOn( sound_cast, target )

@@ -75,7 +75,7 @@ function brax_kinetic_energy:OnSpellStart()
 							mod:SetStackCount(mod:GetStackCount() + 1)
 						end
 					end
-								
+
 					elseif unit == caster then
 						ApplyDamage({victim = unit, attacker = caster, damage = dps_scepter, damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL})
 					end
@@ -239,14 +239,6 @@ function modifier_kinetic_energy_slow:DeclareFunctions()
 	}
 	return funcs
 end
-function modifier_kinetic_energy_slow:CheckState()
-	if self:GetCaster():HasScepter() then
-	local state = {
-		[MODIFIER_STATE_SILENCED] = true,
-	}
-	return state
-	end
-end
 
 function modifier_kinetic_energy_slow:GetModifierMoveSpeedBonus_Percentage()
 	return (-1) * self:GetStackCount()
@@ -255,3 +247,5 @@ end
 function modifier_kinetic_energy_slow:GetEffectName()
 	return "particles/units/heroes/hero_thunderboar/kinetic_energy_debuff.vpcf"
 end
+
+

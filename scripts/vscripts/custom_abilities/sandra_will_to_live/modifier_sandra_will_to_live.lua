@@ -1,3 +1,5 @@
+LinkLuaModifier("modifier_sandra_will_to_live_dummy", "custom_abilities/sandra_will_to_live/modifier_sandra_will_to_live", LUA_MODIFIER_MOTION_NONE)
+
 modifier_sandra_will_to_live = class({})
 local tempTable = require("util/tempTable")
 --------------------------------------------------------------------------------
@@ -26,7 +28,7 @@ function modifier_sandra_will_to_live:OnCreated( kv )
 	self.threshold_base = self:GetAbility():GetSpecialValueFor( "threshold_base" ) -- special value
 	self.threshold_stack = self:GetAbility():GetSpecialValueFor( "threshold_stack" )  -- special value
 	self.threshold_stack_creep = self:GetAbility():GetSpecialValueFor( "threshold_stack_creep" ) -- special value
-	self.stack_duration = self:GetAbility():GetSpecialValueFor( "stack_duration" ) + self:GetCaster():GetTalentValue("spec_bonus_olivia_stack_dur") -- special value
+	self.stack_duration = self:GetAbility():GetSpecialValueFor( "stack_duration" )
 
 	self.bonus_stack = 0
 
@@ -41,7 +43,7 @@ function modifier_sandra_will_to_live:OnRefresh( kv )
 	self.threshold_base = self:GetAbility():GetSpecialValueFor( "threshold_base" ) -- special value
 	self.threshold_stack = self:GetAbility():GetSpecialValueFor( "threshold_stack" ) -- special value
 	self.threshold_stack_creep = self:GetAbility():GetSpecialValueFor( "threshold_stack_creep" ) -- special value
-	self.stack_duration = self:GetAbility():GetSpecialValueFor( "stack_duration" ) + self:GetCaster():GetTalentValue("spec_bonus_olivia_stack_dur") -- special value
+	self.stack_duration = self:GetAbility():GetSpecialValueFor( "stack_duration" ) -- special value
 
 	if IsServer() then
 		self:SetStackCount( self.threshold_base + self.bonus_stack )
@@ -65,7 +67,7 @@ end
 
 function modifier_sandra_will_to_live:GetMinHealth()
 	if IsServer() and not self:GetParent():IsIllusion() then
-		self.currentHealth = self:GetParent():GetHealth()
+		self.currentHealth = self:GetStackCount()
 	end
 end
 function modifier_sandra_will_to_live:OnTakeDamage( params )
@@ -73,15 +75,15 @@ function modifier_sandra_will_to_live:OnTakeDamage( params )
 		if params.unit~=self:GetParent() or params.inflictor==self:GetAbility() then
 			return
 		end
-
+		if self:GetCaster():HasModifier("modifier_sandra_will_to_live_dummy") then return end
 		-- cancel if break
 		if self:GetParent():PassivesDisabled() and (not self:GetParent():HasScepter()) then
 			return
 		end
-
+		self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_sandra_will_to_live_dummy", {duration = 0.1})
 		-- cover up damage
-		self:GetParent():SetHealth( self.currentHealth )
-
+			self:GetParent():Heal(params.damage, self:GetAbility())
+		
 		-- add delay damage if bigger than base threshold
 		if params.damage > self.threshold_base then
 			local attacker = tempTable:AddATValue( params.attacker )
@@ -100,13 +102,11 @@ function modifier_sandra_will_to_live:OnTakeDamage( params )
 		end
 
 		-- add threshold stack
-		if params.attacker:GetTeamNumber()~=self:GetParent():GetTeamNumber() then
-			local stack = self.threshold_stack
-			if not params.attacker:IsHero() then
-				stack = self.threshold_stack_creep
-			end
-			self:AddStack( stack )
+		local stack = self.threshold_stack
+		if not params.attacker:IsHero() then
+			stack = self.threshold_stack_creep
 		end
+		self:AddStack( stack )
 
 		-- effects
 		self:PlayEffects( params.attacker )
@@ -134,6 +134,7 @@ function modifier_sandra_will_to_live:AddStack( value )
 	)
 end
 
+
 function modifier_sandra_will_to_live:RemoveStack( value )
 	-- decrement stack
 	self.bonus_stack = self.bonus_stack - value
@@ -155,4 +156,18 @@ function modifier_sandra_will_to_live:PlayEffects( attacker )
 	ParticleManager:SetParticleControl( effect_cast, 1, Vector( size, 0, 0 ) )
 	ParticleManager:SetParticleControlForward( effect_cast, 2, direction )
 	ParticleManager:ReleaseParticleIndex( effect_cast )
+end
+
+modifier_sandra_will_to_live_dummy = class({})
+function modifier_sandra_will_to_live_dummy:IsHidden() return true end
+function modifier_sandra_will_to_live_dummy:IsPurgable() return false end
+function modifier_sandra_will_to_live_dummy:GetTexture() return end
+function modifier_sandra_will_to_live_dummy:GetEffectName() return end
+
+function modifier_sandra_will_to_live_dummy:OnCreated()
+
+end
+
+function modifier_sandra_will_to_live_dummy:OnRefresh()
+
 end

@@ -7819,4 +7819,204 @@
     }
 
 
+    "item_red_key"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"                            "2359"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "custom/origin_power"
+        "ScriptFile"                    "components/items/item_keys"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_OTHER | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "Model"                         "models/props_gameplay/clarity.vmdl"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"
+        "ItemShopTags"                  "consumable"
+        "ItemQuality"                   "consumable"
+        "ItemAliases"                   "clarity"
+        "ItemStackable"                 "1"
+        "ItemShareability"              "ITEM_NOT_SHAREABLE"
+        "ItemPermanent"                 "0"
+        "ItemInitialCharges"            "1"
+        "ShouldBeSuggested"             "1"
+        "IsTempestDoubleClonable"       "0"
+        "ItemPurchasable"             "0"
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "0"
+        "AbilityCastPoint"              "0.0"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        
+        //-------------------------------------------------------------------------------------------------------------     
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "mana_regen"            "1.0"
+            }
+
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "health_regen"              "1.0"
+            }
+        }
+    }
+
+    "item_red_key"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"                            "2359"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "custom/origin_power"
+        "ScriptFile"                    "components/items/item_keys"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_OTHER | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "Model"                         "models/props_gameplay/clarity.vmdl"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"
+        "ItemShopTags"                  "consumable"
+        "ItemQuality"                   "consumable"
+        "ItemAliases"                   "clarity"
+        "ItemStackable"                 "1"
+        "ItemShareability"              "ITEM_NOT_SHAREABLE"
+        "ItemPermanent"                 "0"
+        "ItemInitialCharges"            "1"
+        "ShouldBeSuggested"             "1"
+        "IsTempestDoubleClonable"       "0"
+        "ItemPurchasable"             "0"
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "0"
+        "AbilityCastPoint"              "0.0"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        
+        //-------------------------------------------------------------------------------------------------------------     
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "mana_regen"            "1.0"
+            }
+
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "health_regen"              "1.0"
+            }
+        }
+    }
+
+    "item_red_key"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"                            "2359"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "custom/origin_power"
+        "ScriptFile"                    "components/items/item_keys"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_OTHER | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "Model"                         "models/props_gameplay/clarity.vmdl"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"
+        "ItemShopTags"                  "consumable"
+        "ItemQuality"                   "consumable"
+        "ItemAliases"                   "clarity"
+        "ItemStackable"                 "1"
+        "ItemShareability"              "ITEM_NOT_SHAREABLE"
+        "ItemPermanent"                 "0"
+        "ItemInitialCharges"            "1"
+        "ShouldBeSuggested"             "1"
+        "IsTempestDoubleClonable"       "0"
+        "ItemPurchasable"             "0"
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "0"
+        "AbilityCastPoint"              "0.0"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        
+        //-------------------------------------------------------------------------------------------------------------     
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "mana_regen"            "1.0"
+            }
+
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "health_regen"              "1.0"
+            }
+        }
+    }
+
+    "item_red_key"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"                            "2359"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "custom/origin_power"
+        "ScriptFile"                    "components/items/item_keys"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_OTHER | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "Model"                         "models/props_gameplay/clarity.vmdl"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"
+        "ItemShopTags"                  "consumable"
+        "ItemQuality"                   "consumable"
+        "ItemAliases"                   "clarity"
+        "ItemStackable"                 "1"
+        "ItemShareability"              "ITEM_NOT_SHAREABLE"
+        "ItemPermanent"                 "0"
+        "ItemInitialCharges"            "1"
+        "ShouldBeSuggested"             "1"
+        "IsTempestDoubleClonable"       "0"
+        "ItemPurchasable"             "0"
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "0"
+        "AbilityCastPoint"              "0.0"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        
+        //-------------------------------------------------------------------------------------------------------------     
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "mana_regen"            "1.0"
+            }
+
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "health_regen"              "1.0"
+            }
+        }
+    }
+    
 }

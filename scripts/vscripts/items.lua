@@ -86,7 +86,6 @@ function COverthrowGameMode:SpecialItemAdd( event )
 	local tier3 = 
 	{
 		"item_plague_staff",
-		"item_repair_kit",
 		"item_slice_amulet"
 	}
 	local tier4 = 
@@ -109,7 +108,7 @@ function COverthrowGameMode:SpecialItemAdd( event )
 			spawnedItem = t2
 		elseif nCOUNTDOWNTIMER > 900 and nCOUNTDOWNTIMER < 1800 then
 			spawnedItem = t3
-		elseif nCOUNTDOWNTIMER > 0 and nCOUNTDOWNTIMER < 900 then
+		elseif nCOUNTDOWNTIMER < 900 then
 			spawnedItem = t4
 		end
 
@@ -129,6 +128,7 @@ function COverthrowGameMode:ThinkSpecialItemDrop()
 	if self.nNextSpawnItemNumber >= 41 then
 		return
 	end
+
 	-- Don't spawn if the game is about to end
 	if nCOUNTDOWNTIMER < 0 then
 		return
@@ -181,6 +181,7 @@ function COverthrowGameMode:PlanNextSpawn()
 end
 
 function COverthrowGameMode:WarnItem()
+
 	-- find the spawn point
 	self:PlanNextSpawn()
 

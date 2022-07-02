@@ -2,6 +2,8 @@
 {
 	HeroGuidesSupported = 1
 	PenaltiesEnabled = 0
+	EnablePickRules = true
+	EnablePickRules = 1
 	map_options = 
 	[
 		{

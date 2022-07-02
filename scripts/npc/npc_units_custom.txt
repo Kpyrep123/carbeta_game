@@ -396,6 +396,74 @@
 		// Team
 		//----------------------------------------------------------------
 	}	
+
+		"unit_drone_agressive"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/courier/courier_mech/courier_mech_flying.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					""
+		"Level"						"5"
+		"IsAncient"					"1"
+		"ModelScale" 				".90"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"			"100"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"1"		// Damage range min.
+		"AttackDamageMax"			"1"		// Damage range max.	
+		"AttackRate"				"0.5"		// Speed of attack.
+		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/nova_drone_attack_missile.vpcf"			// Particle system model for projectile.
+		"ProjectileSpeed"			"650"			// Speed of projectile.		
+
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"50"
+		"HealthBarOffset"			"1"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"35"		// Experience earn.
+		"BountyGoldMin"				"70"		// Gold earned min.
+		"BountyGoldMax"				"80"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"				"550"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"3"		// Base health.
+		"StatusHealthRegen"			"0.1"		// Health regeneration rate.
+		"StatusMana"				"0"		// Base mana.
+		"StatusManaRegen"			"1"			// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+	}	
 //=================================================================================
 // Neutral: Ancient - Elder Jungle Stalker
 //=================================================================================
@@ -4572,14 +4640,14 @@
 	{
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/items/rattletrap/dplus_power_suit_prototype_cogs/dplus_power_suit_prototype_cogs.vmdl"
-		"ModelScale"				"1.0"
+		"ModelScale"				"0.6"
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"  "DOTA_UNIT_CAP_NO_ATTACK"
-		"MovementSpeed"			"600"
+		"MovementSpeed"			"550"
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
 	
 		"UnitRelationshipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 	
@@ -5462,4 +5530,380 @@
     "UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
     "HasInventory"				"0"
 }
+	"npc_dota_soul_red"
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/props_structures/tower_upgrade/tower_upgrade.vmdl"	// Model.
+	"BaseClass"					"npc_dota_venomancer_plagueward"
+	"IsAncient"					"1"
+	"Level"						"1"
+	"CanBeDominated" 			"0"
+
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"ability_red_soul"	   
+	"Ability2"					""	
+	"Ability3"					""			
+	"Ability4"					""			             
+	
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"5"			// Physical protection.
+	"MagicalResistance"			"100"		// Magical protection.  // this should be 33, switch it back once we implement Resistant Skin
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"			// Type of attack - melee, ranged, etc.
+    "AttackDamageMin"			"0"			// Damage range min.
+    "AttackDamageMax"			"0"			// Damage range max.
+    "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"				"1"			// Speed of attack.
+    "AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+    "AttackRange"				"500"		// Range within a target can be attacked.
+    "ProjectileModel"			"" // Particle system model for projectile.
+    "ProjectileSpeed"			"900"		// Speed of projectile.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"HealthBarOffset"			"1"
+	"RingRadius"                "90"
+    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
+
+	// Movement
+	//----------------------------------------------------------------
+    "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+    "MovementSpeed"				"0"		// Speed
+    "MovementTurnRate"			"0.0"		// Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"				"10000"	    // Base health.
+    "StatusHealthRegen"			"100"			// Health regeneration rate.
+
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"0"		// Range of vision during day light.
+	"VisionNighttimeRange"		"0"		// Range of vision at night time.
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"					"DOTA_TEAM_NOTEAM"			// Team name.
+    "CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+    "CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+    "UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+    "HasInventory"				"0"
+}
+	"npc_dota_soul_blue"
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/props_structures/tower_upgrade/tower_upgrade.vmdl"	// Model.
+	"BaseClass"					"npc_dota_venomancer_plagueward"
+	"IsAncient"					"1"
+	"Level"						"1"
+	"CanBeDominated" 			"0"
+
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"ability_red_soul"	   
+	"Ability2"					""	
+	"Ability3"					""			
+	"Ability4"					""			             
+	
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"5"			// Physical protection.
+	"MagicalResistance"			"100"		// Magical protection.  // this should be 33, switch it back once we implement Resistant Skin
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"			// Type of attack - melee, ranged, etc.
+    "AttackDamageMin"			"0"			// Damage range min.
+    "AttackDamageMax"			"0"			// Damage range max.
+    "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"				"1"			// Speed of attack.
+    "AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+    "AttackRange"				"500"		// Range within a target can be attacked.
+    "ProjectileModel"			"" // Particle system model for projectile.
+    "ProjectileSpeed"			"900"		// Speed of projectile.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"HealthBarOffset"			"1"
+	"RingRadius"                "90"
+    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
+
+	// Movement
+	//----------------------------------------------------------------
+    "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+    "MovementSpeed"				"0"		// Speed
+    "MovementTurnRate"			"0.0"		// Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"				"10000"	    // Base health.
+    "StatusHealthRegen"			"100"			// Health regeneration rate.
+
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"0"		// Range of vision during day light.
+	"VisionNighttimeRange"		"0"		// Range of vision at night time.
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"					"DOTA_TEAM_NOTEAM"			// Team name.
+    "CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+    "CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+    "UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+    "HasInventory"				"0"
+}
+	"npc_dota_soul_green"
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/props_structures/tower_upgrade/tower_upgrade.vmdl"	// Model.
+	"BaseClass"					"npc_dota_venomancer_plagueward"
+	"IsAncient"					"1"
+	"Level"						"1"
+	"CanBeDominated" 			"0"
+
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"ability_red_soul"	   
+	"Ability2"					""	
+	"Ability3"					""			
+	"Ability4"					""			             
+	
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"5"			// Physical protection.
+	"MagicalResistance"			"100"		// Magical protection.  // this should be 33, switch it back once we implement Resistant Skin
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"			// Type of attack - melee, ranged, etc.
+    "AttackDamageMin"			"0"			// Damage range min.
+    "AttackDamageMax"			"0"			// Damage range max.
+    "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"				"1"			// Speed of attack.
+    "AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+    "AttackRange"				"500"		// Range within a target can be attacked.
+    "ProjectileModel"			"" // Particle system model for projectile.
+    "ProjectileSpeed"			"900"		// Speed of projectile.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"HealthBarOffset"			"1"
+	"RingRadius"                "90"
+    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
+
+	// Movement
+	//----------------------------------------------------------------
+    "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+    "MovementSpeed"				"0"		// Speed
+    "MovementTurnRate"			"0.0"		// Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"				"10000"	    // Base health.
+    "StatusHealthRegen"			"100"			// Health regeneration rate.
+
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"0"		// Range of vision during day light.
+	"VisionNighttimeRange"		"0"		// Range of vision at night time.
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"					"DOTA_TEAM_NOTEAM"			// Team name.
+    "CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+    "CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+    "UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+    "HasInventory"				"0"
+}
+	"npc_dota_soul_black"
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/props_structures/tower_upgrade/tower_upgrade.vmdl"	// Model.
+	"BaseClass"					"npc_dota_venomancer_plagueward"
+	"IsAncient"					"1"
+	"Level"						"1"
+	"CanBeDominated" 			"0"
+
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"ability_red_soul"	   
+	"Ability2"					""	
+	"Ability3"					""			
+	"Ability4"					""			             
+	
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"5"			// Physical protection.
+	"MagicalResistance"			"100"		// Magical protection.  // this should be 33, switch it back once we implement Resistant Skin
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"			// Type of attack - melee, ranged, etc.
+    "AttackDamageMin"			"0"			// Damage range min.
+    "AttackDamageMax"			"0"			// Damage range max.
+    "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"				"1"			// Speed of attack.
+    "AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+    "AttackRange"				"500"		// Range within a target can be attacked.
+    "ProjectileModel"			"" // Particle system model for projectile.
+    "ProjectileSpeed"			"900"		// Speed of projectile.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"HealthBarOffset"			"1"
+	"RingRadius"                "90"
+    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
+
+	// Movement
+	//----------------------------------------------------------------
+    "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+    "MovementSpeed"				"0"		// Speed
+    "MovementTurnRate"			"0.0"		// Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"				"10000"	    // Base health.
+    "StatusHealthRegen"			"100"			// Health regeneration rate.
+
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"0"		// Range of vision during day light.
+	"VisionNighttimeRange"		"0"		// Range of vision at night time.
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"					"DOTA_TEAM_NOTEAM"			// Team name.
+    "CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+    "CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+    "UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+    "HasInventory"				"0"
+}
+
+	"npc_dota_demolist_spawner_1"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/development/invisiblebox.vmdl"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"BountyXP"					"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"StatusHealth"				"5000"
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"Ability1"					"ability_red_soul"
+	}
+	"npc_dota_demolist_spawner_2"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/development/invisiblebox.vmdl"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"BountyXP"					"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"StatusHealth"				"5000"
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"Ability1"					"ability_red_soul"
+	}
+	"npc_dota_demolist_spawner_3"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/development/invisiblebox.vmdl"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"BountyXP"					"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"StatusHealth"				"5000"
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"Ability1"					"ability_red_soul"
+	}
+	"npc_dota_demolist_spawner_4"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/development/invisiblebox.vmdl"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"BountyXP"					"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"StatusHealth"				"5000"
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"Ability1"					"ability_red_soul"
+	}
+			"npc_dota_demolist_1"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/units/stegius/stegius.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"Level"						"7"
+		"ModelScale"				"0.85"
+		"IsSummoned"				"0"
+		"IsAncient"					"1"
+		"ConsideredHero"			"1"
+		"IgnoreAddSummonedToSelection" "1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""		// Ability 1
+		"Ability2"					""	// Ability 2
+		"Ability3"					""		// Ability 3
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""			// Ability 6	
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"3"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"25"		// Damage range min.
+		"AttackDamageMax"			"35"		// Damage range max.	
+		"AttackRate"				"1.25"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"HealthBarOffset"			"160"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"330"		// Speed.
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1400"		// Base health.
+		"StatusHealthRegen"			"2"			// Health regeneration rate.
+		"StatusMana"				"400"		// Base mana.
+		"StatusManaRegen"			"2"			// Mana regeneration rate.
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	}	
 }

@@ -487,13 +487,6 @@ function modifier_status_bleed:OnRefresh()
 if not IsServer() then return end
 end
 
-function modifier_status_bleed:DeclareFunctions()
-	 local funcs = 	{
-		MODIFIER_EVENT_ON_ATTACK,
-	}
-return funcs
-end
-
 function modifier_status_bleed:OnIntervalThink(  )
 	if self:GetCaster():IsIllusion() then 
 	self.count = self.count + 1

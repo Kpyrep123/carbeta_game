@@ -21,6 +21,12 @@ function ResetAllAbilitiesCooldown(unit)
 	end
 end
 
+
+function CDOTA_BaseNPC:GetIllusionBounty()
+	return self:GetLevel() * 2
+end
+
+
 function GetItemInInventory(unit,itemName)
 	for i = 0, 5 do
 		local item = unit:GetItemInSlot(i) 
@@ -195,6 +201,127 @@ end
 
 function IsFlagSet(number,flag)
 	return (number % (2*flag) >= flag)
+end
+
+function CDOTA_BaseNPC:CreateIllusion(duration, inc, out, pos, mod, ab)
+	if pos == nil then
+		pos = self:GetAbsOrigin() + RandomVector(RandomInt(50, 100))
+	else
+		pos = pos + RandomVector(RandomInt(50, 100))
+	end
+
+	local illusion = CreateUnitByName(self:GetUnitName(), pos, true, self, nil, self:GetTeamNumber())
+	FindClearSpaceForUnit(self, self:GetAbsOrigin() + RandomVector(RandomInt(10, 100)), true)
+	FindClearSpaceForUnit(illusion, illusion:GetAbsOrigin(), true)
+
+	illusion:SetBaseMaxHealth(self:GetMaxHealth())
+	illusion:SetMaxHealth(self:GetMaxHealth())
+	illusion:SetHealth(self:GetHealth())
+	illusion:SetMana(self:GetMana())
+
+--	illusion:SetAverageBaseDamage(self:GetAverageBaseDamage(), 15)
+--	illusion:SetPhysicalArmorBaseValue(self:GetPhysicalArmorValue(false))
+	illusion:SetBaseAttackTime(self:GetBaseAttackTime())
+	illusion:SetBaseMoveSpeed(self:GetIdealSpeed())
+
+	illusion:SetOriginalModel(self:GetModelName())
+	illusion:SetModel(self:GetModelName())
+	illusion:SetModelScale(self:GetModelScale())
+
+--	local moveCap = DOTA_UNIT_CAP_MOVE_NONE
+--	if self:HasMovementCapability() then
+--		moveCap = DOTA_UNIT_CAP_MOVE_GROUND
+--		if self:HasFlyMovementCapability() then
+--			moveCap = DOTA_UNIT_CAP_MOVE_FLY
+--		end
+--	end
+--	illusion:SetMoveCapability( moveCap )
+--	illusion:SetAttackCapability(self:GetOriginalAttackCapability())
+	illusion:SetUnitName(self:GetUnitName())
+	if self:IsRangedAttacker() then
+		illusion:SetRangedProjectileName(self:GetRangedProjectileName())
+	end
+
+	-- billion thanks for that to yahnich
+	for _, wearable in ipairs(self:GetChildren()) do
+		if wearable:GetClassname() == "dota_item_wearable" and wearable:GetModelName() ~= "" then
+			local newWearable = CreateUnitByName("wearable_dummy", illusion:GetAbsOrigin(), false, nil, nil, self:GetTeam())
+			newWearable:SetOriginalModel(wearable:GetModelName())
+			newWearable:SetModel(wearable:GetModelName())
+			newWearable:AddNewModifier(nil, nil, "modifier_wearable", {})
+			newWearable:AddNewModifier(self, ability, "modifier_kill", { duration = duration })
+			newWearable:AddNewModifier(self, ability, "modifier_illusion", { duration = duration })
+			if specIllusionModifier then
+				newWearable:AddNewModifier(self, ability, specIllusionModifier, { duration = duration })
+			end
+			newWearable:MakeIllusion()
+			newWearable:SetParent(illusion, nil)
+			newWearable:FollowEntity(illusion, true)
+			-- newWearable:SetRenderColor(100,100,255)
+			Timers:CreateTimer(1, function()
+				if illusion and not illusion:IsNull() and illusion:IsAlive() then
+					return 0.25
+				else
+					UTIL_Remove( newWearable )
+				end
+			end)
+		end
+	end
+
+	illusion:SetForwardVector(self:GetForwardVector())
+	illusion:AddNewModifier(self, ability, "modifier_kill", {duration = duration}) -- I'm not sure this is needed, but just in case
+	illusion:AddNewModifier(self, nil, "modifier_illusion", {duration = duration, outgoing_damage = out, incoming_damage = inc})
+	illusion:SetControllableByPlayer(self:GetPlayerID(), true)
+
+	illusion:SetPlayerID(self:GetPlayerID())
+	illusion:SetOwner(self:GetPlayerOwner())
+
+	local targetLevel = self:GetLevel()
+	for i=1,targetLevel-1 do
+		illusion:HeroLevelUp(false)
+	end
+
+	illusion:SetAbilityPoints(0)
+
+	for abilitySlot=0,15 do
+		local ability = self:GetAbilityByIndex(abilitySlot)
+		if ability ~= nil then 
+			local abilityLevel = ability:GetLevel()
+			local abilityName = ability:GetAbilityName()
+			local illusionAbility = illusion:FindAbilityByName(abilityName)
+			if illusionAbility then
+				illusionAbility:SetLevel(abilityLevel)
+			end
+		end
+	end
+
+	for itemSlot=0,8 do
+		local item = self:GetItemInSlot(itemSlot)
+		if item ~= nil then
+			local itemName = item:GetName()
+			local newItem = CreateItem(itemName, illusion, illusion)
+			illusion:AddItem(newItem)
+			newItem:SetPurchaser(nil)
+			newItem:SetStacksWithOtherOwners(true)
+		end
+	end
+
+	if mod then
+		for _, modifier in pairs(mod) do
+			illusion:AddNewModifier(self, ab, modifier, {})
+		end
+	end
+
+--[[
+	if IsMutationMap() then
+		if self:HasModifier("modifier_mutation_kill_streak_power") then
+			illusion:AddNewModifier(illusion, nil, "modifier_mutation_kill_streak_power", {}):SetStackCount(self:FindModifierByName("modifier_mutation_kill_streak_power"):GetStackCount())
+		end
+	end
+--]]
+	illusion:MakeIllusion()
+
+	return illusion
 end
 
 function CreateIllusion(target,caster,origin,duration,outgoing_damage,incoming_damage)

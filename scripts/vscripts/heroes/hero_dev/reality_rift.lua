@@ -51,7 +51,7 @@ function Run(keys)
 	local speedMult = ability:GetLevelSpecialValueFor("speed_multiplier", ability_level)
 	local speed = ((speedPct * speedMult) + caster:GetTalentValue("special_bonus_unquie_rift_speed")) / 10000
 	caster:SetAbsOrigin(caster:GetAbsOrigin() + caster:GetForwardVector() * speed)
-	caster:SetAbsOrigin(GetGroundPosition(caster:GetAbsOrigin(), caster))
+	FindClearSpaceForUnit(caster, caster:GetAbsOrigin(), false)
 end
 
 function RandomDamage(keys)

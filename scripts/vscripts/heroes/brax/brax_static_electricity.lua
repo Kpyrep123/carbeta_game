@@ -20,7 +20,7 @@ function modifier_static_electricity:GetAttributes() return MODIFIER_ATTRIBUTE_P
 
 function modifier_static_electricity:OnCreated(keys)
 	if IsServer() then
-		self:StartIntervalThink(0.03)
+		self:StartIntervalThink(FrameTime())
 	end
 end
 

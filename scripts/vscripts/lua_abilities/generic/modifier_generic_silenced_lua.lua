@@ -33,3 +33,18 @@ end
 function modifier_generic_silenced_lua:GetEffectAttachType()
 	return PATTACH_OVERHEAD_FOLLOW
 end
+
+function modifier_generic_silenced_lua:DeclareFunctions(  )
+	local funcs = {
+		--MODIFIER_EVENT_ON_ATTACK_START,
+		--MODIFIER_EVENT_ON_ATTACK_LANDED,
+		MODIFIER_PROPERTY_MISS_PERCENTAGE
+	}
+
+	return funcs
+end
+
+function modifier_generic_silenced_lua:GetModifierMiss_Percentage(  )
+	if not self:GetCaster():HasTalent("special_bonus_unquie_gust_blind") then return end
+	return 50
+end

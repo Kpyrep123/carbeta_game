@@ -1,7 +1,7 @@
 veerah_killer_instinct_lua = class({})
 LinkLuaModifier("modifier_shard_evasion", "heroes/hero_riki/killer_instinct.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_veerah_killer_instinct_lua_buff", "heroes/hero_riki/killer_instinct.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_status_bleed", "status/modifier_bleed.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_bleed", "status/statuses.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_veerah_killer_instinct_lua", "heroes/hero_riki/killer_instinct.lua", LUA_MODIFIER_MOTION_NONE)
 function veerah_killer_instinct_lua:GetIntrinsicModifierName(  )
 	return "modifier_veerah_killer_instinct_lua"
@@ -80,7 +80,7 @@ end
 end
 
 function modifier_veerah_killer_instinct_lua_buff:DeclareFunctions()
-	local funcs = 	{
+	local funcs = 	{ 
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 		MODIFIER_EVENT_ON_ATTACK,

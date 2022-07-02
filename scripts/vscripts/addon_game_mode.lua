@@ -32,7 +32,8 @@ require('lib/util_dusk')
 require('internal/util')
 require('abilities/life_in_arena/utils')
 require('lib/talents')
-
+require('addon_init')
+-- require('internal/client_util')
 -- This library allow for easily delayed/timed actions
 require('libraries/timers')
 -- This library can be used for advancted physics/motion/collision of units.  See PhysicsReadme.txt for more information.
@@ -416,6 +417,10 @@ function COverthrowGameMode:InitGameMode()
 			WaypointName = "camp"..i.."_path_wp1"
 		}
 	end
+    -- local black_soul = CreateUnitByName("string string_1", Vector Vector_2, bool bool_3, handle handle_4, handle handle_5, int int_6)
+    -- local blue_soul = CreateUnitByName("string string_1", Vector Vector_2, bool bool_3, handle handle_4, handle handle_5, int int_6)
+    -- local red_soul = CreateUnitByName("string string_1", Vector Vector_2, bool bool_3, handle handle_4, handle handle_5, int int_6)
+    -- local green_soul = CreateUnitByName("string string_1", Vector Vector_2, bool bool_3, handle handle_4, handle handle_5, int int_6)
 end
 
 ---------------------------------------------------------------------------
@@ -516,7 +521,6 @@ end
 -- Update player labels and the scoreboard
 ---------------------------------------------------------------------------
 function COverthrowGameMode:OnThink()
-
 	
 	self:UpdateScoreboard()
 	-- Stop thinking if game is paused
@@ -549,6 +553,7 @@ function COverthrowGameMode:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		--Spawn Gold Bags
 		COverthrowGameMode:ThinkGoldDrop()
+         
 		COverthrowGameMode:ThinkSpecialItemDrop()
 	end
 
@@ -678,14 +683,12 @@ function COverthrowGameMode:ExecuteOrderFilter( filterTable )
 end
 
 
-
-
  function COverthrowGameMode:OnNPCSpawned(data)
     local npc = EntIndexToHScript(data.entindex)
     if npc.bFirstSpawned == nil then ---если юнит герой и это первый его спавн находишь у него скилл и апаешь скиллу 1 уровень
        npc.bFirstSpawned = true
         if npc and npc:IsRealHero() and npc.initialize_talents == nil then
-            if npc:GetUnitName() == "npc_dota_hero_bloodseeker" then
+            if npc:GetUnitName() == "npc_dota_hero_bloodseeker" or npc:GetUnitName() == "npc_dota_hero_drow_ranger" or npc:GetUnitName() == "npc_dota_hero_terrorblade" then
                 TalentsManager:CreateChooseTalent( npc )
             end
         end

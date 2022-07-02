@@ -385,7 +385,6 @@ end
 
 function modifier_slime_puddle_bonus_effect:CheckState()
     local states = {
-        [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
         [MODIFIER_STATE_NO_UNIT_COLLISION] = true
     }
     return states

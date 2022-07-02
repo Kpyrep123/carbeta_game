@@ -1,5 +1,7 @@
 --[[ events.lua ]]
- sp = 0
+ COverthrowGameMode.DropedKeys = {"item_red_key", "item_red_key", "item_red_key", "item_red_key"}
+ COverthrowGameMode.KilledDemolist = 0
+ -- COverthrowGameMode.LeperCreeps = {"npc_dota_creature_jungle_stalker", "npc_dota_creature_elder_jungle_stalker", "npc_dota_creature_prowler_acolyte", "npc_dota_creature_prowler_shaman", "npc_dota_creature_basic_zombie", "npc_dota_creature_berserk_zombie"}
 ---------------------------------------------------------------------------
 -- Event: Game state change handler
 ---------------------------------------------------------------------------
@@ -93,7 +95,7 @@ end
 function COverthrowGameMode:OnTeamKillCredit( event )
 --	print( "OnKillCredit" )
 --	DeepPrint( event )
-
+	if GetMapName() == "arena_of_purificetion" then return end
 	local nKillerID = event.killer_userid
 	local nTeamID = event.teamnumber
 	local nTeamKills = event.herokills
@@ -142,22 +144,44 @@ function COverthrowGameMode:OnEntityKilled( event , unit )
 	------------------------------------------------------------------------------FILLFILLFILLFILLFILLFILLFILL-----------------------------------------------------------------------------------
 	------------------------------------------------------------------------------FILLFILLFILLFILLFILLFILLFILL-----------------------------------------------------------------------------------
 	---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	--if killedUnit:IsCreature() then 
-	--	if RollPercentage(30) then
-	--	
-      --      print(sp)
-      --     	if sp <= 0 then 
-	--	    local item = CreateItem("item_imba_clarity", nil, nil)
-      --          local pos = killedUnit:GetAbsOrigin()
-      --          local drop = CreateItemOnPositionSync( pos, item )
-      --          local pos_launch = pos+RandomVector(RandomFloat(150,200))
-      --          item:LaunchLoot(false, 200, 0.75, pos_launch)
-      --          sp = sp + 1
-	--	end
---
-      --    end
+	--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	--if killedUnit:GetUnitName() == "npc_dota_demolist_1" then
+	--	COverthrowGameMode.KilledDemolist = COverthrowGameMode.KilledDemolist + 1 
+	--	print(COverthrowGameMode.KilledDemolist)
 	--end
+
+	--if #COverthrowGameMode.DropedKeys <= 0 and COverthrowGameMode.KilledDemolist >= 4 then
+	--	COverthrowGameMode.DropedKeys = {"item_red_key", "item_red_key", "item_red_key", "item_red_key"}
+	--	COverthrowGameMode.KilledDemolist = 0
+
+	--end
+
+	--if killedUnit:IsNeutralUnitType() then 
+	-- 	if RollPercentage(50) then
+	-- 	print(COverthrowGameMode.DropedKeys)
+	--       if #COverthrowGameMode.DropedKeys > 0 then
+	-- 		local itemName = table.remove(COverthrowGameMode.DropedKeys, RandomInt(1, #COverthrowGameMode.DropedKeys))
+	-- 		local item = CreateItem(itemName, nil, nil)
+	--           local pos = killedUnit:GetAbsOrigin()
+	--           local drop = CreateItemOnPositionSync( pos, item )
+	--           local pos_launch = pos+RandomVector(RandomFloat(150,200))
+	--           item:LaunchLoot(false, 200, 0.75, pos_launch)
+	--	 end
+	--     end
+	-- end
+
+	if killedUnit:HasAbility("ability_leper_creep") then 
+		if RollPercentage(2) then
+			local item = CreateItem("item_imba_clarity", nil, nil)
+		      local pos = killedUnit:GetAbsOrigin()
+		      local drop = CreateItemOnPositionSync( pos, item )
+		      local pos_launch = pos+RandomVector(RandomFloat(150,200))
+		      item:LaunchLoot(false, 200, 0.75, pos_launch)
+		end
+	end
+ 
+	
+
 	---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	------------------------------------------------------------------------------FILLFILLFILLFILLFILLFILLFILL-----------------------------------------------------------------------------------
 	------------------------------------------------------------------------------FILLFILLFILLFILLFILLFILLFILL-----------------------------------------------------------------------------------

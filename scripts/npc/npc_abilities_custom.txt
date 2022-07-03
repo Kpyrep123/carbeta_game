@@ -20246,20 +20246,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/hero_sniper/rocket_trap.lua"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCastAnimation"			"ACT_DOTA_FLAIL"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
+
 		"AbilityTextureName"			"custom/hawkeye_hit_n_run"
 		
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.3"
 		
 		
 		// Time		
@@ -20270,10 +20268,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"80"
 		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.0"	// All about the damage
-
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -20296,7 +20290,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_incoming_damage"		"100"
+				"explosion_damage"		"250 350 450 550"
 			}
 			"05"
 			{
@@ -20319,4 +20313,5 @@
 			"particle"					"particles/units/heroes/hero_centaur/centaur_warstomp.vpcf"
 		}
 	}
+
 }

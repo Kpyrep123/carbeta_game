@@ -110,7 +110,7 @@ function modifeir_decoy_illusion:OnAttacked ( p )
 	end
 end
 
-LinkLuaModifier("drone_attacker_moving", "heroes/hero_sniper/decoy_invisibility.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("drone_attacker_moving_decoy", "heroes/hero_sniper/decoy_invisibility.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("drone_attacker_attack", "heroes/hero_sniper/decoy_invisibility.lua", LUA_MODIFIER_MOTION_NONE)
 
 
@@ -119,7 +119,7 @@ function modifeir_decoy_illusion:SummonDrone(  )
 		self.rand_pos = RotatePosition( Vector(0,0,0), QAngle( 0, RandomInt(1, 360), 0 ), self.caster:GetForwardVector() )
 		local locate = self.caster:GetOrigin() + self.idle*self.rand_pos
 		CreateUnitByNameAsync("unit_drone_agressive", locate, true, self.caster, self.caster, self.caster:GetTeam(), function(drones)
-			drones:AddNewModifier(self.caster, self, "drone_attacker_moving", {duration = self.duration})
+			drones:AddNewModifier(self.caster, self, "drone_attacker_moving_decoy", {duration = self.duration})
 			drones:AddNewModifier(self.caster, nil, "modifier_kill", {duration = self.duration})
 			drones:SetOwner(self.caster)
 			local height = drones:AddNewModifier(self.caster, self, "drone_attacker_attack", {duration = self.duration})
@@ -128,23 +128,24 @@ function modifeir_decoy_illusion:SummonDrone(  )
 	end
 end
 
-drone_attacker_moving = class({})
-function drone_attacker_moving:IsHidden() return true end
-function drone_attacker_moving:IsPurgable() return false end
+drone_attacker_moving_decoy = class({})
+function drone_attacker_moving_decoy:IsHidden() return true end
+function drone_attacker_moving_decoy:IsPurgable() return false end
 
-function drone_attacker_moving:OnCreated()
+function drone_attacker_moving_decoy:OnCreated()
 	self:OnIntervalThink()
+	self.attackers = self:GetCaster():FindAbilityByName("drone_attacker")
 	self:StartIntervalThink(1)
 	Timers:CreateTimer(0.03, function()
 	self:GetParent():MoveToPositionAggressive( self:GetCaster():GetAbsOrigin() + RandomVector( RandomInt( 100, 300 ) ) )
 	end)
 end
 
-function drone_attacker_moving:OnRefresh()
+function drone_attacker_moving_decoy:OnRefresh()
 	self:OnCreated()
 end
 
-function drone_attacker_moving:CheckState()
+function drone_attacker_moving_decoy:CheckState()
 	local state = {
 		[MODIFIER_STATE_UNSELECTABLE] = true,
 		[MODIFIER_STATE_UNTARGETABLE] = true,
@@ -160,7 +161,7 @@ function drone_attacker_moving:CheckState()
 	return state
 end
 
-function drone_attacker_moving:DeclareFunctions(  )
+function drone_attacker_moving_decoy:DeclareFunctions(  )
 		local funcs = {
 		MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
@@ -169,15 +170,15 @@ function drone_attacker_moving:DeclareFunctions(  )
 	return funcs
 end
 
-function drone_attacker_moving:GetModifierPreAttack_BonusDamage(  )
-	return self:GetCaster():FindAbilityByName("drone_attacker"):GetSpecialValueFor("drones_damage") or 20
+function drone_attacker_moving_decoy:GetModifierPreAttack_BonusDamage(  )
+	return self:GetAbility():GetSpecialValueFor("drones_damage")
 end
 
-function drone_attacker_moving:GetModifierAttackRangeBonus(  )
+function drone_attacker_moving_decoy:GetModifierAttackRangeBonus(  )
 	return self:GetCaster():Script_GetAttackRange() + 300 or 700
 end
 
-function drone_attacker_moving:OnIntervalThink(  )
+function drone_attacker_moving_decoy:OnIntervalThink(  )
 	self:GetParent():MoveToPosition( self:GetCaster():GetAbsOrigin() + RandomVector( RandomInt( 100, 300 ) ) )
 end
 drone_attacker_attack = class({})

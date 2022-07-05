@@ -84,7 +84,7 @@ function drone_attacker_moving:GetModifierPreAttack_BonusDamage(  )
 end
 
 function drone_attacker_moving:GetModifierAttackRangeBonus(  )
-	return self:GetCaster():Script_GetAttackRange() * 2
+	return self:GetCaster():Script_GetAttackRange() + 300
 end
 
 function drone_attacker_moving:OnIntervalThink(  )

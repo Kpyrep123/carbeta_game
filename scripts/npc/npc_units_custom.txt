@@ -4639,7 +4639,7 @@
 	"explosive_mech"
 	{
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/items/rattletrap/dplus_power_suit_prototype_cogs/dplus_power_suit_prototype_cogs.vmdl"
+		"Model"						"models/items/broodmother/spiderling/ti9_cache_brood_mother_of_thousands_spiderling/ti9_cache_brood_mother_of_thousands_spiderling.vmdl"
 		"ModelScale"				"0.6"
 		// Attack
 		//----------------------------------------------------------------

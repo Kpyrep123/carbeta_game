@@ -1,6 +1,6 @@
+
+
 widow_trap = widow_trap or class({})
-
-
 
 function widow_trap:GetAOERadius()
 	local caster = self:GetCaster()
@@ -80,9 +80,10 @@ end
 
 function widow_trap_borrow:OnDestroy()
 	-- self:GetParent():SetModel("models/courier/courier_mech/courier_mech.vmdl")
-	self:GetParent():SetOriginalModel("models/courier/courier_mech/courier_mech.vmdl")
+	self:GetParent():SetOriginalModel("models/items/broodmother/spiderling/ti9_cache_brood_mother_of_thousands_spiderling/ti9_cache_brood_mother_of_thousands_spiderling.vmdl")
 	self:StartIntervalThink(FrameTime())
 	self:GetParent():EmitSound("Hero_NyxAssassin.Burrow.Out")
+	self:GetParent():SetModelScale(0.3)
 end
 
 
@@ -164,7 +165,7 @@ function widow_trap_unborrow:OnDestroy(  )
 			if 	unit then
 				self:GetParent():MoveToPosition(unit:GetAbsOrigin())
 				self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "widow_trap_ai", {duration = -1})
-				self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "widow_trap_explosion", {duration = 2.6})
+				self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "widow_trap_explosion", {duration = 2.5})
 			end
 		end
 end
@@ -186,16 +187,19 @@ end
  function widow_trap_ai:OnCreated()
  	self:StartIntervalThink(FrameTime())
  	self:OnIntervalThink()
+ 	self.responses = {"MineSound1","MineSound2", "MineSound3", "MineSound4"}
+ 	EmitSoundOn(self.responses[RandomInt(1, #self.responses)], self:GetParent())
  end
  
  function widow_trap_ai:OnRefresh()
  	self:StartIntervalThink(FrameTime())
  	self:OnIntervalThink()
  end
+
  
- function widow_trap_ai:OnIntervalThink(  )
+ function widow_trap_ai:OnIntervalThink()
  	local locate = self:GetParent():GetAbsOrigin()
- 	local radius = self:GetAbility():GetSpecialValueFor("radius") * 1.5
+ 	local radius = self:GetAbility():GetSpecialValueFor("radius") * 2.5
  	local friendly_units = FindUnitsInRadius(self:GetCaster():GetTeamNumber(),
  												locate,
  												nil,
@@ -219,6 +223,11 @@ end
  		if self:GetParent():HasModifier("widow_trap_explosion") then
  			self:GetParent():RemoveModifierByName("widow_trap_explosion")
  		end
+ 		
+ 		self:GetParent():StopSound("MineSound1")
+ 		self:GetParent():StopSound("MineSound2")
+ 		self:GetParent():StopSound("MineSound3")
+ 		self:GetParent():StopSound("MineSound4")
  		self:Destroy()
  	end
  end
@@ -230,7 +239,7 @@ LinkLuaModifier("widow_trap_explosion", "heroes/hero_sniper/rocket_trap.lua", LU
  function widow_trap_explosion:IsPurgable() return false end
  
  function widow_trap_explosion:OnCreated()
- 	self:StartIntervalThink(2.0)
+ 	self:StartIntervalThink(1.65)
  end
  
  function widow_trap_explosion:OnRefresh()
@@ -263,5 +272,14 @@ function widow_trap_explosion:OnIntervalThink(  )
 
 	self:GetParent():ForceKill(true)
 
-	ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+	local prt = ParticleManager:CreateParticle("particles/nova/mine_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+	ParticleManager:SetParticleControl(prt, 1, Vector(radius, radius, radius))
+	ParticleManager:SetParticleControl(prt, 2, Vector(radius, radius, radius))
+	ParticleManager:SetParticleControl(prt, 3, Vector(radius, radius, radius))
+	ParticleManager:SetParticleControl(prt, 4, Vector(radius, radius, radius))
+	ParticleManager:SetParticleControl(prt, 5, Vector(radius, radius, radius))
+	ParticleManager:SetParticleControl(prt, 6, Vector(radius, radius, radius))
+
+	ParticleManager:ReleaseParticleIndex(prt)
+	ParticleManager:CreateParticle("particles/econ/items/phoenix/phoenix_ti10_immortal/phoenix_ti10_fire_spirit_ground.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 end

@@ -28,7 +28,7 @@
 
 
 #base "abilities\invoker\invoke_datadriven.txt"
-
+ 
 
 
 
@@ -20226,8 +20226,8 @@
 			}
 			"06"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"distance"					"600"
+				"var_type"					"FIELD_FLOAT"
+				"drones_damage"					"20.0 30.0 40.0 50.0"
 			}
 		}
 		
